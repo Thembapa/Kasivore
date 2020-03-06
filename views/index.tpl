@@ -4,7 +4,7 @@
 	<title>Kasivore</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="google-signin-client_id" content="67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com">
+	<meta name="google-signin-client_id" content="">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
 <!--===============================CSS================================================================-->
