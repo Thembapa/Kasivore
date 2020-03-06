@@ -21,6 +21,7 @@
 }
 
 
+
 /*//////////////////////////////////////////////////////////////////
 [ RESTYLE TAG ]*/
 
@@ -33,6 +34,33 @@
 body, html {
 	height: 100%;
 	font-family: Montserrat-Regular, sans-serif;
+}
+
+/* --------Welcome msg============================*/
+
+.WelcomeNote
+{
+	text-align:center; 
+	font-size:xx-large;
+	color:white;
+	font-weight:bold;
+	height:50px;vertical-align:middle ; 
+	float:left;
+	width:100%
+}
+/* --------Error msg=============================*/
+
+.ErrorMsg
+{
+	text-align:center; 
+	color:orange;
+	font-size:medium;
+	font-weight:bold;
+	float:center;
+	height:50px;
+	vertical-align:middle ; 
+	float:left;
+	width:100%
 }
 
 /*---------------------------------------------*/
@@ -148,27 +176,22 @@ iframe {
 /*//////////////////////////////////////////////////////////////////
 [ login ]*/
 
-.limiter {
+.limiter-Signedin {
   width: 100%;
   margin: 0 auto;
 }
 
 .container-login100 {
-  width: 100%;  
+  width: 100%;    
   min-height: 100vh;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -moz-box;
-  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   padding: 15px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
-  
+  background-size: cover;
+  background-position: center;  
   position: relative;
   z-index: 1;
 }
@@ -183,15 +206,16 @@ iframe {
   top: 0;
   left: 0;
   background: #005bea;
-  background: -webkit-linear-gradient(bottom, #005bea, #00c6fb);
-  background: -o-linear-gradient(bottom, #005bea, #00c6fb);
-  background: -moz-linear-gradient(bottom, #005bea, #00c6fb);
-  background: linear-gradient(bottom, #005bea, #00c6fb);
   opacity: 0.8;
 }
 
 .wrap-login100 {
-  width: 390px;
+  width: 400px;
+  background: transparent;
+}
+
+.wrap-login100-Signedin {
+  width: 400px;
   background: transparent;
 }
 
@@ -216,18 +240,18 @@ iframe {
   color: #fff;
   line-height: 1.2;
   text-align: center;
-
   width: 100%;
   display: block;
 }
 
 /*---------------------------------------------*/
 .login100-form-avatar {
-  width: 120px;
-  height: 120px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   overflow: hidden;
   margin: 0 auto;
+  vertical-align:top;
 }
 .login100-form-avatar img {
   width: 100%;
@@ -521,7 +545,8 @@ iframe {
 
 @media (max-width: 576px) {
   .wrap-login100 {
-    padding-top: 80px;
+    padding-bottom: 50px;
+	padding-top: 0;
     padding-left: 15px;
     padding-right: 15px;
   }
