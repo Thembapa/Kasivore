@@ -1,16 +1,7 @@
-import waitress
-from bottle import Bottle
+from bottle import route, run
 
-app =Bottle()
+@route('/')
+def hello():
+    return "Hello World!"
 
-@app.route('/hello')
-@app.route('/hello/<a>')
-def echo(a = None):
-	if a == None:
-		return('nada')
-	else:
-		print(a)
-		return (a)
-
-
-waitress.serve(app, listen='*:8765')
+run()

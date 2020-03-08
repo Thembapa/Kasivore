@@ -5,7 +5,8 @@ import waitress
 app = Bottle()
 
 
-##
+## Global variebles
+GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"
 
 
 @app.route('/css/<filename>')
@@ -51,5 +52,5 @@ def index():
     UserList = json.dumps(GetAllUserNames())
     print(UserList)
     #return template('Index.html', userNames=UserList)
-    return template('views/index', userNames=UserList)
+    return template('views/index', userNames=UserList,GID = GID)
 waitress.serve(app, listen='*:9999')
