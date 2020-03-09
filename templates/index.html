@@ -16,23 +16,40 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
 	function ValidateUser() {
-	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
-		userNames= "{{ userNames}}";
+		
 		Email =document.getElementById( 'txtUsername' ).value.toString().trim();
-		userNames = userNames.replace(/&quot;/g, '"').toUpperCase();
-		if(userNames.indexOf(Email.toUpperCase()) !== -1 && document.getElementById('hf_IsSignup' ).value.toString()=="1") {
-			document.getElementById( 'lbErrorMsg' ).innerHTML = "Username already in use: " + document.getElementById( 'txtUsername' ).value;
-		}else{
-			if(ValidateEmail(Email))
-			{
-				document.getElementById( 'lbErrorMsg' ).innerHTML = "";
+
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+		if (xhr.readyState == XMLHttpRequest.DONE) {
+			userNames =xhr.responseText;
+
+				if( userNames.indexOf("Error") !== -1)
+				{
+				    document.getElementById( 'lbErrorMsg' ).innerHTML = userNames;
+							
+				} else
+				{
+				    		
+				    document.getElementById( 'lbErrorMsg' ).innerHTML = "";
+				    if(ValidateEmail(Email))
+					{
+						document.getElementById( 'lbErrorMsg' ).innerHTML = "";
+					}
+					else{
+						document.getElementById( 'lbErrorMsg' ).innerHTML = "You have entered an invalid email address!";
+					
+					}
+				    		
+				}
+				        
 			}
-			else{
-				document.getElementById( 'lbErrorMsg' ).innerHTML = "You have entered an invalid email address!";
-			
-			}
-			
 		}
+		url = '/UserNames/'+ Email
+		xhr.open('GET', url, true);
+		xhr.send(null);	
+
+		
 		
 	}
 	function Signup_Click() {

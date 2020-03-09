@@ -9,17 +9,22 @@ app = Flask(__name__, static_url_path='')
 GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"
 
 
-def getallusernames():
-    matchdoc = []
+@app.route('/UserNames/<username>')
+def getallusernames(username = None):
+    currentUser = ""
     matchdoc = ['Themba', 'thembapa@gmail.com', 'Mandy', 'test']
-    return matchdoc
+
+    if username is not None:
+        if username.lower() in (name.lower() for name in matchdoc):
+            currentUser = "Error: Email already in use " + username
+        else:
+            currentUser = ""
+    return currentUser
 
 
 @app.route('/')
 def index():
-    userlist = json.dumps(getallusernames())
-    print(userlist)
-    return render_template('index.html', userNames=userlist, GID = GID)
+    return render_template('index.html', GID = GID)
 
 
 if __name__ == "__main__":
