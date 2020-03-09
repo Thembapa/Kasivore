@@ -1,4 +1,4 @@
-from flask import Flask, request, send_from_directory, render_template
+from flask import Flask, render_template
 import json
 
 # set the project root directory as the static folder, you can set others.
