@@ -1,0 +1,101 @@
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: Montserrat-Regular;
+  src: url('../fonts/montserrat/Montserrat-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-ExtraBold;
+  src: url('../fonts/montserrat/Montserrat-ExtraBold.ttf'); 
+}
+
+@font-face {
+  font-family: Montserrat-Bold;
+  src: url('../fonts/montserrat/Montserrat-Bold.ttf'); 
+}
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: Montserrat-Regular, sans-serif;
+}
+
+/* --------Welcome msg============================*/
+
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.MenuBar
+{
+  width: 100%;
+  height: 50px;
+  float: left;
+}
+.UserProfile
+{
+  background-color: green;
+  float: left;
+  width: 20%;
+}
+.ServiceProviderList
+{
+  background-color: yellow;
+  width: 60%;
+  float: left;
+}
+
+.Recomendetion
+{
+   background-color: orange;
+   float: left;
+  width: 20%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+  font-size: large;
+  font-weight: bold;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #4CAF50;
+}
+
+.active {
+  background-color: #4CAF50;
+}
