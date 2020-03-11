@@ -2,18 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24d922bd-95f5-4eea-87e9-f74fef59fa79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/NevMenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/About.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Help.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Legal.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Pay.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/LogIn.htmlold" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Indexpage.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/NevMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/NevMenu.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/LogIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/LogIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
