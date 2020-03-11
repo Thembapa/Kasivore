@@ -75,9 +75,7 @@ def Login():
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    app.run()
-=======
+
     app.run(host='192.168.0.194', port=8080)
     #app.run(host='192.168.0.194', port=8080)
->>>>>>> 9611e4be14101cc95b23f1616cd09057c503d7f2
+
