@@ -186,14 +186,12 @@ iframe {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 15px;
   background-repeat: no-repeat;
   background-size: cover;
-  background-size: cover;
-  background-position: center;  
   position: relative;
   z-index: 1;
+  padding: 15px;
+ 
 }
 
 .container-login100::before {

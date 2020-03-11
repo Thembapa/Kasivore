@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<title>Kasivore</title>
-	<meta charset="UTF-8">
+	
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="google-signin-client_id" content="{{GID}}">
 <!--===============================================================================================-->	
@@ -10,7 +10,8 @@
 <!--===============================CSS================================================================-->
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/Login.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/NevMenu.css')}}">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
 <!--===================================Javascript============================================================-->
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -98,7 +99,22 @@
  </style>
 </head>
 <body onload="PageLoad()">
-
+	<nav>
+	      <input type="checkbox" id="check">
+	      <label for="check" class="checkbtn">
+	        <i class="fas fa-bars"></i>
+	      </label>
+	      <label class="logo">Kasivore</label>
+	      <ul>
+	        <li><a class="active" href="/">Home</a></li>
+	        <li><a href="/About">About</a></li>
+	        <li><a href="/Legal">Legal</a></li>
+	        <li><a href="/Pay">Pay</a></li>
+	        <li><a href="/Contact">Contact Us</a></li>
+	        <li><a href="/Help">Help</a></li>
+	        <li><a href="/login">Signin</a></li>
+	      </ul>
+    </nav>
 	<div   class="limiter" >
 		<div class="container-login100" style="background-image: url('images/img-01.jpg');">
 			<div class="wrap-login100" id="LoginDiv" style="display:none;" 	>

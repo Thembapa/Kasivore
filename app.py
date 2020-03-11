@@ -35,9 +35,34 @@ def getallusernames(username = None):
         else:
             currentUser = ""
     return currentUser
+##HTML pages redirect
+@app.route('/Help')
+def Help():
+    return render_template('Help.html',)
+
+
+@app.route('/About')
+def About():
+    return render_template('About.html',)
+
+
+@app.route('/Contact')
+def Contact():
+    return render_template('Contact.html',)
+
+
+@app.route('/Legal')
+def Legal():
+
+    return render_template('Legal.html',)
+
+@app.route('/Pay')
+def Pay():
+    return render_template('Pay.html',)
 
 
 @app.route('/')
+@app.route('/index')
 def index():
     return render_template('index.html',)
 
