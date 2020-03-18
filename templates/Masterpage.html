@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kasivore</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================CSS================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/NevMenu.css')}}">	
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}" id="bootstrap-css">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/Login.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/Kasivore.css')}}">
+    
+<!--===================================Javascript============================================================-->
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script type="text/javascript">
+	function ValidateUser() {
+		
+		Email =document.getElementById( 'txtUsername' ).value.toString().trim();
+
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() {
+		if (xhr.readyState == XMLHttpRequest.DONE) {
+			userNames =xhr.responseText;
+
+				if( userNames.indexOf("Error") !== -1)
+				{
+				    document.getElementById( 'lbErrorMsg' ).innerHTML = userNames;
+							
+				} else
+				{
+				    		
+				    document.getElementById( 'lbErrorMsg' ).innerHTML = "";
+				    if(ValidateEmail(Email))
+					{
+						document.getElementById( 'lbErrorMsg' ).innerHTML = "";
+					}
+					else{
+						document.getElementById( 'lbErrorMsg' ).innerHTML = "You have entered an invalid email address!";
+					
+					}
+				    		
+				}
+				        
+			}
+		}
+		url = '/UserNames/'+ Email
+		xhr.open('GET', url, true);
+		xhr.send(null);	
+
+		
+		
+	}
+	function Signup_Click() {
+	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
+
+	  document.getElementById('SiginForm' ).style.display = "none"; 
+	  document.getElementById('SigupForm' ).style.display = "block";
+	  document.getElementById('footer').style.display = "none";
+	  document.getElementById('hf_IsSignup' ).value = "1";
+	  document.getElementById('txtUsername' ).value = "";
+
+	  // document.getElementById('ub_SigInGoogle' ).style.display = "none"; 
+	  //alert(document.getElementById('hf_IsSignup' ).value);
+	}
+	function PageLoad() {
+	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
+	   //alert(document.getElementById('hf_IsSignup' ).value);
+	  if(document.getElementById('hf_IsSignup' ).value==="")	  {
+		document.getElementById('SiginForm' ).style.display = "block";
+		document.getElementById('footer').style.display = "block"; 
+		document.getElementById('SigupForm' ).style.display = "none";
+		
+		//document.getElementById('LoginDiv').style.display = "block"; 
+		//document.getElementById('div_HomePage').style.display = "none"; 
+		
+	  }
+	  else
+	  {
+		document.getElementById('LoginDiv').style.display = "none"; 
+	  }
+	}
+	
+	function ValidateEmail(mail) 
+	{
+	 if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail))
+	  {
+		return (true)
+	  }
+		return (false)
+	}
+ </script>
+ <script src="Scripts/Script.js"></script>
+ <style>
+
+ </style>
+</head>
+<body onload="PageLoad()">
+	<div class ="MenuCotainer">
+			<nav>
+				      <input type="checkbox" id="check">
+				      <label for="check" class="checkbtn">
+				        <i class="fas fa-bars"></i>
+				      </label>
+				      <label class="logo">Kasivore</label>
+				      <ul>
+				      	{%for menu in menubuttons%}
+				      		<li><a href="{{menubuttons[menu]}}">{{menu}}</a></li>
+				      	{%endfor%}
+			      	 </ul>
+	    		</nav>
+    		
+    		<div class="CurrentUser">  
+
+				<div class="dropdown">
+				  <button class="dropbtn"><a  href="/login"><img src="images/avatar-01.jpg"  alt="Avatar" class="ProfilePicture"></a></button>
+				  <div class="dropdown-content">
+				  <a href="/login">SignOut</a>
+				  <a href="#">Profile</a>
+				  <a href="#">Billing</a>
+				  </div>
+				</div>
+				
+    		</div>
+    </div>
+	
+	{% block content%}
+	{%endblock%}
+	
+
+
+	
+
+</body>
+</html>

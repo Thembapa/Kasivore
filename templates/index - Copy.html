@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Kasivore</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="google-signin-client_id" content="{{GID}}">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
+<!--===============================CSS================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/NevMenu.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/Kasivore.css')}}">
+
+    
+<!--===================================Javascript============================================================-->
+	 <script src="{{url_for('static',filename='Scripts/platform.js')}}"></script>
+	 <script src="{{url_for('static',filename='Scripts/jquery.min.js')}}"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script type="text/javascript">
+	
+
+	function PageLoad() {
+	  
+	}
+	
+ </script>
+ <script src="Scripts/Script.js"></script>
+ <style>
+
+ </style>
+</head>
+<body onload="PageLoad()">
+	<div class ="MenuCotainer">
+			<nav>
+				      <input type="checkbox" id="check">
+				      <label for="check" class="checkbtn">
+				        <i class="fas fa-bars"></i>
+				      </label>
+				      <label class="logo">Kasivore</label>
+				      <ul>
+				        <li><a href="/">Home</a></li>
+				        <li><a href="/About">About</a></li>
+				        <li><a href="/Legal">Legal</a></li>
+				        <li><a href="/Pay">Pay</a></li>
+				        <li><a href="/Contact">Contact Us</a></li>
+				        <li><a href="/Help">Help</a></li>
+			      	 </ul>
+	    		</nav>
+    		
+    		<div class="CurrentUser">  
+
+				<div class="dropdown">
+				  <button class="dropbtn"><a  href="/login"><img src="images/avatar-01.jpg"  alt="Avatar" class="ProfilePicture"></a></button>
+				  <div class="dropdown-content">
+				  <a href="#">Link 1</a>
+				  <a href="#">Link 2</a>
+				  <a href="#">Link 3</a>
+				  </div>
+				</div>
+				
+    		</div>
+    </div>
+	<div class="limiter" >
+		<div class="MenuBar" >
+			
+		</div>
+		
+		
+	</div>
+	
+
+
+	
+
+</body>
+</html>
