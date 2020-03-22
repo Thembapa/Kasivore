@@ -2,33 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24d922bd-95f5-4eea-87e9-f74fef59fa79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/css/Kasivore.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/css/all.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/Soweto.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/a076d05399.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/js/platform.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/LogIn - Copy.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/Masterpage.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/index - Copy.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/KasivoreData.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configfile.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/kasivoreCommon.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/Online.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/login.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/kasivore.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/Welcome.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/KasivoreWebApp.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/NevMenu.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/NevMenu.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images/img-01.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/static/images/img-01.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/About.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/About.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Contact.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Help.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Help.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Legal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/LogIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/LogIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/Pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Pay.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Masterpage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Masterpage.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -42,10 +40,10 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Themba\Kasivore\KasivoreWebApp\Kasivore" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Themba\Kasivore\KasivoreWebApp\Kasivore" />
     </key>
   </component>
@@ -62,6 +60,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.app">
+    <configuration name="KasivoreData" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Kasivore" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KasivoreData.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="KasivoreWebApp" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Kasivore" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -125,7 +144,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="emailTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Kasivore" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -137,7 +156,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/emailTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -149,9 +168,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.emailTest" />
+        <item itemvalue="Python.KasivoreData" />
         <item itemvalue="Python.KasivoreWebApp" />
         <item itemvalue="Python.KasivoreWebAppFlask" />
-        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
