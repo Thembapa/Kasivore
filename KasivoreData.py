@@ -1,5 +1,4 @@
 import psycopg2 as psycopg2
-import traceback
 import configfile
 
 ##postgresql connection string
@@ -33,8 +32,8 @@ def pgsql_get_scalar(schema, fn_name, paramenters):
         mycursor.close()
         con_postgresql.commit()
         value = user_record
-    except Exception:
-        traceback.print_exc()
+    except Exception as e:
+        print(e)
     return value[0]
 
 
@@ -57,8 +56,8 @@ def pgsql_call_SP(schema, sp_name, paramenters):
         mycursor.execute(Sp_QueryStr)
         mycursor.close()
         con_postgresql.commit()
-    except Exception:
-        traceback.print_exc()
+    except Exception as e:
+        print(e)
 
 
 # this table value function takes a schema name as string, function name as string and a dictinary list of parameter name and values [{name: name,value: value}]. returns Dataset
@@ -83,8 +82,8 @@ def pgsql_call_Tablefunction_P(schema, fn_name, paramenters):
         DataSet = mycursor.fetchall()
         mycursor.close()
         con_postgresql.commit()
-    except Exception:
-        traceback.print_exc()
+    except Exception as e:
+        print(e)
     return DataSet
 
 
@@ -104,7 +103,7 @@ def pgsql_call_Tablefunction(schema, fn_name):
         mycursor.close()
         con_postgresql.commit()
 
-    except Exception:
-        traceback.print_exc()
+    except Exception as e:
+        print(e)
 
     return DataSet

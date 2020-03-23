@@ -1,5 +1,3 @@
-import traceback
-
 from flask import Flask, render_template, session, redirect, request
 import json
 from passlib.hash import sha256_crypt
@@ -279,14 +277,15 @@ def Login():
                 else:
                     ErrorMsq = 'No match found!'
 
-            except Exception:
+            except Exception as e:
+                print(e)
                 ErrorMsq = 'No match found!'
-                traceback.print_exc()
 
     return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
                            profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 if __name__ == "__main__":
-    # app.run(host='192.168.0.194', port=8080)
+    #from waitress import serve
+    #serve(app, host="192.168.178.1", port=8080)
     app.run()
