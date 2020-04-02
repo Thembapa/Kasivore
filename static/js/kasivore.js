@@ -43,20 +43,34 @@ function ValidateUser() {
 	function Signup_Click() {
 	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
 
+	  document.getElementById('frmResetPass' ).style.display = "none"; 
 	  document.getElementById('SiginForm' ).style.display = "none"; 
 	  document.getElementById('SigupForm' ).style.display = "block";
 	  document.getElementById('footer').style.display = "none";
 	  document.getElementById('hf_IsSignup' ).value = "1";
 	  document.getElementById('Error').style.display = "block";
+	  document.getElementById( 'lbSignin' ).innerHTML = "Sign up";
 		  
 
 	  // document.getElementById('ub_SigInGoogle' ).style.display = "none"; 
 	  //alert(document.getElementById('hf_IsSignup' ).value);
 	}
+	function ResetPass()
+	{
+		document.getElementById('frmResetPass' ).style.display = "block"; 
+		document.getElementById('SiginForm' ).style.display = "none"; 
+	  	document.getElementById('SigupForm' ).style.display = "none";
+	  	document.getElementById('footer').style.display = "none";
+	  	document.getElementById('hf_IsSignup' ).value = "1";
+	  	document.getElementById('Error').style.display = "block";
+	  	document.getElementById( 'lbSignin' ).innerHTML = "Reset password";
+	}
+
 	function PageLoad() {
 	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
 	   //alert(document.getElementById('hf_IsSignup' ).value);
 	  
+
 
 	  if(document.getElementById('hf_IsSignup' ) != null)
 	  {
@@ -67,17 +81,19 @@ function ValidateUser() {
 			document.getElementById('footer').style.display = "block"; 
 			document.getElementById('SigupForm' ).style.display = "none";
 			document.getElementById('Error').style.display = "none";
-			
+			document.getElementById( 'lbSignin' ).innerHTML = "Sign in";
 			//document.getElementById('LoginDiv').style.display = "block"; 
 			//document.getElementById('div_HomePage').style.display = "none"; 
 			
 		  }
 		  else
 		  {
+		  	document.getElementById( 'lbSignin' ).innerHTML = "Sign up";
 			document.getElementById('SiginForm' ).style.display = "none"; 
 		  	document.getElementById('SigupForm' ).style.display = "block";
 		  	document.getElementById('footer').style.display = "none";
 		  	document.getElementById('Error').style.display = "block";
+		  	document.getElementById( 'lbSignin' ).innerHTML = "Sign out";
 		  }
 	  }
 	 
@@ -104,6 +120,35 @@ function ValidateUser() {
 			 document.getElementById( 'hf_Error' ).value =  "";
 		     document.getElementById( 'lbErrorMsg' ).innerHTML ="";
 		}
+	}
+	function onSignIn(googleUser) {
+	  var profile = googleUser.getBasicProfile();
+	   $(".data").css("display","block");
+	  // $("#lb_Email").text(profile.getEmail());
+	  // $("#lb_User").text(profile.getName());
+	   //$("#lb_UserID").text(profile.getId());
+	   $("#profilepicture").attr('src',profile.getImageUrl());
+	   //$(".limiter").css("display","none");
+	   //$(".limiter-Signedin").css("display","block");
+	  //window.location.replace("/Home");
+	  //console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+	  //console.log('Name: ' + profile.getName());
+	  //console.log('Image URL: ' + profile.getImageUrl());
+	  //console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+	  Url = '/login/' + profile.getEmail()+'/'+ profile.getName()
+	  window.location.replace(Url);
+	}
+
+	function sinOut() {
+	   
+	   	/*if gapi.auth2.getAuthInstance() != null
+	   	{
+	   		var auth2 = gapi.auth2.getAuthInstance();
+	        auth2.signOut().then(function () {
+	            auth2.disconnect();
+	        });
+	   	}*/
+	 	window.location.replace('/login');
 	}
 	function passwordValidation() 
 	{

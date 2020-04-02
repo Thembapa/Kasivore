@@ -12,22 +12,26 @@
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/Login.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/Kasivore.css')}}">
+	<meta name="google-signin-client_id" content="{{GID}}">
     
 <!--===================================Javascript============================================================-->
 	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
 	<script type="text/javascript" src="{{url_for('static',filename='js/kasivore.js')}}"></script>
 	<script type="text/javascript">
 	
 	
  </script>
- <script src="Scripts/Script.js"></script>
  <style>
 
  </style>
 </head>
 <body onload="PageLoad()">
+
+
+</script>
 	<div class ="MenuCotainer">
 			<nav>
 				      <input type="checkbox" id="check">
@@ -45,7 +49,8 @@
     		<div class="CurrentUser">  
 
 				<div class="dropdown">
-				  <button class="dropbtn"><a  href="{{loginUrl}}"><img src="images/{{profilepicture}}"  alt="Avatar" class="ProfilePicture"></a></button>
+
+				  <button class="dropbtn"><a  href="{{loginUrl}}"><img id="profilepicture" src="/images/{{profilepicture}}" alt="Avatar" class="ProfilePicture"></a></button>
 				  <div class="dropdown-content">
 				  	{% for usermenu in userMenuList%}
 				  		<a href="{{userMenuList[usermenu]}}">{{usermenu}}</a>
