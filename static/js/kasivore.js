@@ -119,7 +119,7 @@ function ValidateUser() {
 		else{
 			 document.getElementById( 'hf_Error' ).value =  "";
 		     document.getElementById( 'lbErrorMsg' ).innerHTML ="";
-		}
+		}````
 	}
 	function onSignIn(googleUser) {
 	  var profile = googleUser.getBasicProfile();
@@ -136,7 +136,12 @@ function ValidateUser() {
 	  //console.log('Image URL: ' + profile.getImageUrl());
 	  //console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 	  Url = '/login/' + profile.getEmail()+'/'+ profile.getName()
-	  window.location.replace(Url);
+	  
+	  if(document.getElementById('hf_GoogleprofilePic' ) != null)
+	  {
+	       window.location.replace(Url);
+	  }
+	 
 	}
 
 	function sinOut() {

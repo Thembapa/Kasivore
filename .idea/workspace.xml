@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24d922bd-95f5-4eea-87e9-f74fef59fa79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/templates/NewPassword.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/configfile.py" beforeDir="false" afterPath="$PROJECT_DIR$/configfile.py" afterDir="false" />
@@ -163,8 +162,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.emailTest" />
         <item itemvalue="Python.KasivoreData" />
+        <item itemvalue="Python.emailTest" />
         <item itemvalue="Python.KasivoreWebApp" />
         <item itemvalue="Python.KasivoreWebAppFlask" />
       </list>
@@ -198,16 +197,5 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/app.py</url>
-          <line>283</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

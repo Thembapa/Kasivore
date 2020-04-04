@@ -13,7 +13,7 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<di>
+				<div>
 					<form id="SiginForm" name="SiginForm" action="/login" method="POST" >
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
@@ -37,9 +37,11 @@
 						</div>
 						<input type="hidden" name="hf_Error1" id="hf_Error1">
 						<input type="hidden" id="hf_IsSignup" name="hf_IsSignup" value="{{Signup}}" >
+						<input type="hidden" name="hf_GoogleprofilePic" id="hf_GoogleprofilePic">
+
 					</form>
-				</di>
-				<di>
+				</div>
+				<div>
 					
 					<form id="SigupForm" name="SigupForm"  action="/Signup" style="display: none;" method="POST" >
 					
@@ -71,8 +73,8 @@
 						</div>
 						<input type="hidden" name="hf_Error" id="hf_Error">
 					</form>
-				</di>
-				<di>
+				</div>
+				<div>
 					
 					<form id="frmResetPass" name="frmResetPass"  action="/login/Resetpassword" style="display: none;" method="POST" >
 					
@@ -88,7 +90,7 @@
 							<input type="submit" value="RESET PASSWORD" id="ub_Resetpass" name="ub_Resetpass" class="btn float-right login_btn" style="width: 100%">
 						</div>
 					</form>
-				</di>
+				</div>
 				
 			</div>
 			

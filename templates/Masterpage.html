@@ -50,8 +50,9 @@
 
 				<div class="dropdown">
 
-				  <button class="dropbtn"><a  href="{{loginUrl}}"><img id="profilepicture" src="/images/{{profilepicture}}" alt="Avatar" class="ProfilePicture"></a></button>
+				  <button class="dropbtn"><a  href="{{loginUrl}}"><img id="profilepicture" src="{{session['profilepicture']}}" alt="Avatar" class="ProfilePicture"></a></button>
 				  <div class="dropdown-content">
+				  	
 				  	{% for usermenu in userMenuList%}
 				  		<a href="{{userMenuList[usermenu]}}">{{usermenu}}</a>
 				  	{%endfor%}
@@ -61,6 +62,7 @@
 				
     		</div>
     </div>
+    <span><i class="fab fa-google-plus-square" ><div class="g-signin2"  data-onsuccess="onSignIn" style="opacity: 0%;height:50%; margin-top: -100%; width:55%"></div></i></span>
 	
 	{% block content%}
 	{%endblock%}

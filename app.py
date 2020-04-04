@@ -6,6 +6,8 @@ from passlib.hash import sha256_crypt
 # set the project root directory as the static folder, you can set others.
 import KasivoreData
 import kasivoreCommon
+import secrets
+import string
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = "kasivoretest"
@@ -13,7 +15,8 @@ UPLOAD_FOLDER = 'static/images/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ## Global variebles
-GID = "67980471209-aog2b4acht8fhsm1438cnsnkp5arhhle.apps.googleusercontent.com"
+#GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"   #Live
+GID = "67980471209-aog2b4acht8fhsm1438cnsnkp5arhhle.apps.googleusercontent.com"  #test
 menubuttons = {'Home': '/', 'About': '/About', 'Legal': '/Legal', 'Pay': '/Pay', 'Contact': '/Contact', 'Help': 'Help'}
 
 
@@ -84,8 +87,7 @@ def activate(username=None):
         Accountstatus = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_ActivateAccount', {'_userName': username})
         print(Accountstatus)
 
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 ##HTML pages redirect
@@ -100,8 +102,7 @@ def Help():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('Help.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('Help.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/About')
@@ -115,8 +116,7 @@ def About():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('About.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('About.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Contact')
@@ -130,8 +130,7 @@ def Contact():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('Contact.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('Contact.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Welcome/<username>/<email>')
@@ -150,8 +149,7 @@ def Welcome(username=None, email=None):
         send_WelcomeEmail(username, email)
 
     return render_template('Welcome.html', username=username, email=email, ErrorMsq=ErrorMsq, GID=GID,
-                           menubuttons=menubuttons, Signup=IsSignUp, profilepicture=profilepicture,
-                           userMenuList=userMenuList, loginUrl=loginUrl)
+                           menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Legal')
@@ -165,8 +163,7 @@ def Legal():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('Legal.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('Legal.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Pay')
@@ -180,8 +177,7 @@ def Pay():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('Pay.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('Pay.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/newpassword/<token>', methods=['GET', 'POST'])
@@ -210,8 +206,7 @@ def newpassword(token=None):
         print(isCreated)
         return redirect('/login')
 
-    return render_template('NewPassword.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('NewPassword.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Signup', methods=['GET', 'POST'])
@@ -229,8 +224,7 @@ def Signup():
             ErrorMsq = request.form["hf_Error"]
             print('error:' + ErrorMsq)
             IsSignUp = '1'
-            return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                                   profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+            return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
         print(sha256_crypt.encrypt(request.form["txt_pass1"]))
         parameters = {'_usertypeid': '2', '_emailaddress': request.form["txtUser1"],
@@ -250,14 +244,19 @@ def Signup():
         print('Userid: ' + str(user_id))
         if user_id != '0':
             return redirect(Welcomepage)
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 def passwordresetEmail(email, resetcode):
     subject = 'Kasivore Password Reset'
     link = 'https://kasivore.com/newpassword/' + resetcode
     Body = 'Please follow the link to set a new password: ' + link
+    kasivoreCommon.sendmail(subject, Body, email)
+
+
+def google_sign_up(email, username, temp_password):
+    subject = 'Welcome to Kasivore'
+    Body = 'Your account details are as follows, Username: ' + username + ' Password: ' + temp_password
     kasivoreCommon.sendmail(subject, Body, email)
 
 
@@ -268,8 +267,26 @@ def googleSignIn(email, username):
     FirstName = Name[0]
     lastname = Name[len(Name) - 1]
     if getallusernames(email) == '':
-        print('Signup')
+
+        alphabet = string.ascii_letters + string.digits
+        password = ''.join(secrets.choice(alphabet) for i in range(20))
+
+        parameters = {'_usertypeid': '2', '_emailaddress': email,
+                      '_userpassword': sha256_crypt.encrypt(password)}
+        CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
+
+        for createduser in CreatedID:
+            user_id = createduser[0]
+            username = createduser[1]
+            email = createduser[2]  # Activation tocken
+            Accountstatus = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_ActivateAccount', {'_userName': createduser[3]})
+            google_sign_up(email, username, password)
+            parameters = {'_userName': username}
+            CurrentUser = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_getUser', parameters)
+            session['CurrentUser'] = CurrentUser
+
     else:
+
         parameters = {'_userName': username}
         CurrentUser = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_getUser', parameters)
         session['CurrentUser'] = CurrentUser
@@ -279,7 +296,7 @@ def googleSignIn(email, username):
 @app.route('/login/<email>/<username>', methods=['GET', 'POST'])
 @app.route('/login/<Resetpassword>', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
-def Login(Resetpassword=None, email=None, username=None):
+def Login(resetpassword= None, email=None, username=None):
     profilepicture = 'login.png'
     userMenuList = {}
     ErrorMsq = ''
@@ -288,14 +305,17 @@ def Login(Resetpassword=None, email=None, username=None):
 
     if IsSignedIn():
         session.pop('CurrentUser')
+        if 'googleSignIn' in session:
+            session.pop('googleSignIn')
 
     if email is not None and username is not None:
         print('Google signIn')
+        print(request.method)
         googleSignIn(email, username)
         return redirect('/')
 
     elif request.method == 'POST':
-        if Resetpassword is not None:
+        if resetpassword is not None:
             if request.form["txtEmailReset"] != '':
                 resetCode = KasivoreData.pgsql_get_scalar('app', 'fn_getResetCode',
                                                           {'_emial': request.form["txtEmailReset"]})
@@ -335,20 +355,23 @@ def Login(Resetpassword=None, email=None, username=None):
                     print(e)
                     ErrorMsq = 'No match found!'
 
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/')
 @app.route('/index')
 def index():
-    profilepicture = 'login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
+    session['profilepicture'] = '/images/login.png'
     if IsSignedIn():
-        profilepicture = 'Online.png'
+        session['profilepicture'] = '/images/Online.png'
+        if 'googleSignIn' in session:
+            session['profilepicture'] = session['googleSignIn']
+            print('google')
+            print(session['googleSignIn'])
         userMenuList = {'Sigout': 'javascript: sinOut();', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
 
@@ -356,8 +379,7 @@ def index():
     # password = sha256_crypt.encrypt(test)
     # print(sha256_crypt.verify(test, password))
     # print(password)
-    return render_template('index.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           profilepicture=profilepicture, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('index.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 if __name__ == "__main__":
