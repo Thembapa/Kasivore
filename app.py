@@ -9,7 +9,8 @@ import KasivoreData
 import kasivoreCommon
 import secrets
 import string
-import requests
+
+from configfile import TWILIOKEY, TWILIOTOCKEN, TWILIOWHATSAPP, MYWHATSAPP, MYWHATSSMS, TWILIOSMS
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = "kasivoretest"
@@ -136,27 +137,17 @@ def Contact():
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
 
-    resp = requests.post('https://textbelt.com/otp/generate', {
-        'phone': '+27738195149',
-        'userid': 'info@kasivore.com',
-        'key': 'example_otp_key',
-    })
-    OTPDic = resp.json()
-    print(OTPDic)
     # client credentials are read from TWILIO_ACCOUNT_SID and AUTH_TOKEN
-    # client = Client('AC9c897dd250d879025c6fcf60e795479a', '221f1485c10ddcfadc39197ab8889f7d') #WhatsApp
-    client = Client('AC9c897dd250d879025c6fcf60e795479a', '221f1485c10ddcfadc39197ab8889f7d')
+    client = Client(TWILIOKEY, TWILIOTOCKEN)
 
     # this is the Twilio sandbox testing number
-    from_whatsapp_number = 'whatsapp:+14155238886'
+    from_whatsapp_number = TWILIOWHATSAPP
     # replace this number with your own WhatsApp Messaging number
-    to_whatsapp_Themba = 'whatsapp:+27763635844'
-    to_whatsapp_JT = 'whatsapp:+27765545598'
-    to_whatsapp_nicola = 'whatsapp:+27832305620'
+    to_whatsapp_Themba = MYWHATSAPP
     #Sms
     client.messages.create(body='We can use this for OTP, From Themba!!',
-                           from_='+12566702960',
-                           to='+27738195149')
+                           from_=TWILIOSMS,
+                           to=MYWHATSSMS)
     # WhatsApp
     client.messages.create(body='Someone clicked on the contact us menu!!!',
                            from_=from_whatsapp_number,
