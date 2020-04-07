@@ -1,75 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<title>Kasivore</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
-<!--===============================CSS================================================================-->
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/NevMenu.css')}}">	
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/bootstrap.min.css')}}" id="bootstrap-css">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/Login.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
-	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/Kasivore.css')}}">
-	<meta name="google-signin-client_id" content="{{GID}}">
-    
-<!--===================================Javascript============================================================-->
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	<script src="https://apis.google.com/js/platform.js" async defer></script>
-	<script type="text/javascript" src="{{url_for('static',filename='js/kasivore.js')}}"></script>
-	<script type="text/javascript">
-	
-	
- </script>
- <style>
+    <head>
+       <title>KasiVore - Platform that brings kasi together.</title>
+        <meta charset="utf-8">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700' rel='stylesheet' type='text/css'>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" type="image/png" href="/static/images/favicon.ico"/>
 
- </style>
-</head>
-<body onload="PageLoad()">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
+        <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/animate.css')}}">
+        <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/owl.carousel.min.css')}}">
+        <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/owl.theme.default.min.css')}}">
+        <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/magnific-popup.css')}}">
+        <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/bootstrap-datepicker.css')}}">
+        <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/jquery.timepicker.css')}}">
+        <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='css/style.css')}}">
 
-</script>
-	<div class ="MenuCotainer">
-			<nav>
-				      <input type="checkbox" id="check">
-				      <label for="check" class="checkbtn">
-				        <i class="fas fa-bars"></i>
-				      </label>
-				      <label class="logo">Kasivore</label>
-				      <ul>
-				      	{%for menu in menubuttons%}
-				      		<li><a href="{{menubuttons[menu]}}">{{menu}}</a></li>
-				      	{%endfor%}
-			      	 </ul>
-	    		</nav>
-    		
-    		<div class="CurrentUser">  
+      <script src="/static/js/modernizr.js"></script> <!-- Modernizr -->
+    </head>
+    <body>
+        <div class="wrap ">
+            <div class="container">
+				<div class="row justify-content-between">
+					<div class="col-md-3 d-flex align-items-center">
+						<a class="navbar-brand" href="index.html">KasiVore<span>.</span></a>
+					</div>
+                    <div class="col-md-7">
+                        <div class="row">
+                          <div class="col">
+                            <div class="top-wrap d-flex">
+                              <!-- <div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-location-arrow"></span></div>
+                              <div class="text"><span>Address</span><span>721 New York NY 10016</span></div> -->
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="top-wrap d-flex">
+                              <!--<<div class="icon d-flex align-items-center justify-content-center"><span class="fa fa-location-arrow"></span></div>
+                              div class="text"><span>Call us</span><span>(+01) 123 456 7890</span></div>-->
+                            </div>
+                          </div>
+							<div class="col-md-3 d-flex justify-content-end align-items-center">
+								<div class="social-media">
+					    		<p class="mb-0 d-flex">
+					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-facebook"><i class="sr-only">Facebook</i></span></a>
+					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-twitter"><i class="sr-only">Twitter</i></span></a>
+					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-instagram"><i class="sr-only">Instagram</i></span></a>
+					    			<a href="#" class="d-flex align-items-center justify-content-center"><span class="fa fa-dribbble"><i class="sr-only">Dribbble</i></span></a>
+					    		</p>
+				        </div>
+							</div>
+                    <!--  <div class="top-wrap d-flex">
+                             <button type="submit" placeholder="" class=" button"><span class="fa fa-button"></span>Sign In</button>
 
-				<div class="dropdown">
-
-				  <button class="dropbtn"><a  href="{{loginUrl}}"><img id="profilepicture" src="{{session['profilepicture']}}" alt="Avatar" class="ProfilePicture"></a></button>
-				  <div class="dropdown-content">
-				  	
-				  	{% for usermenu in userMenuList%}
-				  		<a href="{{userMenuList[usermenu]}}">{{usermenu}}</a>
-				  	{%endfor%}
-				  
-				  </div>
+                      </div> -->
+					</div>
 				</div>
-				
-    		</div>
-    </div>
-    <span><i class="fab fa-google-plus-square" ><div class="g-signin2"  data-onsuccess="onSignIn" style="opacity: 0%;height:50%; margin-top: -100%; width:55%"></div></i></span>
-	
-	{% block content%}
-	{%endblock%}
-	
+			</div>
+		</div>
+        </div>
+        <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="fa fa-bars"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav mr-auto">
+	        	<li class="nav-item active"><a href="index" class="nav-link">Home</a></li>
+	        	<li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+	        	<li class="nav-item"><a href="/service" class="nav-link">Service</a></li>
+	        	<li class="nav-item"><a href="/project" class="nav-link">Project</a></li>
+	        	<li class="nav-item"><a href="/blog" class="nav-link">Blog</a></li>
+	          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+        {% block content %}{% endblock %}
+     <footer class="footer ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-6 col-lg">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="logo"><a href="#">KasiVore.<span>.</span></a></h2>
+              <p>We are behind every need by our communities</p>
+              <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-4">
+                <li class="ftco-animate"><a href="#"><span class="fa fa-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="#"><span class="fa fa-instagram"></span></a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Contact information</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon fa fa-map-marker"></span><span class="text">Cosmo city, Randburg, 2188, Gauteng , SA</span></li>
+	                <li><a href="#"><span class="icon fa fa-phone"></span><span class="text">+27 76 554 5598</span></a></li>
+	                <li><a href="#"><span class="icon fa fa-paper-plane"></span><span class="text">info@kasivore.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+<!-- loader -->
+ <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
 
-	
-
-</body>
+  <script src="/static/js/jquery.min.js"></script>
+  <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/js/popper.min.js"></script>
+  <script src="/static/js/bootstrap.min.js"></script>
+  <script src="/static/js/jquery.easing.1.3.js"></script>
+  <script src="/static/js/jquery.waypoints.min.js"></script>
+  <script src="/static/js/jquery.stellar.min.js"></script>
+  <script src="/static/js/jquery.animateNumber.min.js"></script>
+  <script src="/static/js/bootstrap-datepicker.js"></script>
+  <script src="/static/js/jquery.timepicker.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/jquery.magnific-popup.min.js"></script>
+  <script src="/static/js/scrollax.min.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="/static/js/google-map.js"></script>
+  <script src="/static/js/main.js"></script>
+ <!-- filter js-->
+<script src="/static/js/jquery-2.1.1.js"></script>
+<script src="/static/js/jquery.mixitup.min.js"></script>
+<script src="/static/js/mainfilter.js"></script>
+    </body>
 </html>
