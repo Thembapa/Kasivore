@@ -1,6 +1,7 @@
 import os
-
 from flask import Flask, render_template, session, redirect, request, send_from_directory, url_for
+from twilio.rest import Client
+from twilio.twiml.messaging_response import MessagingResponse
 import json
 from passlib.hash import sha256_crypt
 # set the project root directory as the static folder, you can set others.
@@ -8,6 +9,7 @@ import KasivoreData
 import kasivoreCommon
 import secrets
 import string
+import requests
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = "kasivoretest"
@@ -15,8 +17,8 @@ UPLOAD_FOLDER = 'static/images/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ## Global variebles
-#GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"   #Live
-GID = "67980471209-aog2b4acht8fhsm1438cnsnkp5arhhle.apps.googleusercontent.com"  #test
+GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"  # Live
+# GID = "67980471209-aog2b4acht8fhsm1438cnsnkp5arhhle.apps.googleusercontent.com"  #test
 menubuttons = {'Home': '/', 'About': '/About', 'Legal': '/Legal', 'Pay': '/Pay', 'Contact': '/Contact', 'Help': 'Help'}
 
 
@@ -87,7 +89,8 @@ def activate(username=None):
         Accountstatus = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_ActivateAccount', {'_userName': username})
         print(Accountstatus)
 
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 ##HTML pages redirect
@@ -102,7 +105,8 @@ def Help():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('Help.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('Help.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/About')
@@ -116,7 +120,8 @@ def About():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('About.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('About.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Contact')
@@ -130,7 +135,62 @@ def Contact():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('Contact.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+
+    resp = requests.post('https://textbelt.com/otp/generate', {
+        'phone': '+27738195149',
+        'userid': 'info@kasivore.com',
+        'key': 'example_otp_key',
+    })
+    OTPDic = resp.json()
+    print(OTPDic)
+    # client credentials are read from TWILIO_ACCOUNT_SID and AUTH_TOKEN
+    # client = Client('AC9c897dd250d879025c6fcf60e795479a', '221f1485c10ddcfadc39197ab8889f7d') #WhatsApp
+    client = Client('AC9c897dd250d879025c6fcf60e795479a', '221f1485c10ddcfadc39197ab8889f7d')
+
+    # this is the Twilio sandbox testing number
+    from_whatsapp_number = 'whatsapp:+14155238886'
+    # replace this number with your own WhatsApp Messaging number
+    to_whatsapp_Themba = 'whatsapp:+27763635844'
+    to_whatsapp_JT = 'whatsapp:+27765545598'
+    to_whatsapp_nicola = 'whatsapp:+27832305620'
+    #Sms
+    client.messages.create(body='We can use this for OTP, From Themba!!',
+                           from_='+12566702960',
+                           to='+27738195149')
+    # WhatsApp
+    client.messages.create(body='Someone clicked on the contact us menu!!!',
+                           from_=from_whatsapp_number,
+                           to=to_whatsapp_Themba)
+
+    return render_template('Contact.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
+
+
+@app.route('/WBot', methods=['GET', 'POST'])
+def WBot():
+    """Respond to incoming calls with a simple text message."""
+    # Fetch the message
+    msg = request.form.get('Body')
+    response = ''
+    if msg.lower() == 'hi':
+        response = '''Welcome to Kasivore \nHow can we help you? \n\n1. New account \n2. Billing \n3. About Us\n99. Main Menu'''
+    elif msg.lower()  == '1':
+        response = '''go to https://kasivore.com  to open a new account
+                           '''
+    elif msg.lower()  == '2':
+        response = '''your bill has been sent to you email account
+                           '''
+    elif msg.lower() == '3':
+        response = '''Kasivore is a... thinking...   '''
+    elif msg.lower() == '99':
+        response = '''Welcome to Kasivore \nHow can we help you? \n\n1. New account \n2. Billing \n3. About Us\n99. Main Menu'''
+    else:
+        response = '''You made an invilid selection!'\nUse Options below: \n\n1. New account \n2. Billing \n3. About Us\n99. Main Menu'''
+    # Create reply
+    resp = MessagingResponse()
+    resp.message("{}".format(response))
+
+    return str(resp)
 
 
 @app.route('/Welcome/<username>/<email>')
@@ -163,7 +223,8 @@ def Legal():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('Legal.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('Legal.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Pay')
@@ -177,7 +238,8 @@ def Pay():
         profilepicture = 'Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
-    return render_template('Pay.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('Pay.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/newpassword/<token>', methods=['GET', 'POST'])
@@ -206,7 +268,8 @@ def newpassword(token=None):
         print(isCreated)
         return redirect('/login')
 
-    return render_template('NewPassword.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('NewPassword.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Signup', methods=['GET', 'POST'])
@@ -224,7 +287,8 @@ def Signup():
             ErrorMsq = request.form["hf_Error"]
             print('error:' + ErrorMsq)
             IsSignUp = '1'
-            return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+            return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                                   userMenuList=userMenuList, loginUrl=loginUrl)
 
         print(sha256_crypt.encrypt(request.form["txt_pass1"]))
         parameters = {'_usertypeid': '2', '_emailaddress': request.form["txtUser1"],
@@ -244,7 +308,8 @@ def Signup():
         print('Userid: ' + str(user_id))
         if user_id != '0':
             return redirect(Welcomepage)
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 def passwordresetEmail(email, resetcode):
@@ -279,7 +344,8 @@ def googleSignIn(email, username):
             user_id = createduser[0]
             username = createduser[1]
             email = createduser[2]  # Activation tocken
-            Accountstatus = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_ActivateAccount', {'_userName': createduser[3]})
+            Accountstatus = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_ActivateAccount',
+                                                                    {'_userName': createduser[3]})
             google_sign_up(email, username, password)
             parameters = {'_userName': username}
             CurrentUser = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_getUser', parameters)
@@ -296,7 +362,7 @@ def googleSignIn(email, username):
 @app.route('/login/<email>/<username>', methods=['GET', 'POST'])
 @app.route('/login/<Resetpassword>', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
-def Login(resetpassword= None, email=None, username=None):
+def Login(resetpassword=None, email=None, username=None):
     profilepicture = 'login.png'
     userMenuList = {}
     ErrorMsq = ''
@@ -305,8 +371,7 @@ def Login(resetpassword= None, email=None, username=None):
 
     if IsSignedIn():
         session.pop('CurrentUser')
-        if 'googleSignIn' in session:
-            session.pop('googleSignIn')
+        session['profilepicture'] = '/images/login.png'
 
     if email is not None and username is not None:
         print('Google signIn')
@@ -355,7 +420,8 @@ def Login(resetpassword= None, email=None, username=None):
                     print(e)
                     ErrorMsq = 'No match found!'
 
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/')
@@ -368,10 +434,6 @@ def index():
     session['profilepicture'] = '/images/login.png'
     if IsSignedIn():
         session['profilepicture'] = '/images/Online.png'
-        if 'googleSignIn' in session:
-            session['profilepicture'] = session['googleSignIn']
-            print('google')
-            print(session['googleSignIn'])
         userMenuList = {'Sigout': 'javascript: sinOut();', 'Profile': '#', 'Customise': '#'}
         loginUrl = '#'
 
@@ -379,10 +441,11 @@ def index():
     # password = sha256_crypt.encrypt(test)
     # print(sha256_crypt.verify(test, password))
     # print(password)
-    return render_template('index.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('index.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 if __name__ == "__main__":
     # from waitress import serve
     # serve(app, host="192.168.178.1", port=8080)
-    app.run(host='localhost', port=8080)
+    app.run(host='192.168.0.194', port=8080)

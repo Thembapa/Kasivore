@@ -127,7 +127,7 @@ function ValidateUser() {
 	  // $("#lb_Email").text(profile.getEmail());
 	  // $("#lb_User").text(profile.getName());
 	   //$("#lb_UserID").text(profile.getId());
-	   $("#profilepicture").attr('src',profile.getImageUrl());
+	  
 	   //$(".limiter").css("display","none");
 	   //$(".limiter-Signedin").css("display","block");
 	  //window.location.replace("/Home");
@@ -135,6 +135,12 @@ function ValidateUser() {
 	  //console.log('Name: ' + profile.getName());
 	  //console.log('Image URL: ' + profile.getImageUrl());
 	  //console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+	   try {
+           $("#profilepicture").attr('src',profile.getImageUrl());
+        }
+        catch(err) {
+          
+        }
 	  Url = '/login/' + profile.getEmail()+'/'+ profile.getName()
 	  
 	  if(document.getElementById('hf_GoogleprofilePic' ) != null)
@@ -146,13 +152,17 @@ function ValidateUser() {
 
 	function sinOut() {
 	   
-	   	/*if gapi.auth2.getAuthInstance() != null
-	   	{
-	   		var auth2 = gapi.auth2.getAuthInstance();
-	        auth2.signOut().then(function () {
-	            auth2.disconnect();
-	        });
-	   	}*/
+	   
+	   try {
+          var auth2 = gapi.auth2.getAuthInstance();
+    	   auth2.signOut().then(function () {
+    	   auth2.disconnect();
+    	   });
+        }
+        catch(err) {
+          
+        }
+	   	
 	 	window.location.replace('/login');
 	}
 	function passwordValidation() 
