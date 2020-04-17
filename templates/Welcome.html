@@ -1,6 +1,13 @@
 {% extends "base.html"%}
+
+
 {%block content%}
+
+<section class="hero d-flex flex-column justify-content-center align-items-center" >
+
  <p style="color: white; font-size: large; float: left; display: inline-block;">
  	Welcome to kasivore an email has been sent to {{email}}. please confirm to activate your account then <a href="/login"> Signin </a> 
 	You can use your email as username or use kasivore username:&nbsp;  <b> {{username}} </b> </p>
+</section>
+
 {%endblock%}

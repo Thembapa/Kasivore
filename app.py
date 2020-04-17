@@ -10,7 +10,7 @@ import kasivoreCommon
 import secrets
 import string
 
-from configfile import TWILIOKEY, TWILIOTOCKEN, TWILIOWHATSAPP, MYWHATSAPP, MYWHATSSMS, TWILIOSMS
+from configfile import TWILIOKEY, TWILIOTOCKEN, TWILIOWHATSAPP, MYWHATSAPP, MYWHATSSMS, TWILIOSMS, GOOGLEID, EMAIL_INFO
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = "kasivoretest"
@@ -18,9 +18,10 @@ UPLOAD_FOLDER = 'static/images/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ## Global variebles
-#GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"  # Live
-GID = "67980471209-aog2b4acht8fhsm1438cnsnkp5arhhle.apps.googleusercontent.com"  #test
-menubuttons = {'Home': '/', 'About': '/About', 'Legal': '/Legal', 'Pay': '/Pay', 'Service': '/service', 'Contact': '/Contact', 'Help': 'Help'}
+# GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"  # Live
+GID = GOOGLEID  # test
+menubuttons = {'Home': '/', 'About': '/About', 'Legal': '/Legal', 'Pay': '/Pay', 'Service': '/service',
+               'Contact': '/Contact', 'Help': 'Help'}
 
 
 ##App functions
@@ -125,7 +126,7 @@ def About():
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
-@app.route('/Contact')
+@app.route('/Contact', methods=['GET', 'POST'])
 def Contact():
     profilepicture = 'login.png'
     userMenuList = {}
@@ -144,14 +145,31 @@ def Contact():
     from_whatsapp_number = TWILIOWHATSAPP
     # replace this number with your own WhatsApp Messaging number
     to_whatsapp_Themba = MYWHATSAPP
-    #Sms
-    client.messages.create(body='We can use this for OTP, From Themba!!',
-                           from_=TWILIOSMS,
-                           to=MYWHATSSMS)
-    # WhatsApp
-    client.messages.create(body='Someone clicked on the contact us menu!!!',
-                           from_=from_whatsapp_number,
-                           to=to_whatsapp_Themba)
+    # Sms
+
+    if request.method == 'POST':
+        if request.form["hf_Error"] != '':
+            ErrorMsq = request.form["hf_Error"]
+            print('error:' + ErrorMsq)
+            IsSignUp = '1'
+        else:
+            EmailAdress = request.form["txtemail"]
+            infodress = EMAIL_INFO
+            Contactperson = request.form["txtname"]
+            usermsg = request.form["txtmessage"]
+            Body = 'Hi ' + Contactperson + '\n\n Thank you for contacting us. Your input is important to us\n We will get back to you soonest\n\n Kasivore Team'
+            kasivoreCommon.sendmail('Kasivore feeback', Body, EmailAdress)
+            kasivoreCommon.sendmail('Kasivore feeback', usermsg, infodress)
+            ErrorMsq = 'Email sent!!!'
+
+    if 1 == 0:
+        client.messages.create(body='We can use this for OTP, From Themba!!',
+                               from_=TWILIOSMS,
+                               to=MYWHATSSMS)
+        # WhatsApp
+        client.messages.create(body='Someone clicked on the contact us menu!!!',
+                               from_=from_whatsapp_number,
+                               to=to_whatsapp_Themba)
 
     return render_template('Contact.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
                            userMenuList=userMenuList, loginUrl=loginUrl)
@@ -165,10 +183,10 @@ def WBot():
     response = ''
     if msg.lower() == 'hi':
         response = '''Welcome to Kasivore \nHow can we help you? \n\n1. New account \n2. Billing \n3. About Us\n99. Main Menu'''
-    elif msg.lower()  == '1':
+    elif msg.lower() == '1':
         response = '''go to https://kasivore.com  to open a new account
                            '''
-    elif msg.lower()  == '2':
+    elif msg.lower() == '2':
         response = '''your bill has been sent to you email account
                            '''
     elif msg.lower() == '3':
