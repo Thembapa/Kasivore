@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+     <title>Kasivore</title>
+
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+     <meta name="description" content="">
+     <meta name="keywords" content="">
+     <meta name="author" content="">
+     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+     <meta name="google-signin-client_id" content="{{GID}}">
+
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/bootstrap.min.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/font-awesome.min.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/aos.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/Kasivore.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/Login.css')}}">
+     <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='/css/stylefilter.css')}}"> <!-- Resource style -->
+     <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='/css/search-filter.css')}}"> <!-- Resource style -->
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
+     <!-- MAIN CSS -->
+     <link rel="stylesheet" href="/css/tooplate-gymso-style.css">
+
+<!--
+Tooplate 2119 Gymso Fitness
+https://www.tooplate.com/view/2119-gymso-fitness
+-->
+</head>
+<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+    <div class="g-signin2"  data-onsuccess="onSignIn" style="display: none"></div>
+    <!-- MENU BAR -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+
+            <a class="navbar-brand" href="/">KasiVore</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-lg-auto">
+                     {%for menu in menubuttons%}
+                          <li class="nav-item"><a class="nav-link smoothScroll" href="{{menubuttons[menu]}}">{{menu}}</a></li>
+                     {%endfor%}
+                  
+                </ul>
+
+                <ul class="social-icon ml-lg-3">
+                    <li><a href="#" class="fa fa-facebook-f"></a></li>
+                    <li><a href="#" class="fa fa-twitter"></a></li>
+                    <li><a href="#" class="fa fa-instagram"></a></li>
+                </ul>
+                <ul>
+                    <li>
+                        <div class="CurrentUser">  
+
+                            <div class="dropdown">
+
+                              <button class="dropbtn" style="background-color: transparent;border: none; margin-top: 15px"><a  href="{{loginUrl}}"><img id="profilepicture" src="{{session['profilepicture']}}" alt="Avatar" class="ProfilePicture"></a></button>
+                              <div class="dropdown-content">
+                                
+                                {% for usermenu in userMenuList%}
+                                    <a href="{{userMenuList[usermenu]}}">{{usermenu}}</a>
+                                {%endfor%}
+                              
+                              </div>
+                            </div>
+                            
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        
+    </nav>
+
+
+    {% block content%}
+    {%endblock%}
+     <section class="feature" id="feature">
+        <div class="container">
+            <div class="row">
+
+                <div class="d-flex flex-column justify-content-center ml-lg-auto mr-lg-5 col-lg-5 col-md-6 col-12">
+                    <h2 class="mb-3 text-white" data-aos="fade-up">New to Kasivore?</h2>
+
+                    <h6 class="mb-4 text-white" data-aos="fade-up">Your membership is FREE for life</h6>
+
+                    <a href="#" class="btn custom-btn bg-color mt-3" data-aos="fade-up" data-aos-delay="300" data-toggle="modal" data-target="#membershipForm">Become a member today</a>
+                </div>
+
+                <div class="mr-lg-auto mt-3 col-lg-4 col-md-6 col-12">
+                     <div class="about-working-hours">
+                          <div>
+
+                                <h2 class="mb-4 text-white" data-aos="fade-up" data-aos-delay="500">Kasivore, Strengthening local economies </h2>
+
+                                <p>
+                                  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+                                 </p>
+                               </div>
+                          </div>
+                     </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+     <!-- SCRIPTS -->
+    <script type="text/javascript" src="{{url_for('static',filename='/js/jquery.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/bootstrap.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/aos.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/smoothscroll.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/custom.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/kasivore.js')}}"></script>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+      <!-- filter js-->
+    <script type="text/javascript" src="{{url_for('static',filename='/js/jquery-2.1.1.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/jquery.mixitup.min.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/mainfilter.js')}}"></script>
+
+</body>
+</html>

@@ -18,9 +18,9 @@ UPLOAD_FOLDER = 'static/images/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 ## Global variebles
-GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"  # Live
-# GID = "67980471209-aog2b4acht8fhsm1438cnsnkp5arhhle.apps.googleusercontent.com"  #test
-menubuttons = {'Home': '/', 'About': '/About', 'Legal': '/Legal', 'Pay': '/Pay', 'Contact': '/Contact', 'Help': 'Help'}
+#GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"  # Live
+GID = "67980471209-aog2b4acht8fhsm1438cnsnkp5arhhle.apps.googleusercontent.com"  #test
+menubuttons = {'Home': '/', 'About': '/About', 'Legal': '/Legal', 'Pay': '/Pay', 'Service': '/service', 'Contact': '/Contact', 'Help': 'Help'}
 
 
 ##App functions
@@ -316,6 +316,20 @@ def google_sign_up(email, username, temp_password):
     kasivoreCommon.sendmail(subject, Body, email)
 
 
+@app.route('/service')
+def service():
+    profilepicture = 'login.png'
+    userMenuList = {}
+    ErrorMsq = ''
+    IsSignUp = ''
+    loginUrl = '/login'
+    if IsSignedIn():
+        session.pop('CurrentUser')
+        session['profilepicture'] = '/images/login.png'
+    return render_template('/service.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
+
+
 def googleSignIn(email, username):
     print(email)
     print(username)
@@ -351,7 +365,7 @@ def googleSignIn(email, username):
 
 
 @app.route('/login/<email>/<username>', methods=['GET', 'POST'])
-@app.route('/login/<Resetpassword>', methods=['GET', 'POST'])
+@app.route('/login/<resetpassword>', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def Login(resetpassword=None, email=None, username=None):
     profilepicture = 'login.png'
@@ -439,4 +453,4 @@ def index():
 if __name__ == "__main__":
     # from waitress import serve
     # serve(app, host="192.168.178.1", port=8080)
-    app.run(host='192.168.0.194', port=8080)
+    app.run(port=8080)

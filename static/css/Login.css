@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html,body{
-background-image: url('/images/img-01.jpg');
 background-size: cover;
 background-repeat: no-repeat;
 height: 100%;
@@ -16,21 +15,21 @@ align-content: center;
 }
 
 .card{
-height: 370px;
+height: 450px;
 margin-top: auto;
 margin-bottom: auto;
-width: 400px;
+width: 450px;
 background-color: rgba(0,0,0,0.5) !important;
 }
 
 .social_icon span{
 font-size: 60px;
 margin-left: 10px;
-color: #FFC312;
+color: #be222f;
 }
 
 .social_icon span:hover{
-color: white;
+color: #be222f;
 cursor: pointer;
 }
 
@@ -46,9 +45,11 @@ top: -45px;
 
 .input-group-prepend span{
 width: 50px;
-background-color: #FFC312;
-color: black;
+background-color: #be222f;
+color: white;
 border:0 !important;
+height: 38.5px;
+margin-top: 20px;
 }
 
 input:focus{
@@ -71,7 +72,8 @@ margin-right: 5px;
 
 .login_btn{
 color: black;
-background-color: #FFC312;
+background-color: #be222f;
+color: white;
 width: 100px;
 }
 
