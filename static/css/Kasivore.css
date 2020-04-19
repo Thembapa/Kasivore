@@ -38,7 +38,10 @@
   color: white;
   font-size: 17px;
 }
-
+input[type=button], input[type=submit], input[type=reset], input[type=file] {
+  background-color: #be222f;
+ 
+}
 .dropdown-content a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
@@ -48,11 +51,13 @@
 .dropdown:hover .dropbtn {
   transition: .5s;
 }
-.ProfilePicture
+
+.KasivoreLogo
 {
-  height :50px;  
-  width: 50px%;
-  margin-top: -17px;
-  border-radius: 50%;
-  float: right;
+  width: 180x;
+  height: 135px; 
+  margin-top: 10px;
 }
+
+
+

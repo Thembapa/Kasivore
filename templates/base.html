@@ -12,6 +12,7 @@
      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
      <meta name="google-signin-client_id" content="{{GID}}">
 
+     <link rel="icon" type="image/png" href="{{url_for('static',filename='images/icons/favicon.ico')}}"/>
      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/bootstrap.min.css')}}">
      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/font-awesome.min.css')}}">
      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='/css/aos.css')}}">
@@ -21,7 +22,7 @@
      <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='/css/search-filter.css')}}"> <!-- Resource style -->
      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
      <!-- MAIN CSS -->
-     <link rel="stylesheet" href="/css/tooplate-gymso-style.css">
+     <link rel="stylesheet" href="/css/KasivoreTheme.css">
 
 <!--
 Tooplate 2119 Gymso Fitness
@@ -34,7 +35,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
 
-            <a class="navbar-brand" href="/">KasiVore</a>
+            <a class="navbar-brand" href="/"><img src="../images/icons/Logo_White.png" class="KasivoreLogo" ></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -42,19 +43,15 @@ https://www.tooplate.com/view/2119-gymso-fitness
             </button>
 
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ml-lg-auto">
+                <ul class="navbar-nav ml-lg-auto" >
                      {%for menu in menubuttons%}
-                          <li class="nav-item"><a class="nav-link smoothScroll" href="{{menubuttons[menu]}}">{{menu}}</a></li>
+                          <li class="nav-item" ><a class="nav-link smoothScroll"  href="{{menubuttons[menu]}}">{{menu}}</a></li>
                      {%endfor%}
                   
                 </ul>
 
-                <ul class="social-icon ml-lg-3">
-                    <li><a href="#" class="fa fa-facebook-f"></a></li>
-                    <li><a href="#" class="fa fa-twitter"></a></li>
-                    <li><a href="#" class="fa fa-instagram"></a></li>
-                </ul>
-                <ul>
+                
+                <ul class="navbar-nav ml-lg-auto">
                     <li>
                         <div class="CurrentUser">  
 
@@ -82,6 +79,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
     {% block content%}
     {%endblock%}
+   
      <section class="feature" id="feature">
         <div class="container">
             <div class="row">
@@ -99,7 +97,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
                           <div>
 
                                 <h2 class="mb-4 text-white" data-aos="fade-up" data-aos-delay="500">Kasivore, Strengthening local economies </h2>
-
+                               
                                 <p>
                                   Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
                                  </p>

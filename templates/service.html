@@ -1,83 +1,18 @@
 {% extends "base.html" %}
 {% block content %}
- <section class="feature" id="feature">
-    </section>
-<main class="cd-main-content" style="background-color: #252525;">
-        <div class="cd-tab-filter-wrapper" style="background-color: #252525">
-          <div class="cd-tab-filter col-md-12 col-lg-6 half  pl-lg-5 ftco-animate heading-section heading-section-white">
-              <div class="row d-md-flex justify-content-center">
-                  <h1 class="subheading">Search results ..</h1>
-              </div>
-          </div> <!-- cd-tab-filter -->
+ 
+ <section class="service d-flex flex-column justify-content-center align-items-center" >
+       <div class="bg-overlay"></div>
 
-        </div>
-
-    <section class="cd-gallery" >
-      <ul>
-        <li class="mix color-1 check1 radio2 option3"><img src="{{url_for('static',filename='/images/delivery.png')}}" alt="Image 1"></li>
-        <li class="mix color-2 check2 radio2 option2"><img src="{{url_for('static',filename='/images/welder.png')}}" alt="Image 2"></li>
-        <li class="mix color-1 check3 radio3 option1"><img src="{{url_for('static',filename='/images/avatar.png')}}" alt="Image 3"></li>
-        <li class="mix color-1 check3 radio2 option4"><img src="{{url_for('static',filename='/images/laptop.png')}}" alt="Image 4"></li>
-        <li class="mix color-1 check1 radio3 option2"><img src="{{url_for('static',filename='/images/delivery-truck.png')}}" alt="Image 5"></li>
-        <li class="mix color-2 check2 radio3 option3"><img src="{{url_for('static',filename='/mages/paint.png')}}" alt="Image 6"></li>
-        <li class="mix color-2 check2 radio2 option1"><img src="{{url_for('static',filename='/images/tool-box.png')}}" alt="Image 7"></li>
-        <li class="mix color-1 check1 radio3 option4"><img src="{{url_for('static',filename='/images/construction1.png')}}" alt="Image 8"></li>
-        <li class="mix color-2 check1 radio2 option3"><img src="{{url_for('static',filename='/images/taxi.png')}}" alt="Image 9"></li>
-        <li class="mix color-1 check3 radio2 option4"><img src="{{url_for('static',filename='/images/virus.png')}}" alt="Image 10"></li>
-        <li class="mix color-1 check3 radio3 option2"><img src="{{url_for('static',filename='/images/smartphone.png')}}" alt="Image 11"></li>
-        <li class="mix color-2 check1 radio3 option1"><img src="{{url_for('static',filename='/images/tow.png')}}" alt="Image 12"></li>
-
-         <li class="mix color-2 check4 radio2 option3"><img src="{{url_for('static',filename='/images/tire.png')}}" alt="Image 9"></li>
-        <li class="mix color-1 check4 radio2 option4"><img src="{{url_for('static',filename='/images/shock-absorber.png')}}" alt="Image 10"></li>
-        <li class="mix color-1 check4 radio3 option2"><img src="{{url_for('static',filename='/images/maintenance-2.png')}}" alt="Image 11"></li>
-        <li class="gap"></li>
-        <li class="gap"></li>
-        <li class="gap"></li>
-      </ul>
-     <div class="slider-item cd-fail-message" style="background-image:url(static/images/error.png") >No results found</div>
-    </section> <!-- cd-gallery -->
-    <div class="cd-filter" >
-      <form>
-        <div class="cd-filter-block" >
-          <h4>Search</h4>
-
-          <div class="cd-filter-content">
-            <input type="search" placeholder="Try for service...">
-          </div> <!-- cd-filter-content -->
-        </div> <!-- cd-filter-block -->
-
-        <div class="cd-filter-block">
-          <h4>Service Categories</h4>
-
-          <ul class="cd-filter-content cd-filters list">
-            <li>
-              <input class="filter" data-filter=".check1" type="checkbox" id="checkbox1">
-                <label class="checkbox-label" for="checkbox1">Transportation</label>
-            </li>
-
-            <li>
-              <input class="filter" data-filter=".check2" type="checkbox" id="checkbox2">
-              <label class="checkbox-label" for="checkbox2">Construction</label>
-            </li>
-
-            <li>
-              <input class="filter" data-filter=".check3" type="checkbox" id="checkbox3">
-              <label class="checkbox-label" for="checkbox3">Technology</label>
-            </li>
-
-            <li>
-              <input class="filter" data-filter=".check4" type="checkbox" id="checkbox4">
-                <label class="checkbox-label" for="checkbox1">Car `maintanance</label>
-            </li>
-          </ul> <!-- cd-filter-content -->
-        </div> <!-- cd-filter-block -->
-
-
-      </form>
-      <a href="#0" class="cd-close">Close</a>
-
+               <div class="container">
+                 
+               </div>
+      <div class="Social-media">
+         <ul class="social-icon ml-lg-3 SocialList">
+                <li><a href="#" class="fa fa-facebook-f" ></a></li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+         </ul>
     </div>
-      <a class="cd-filter-trigger">Filters</a>
-
-</main>
+     </section>
 {% endblock %}

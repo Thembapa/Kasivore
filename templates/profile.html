@@ -1,0 +1,88 @@
+{% extends "base.html"%}
+ {% block content%}
+ <!-- CONTACT -->
+ 	 <div style="height: 13%; width:100% " ></div>    
+
+     <section class="hero d-flex flex-column justify-content-center align-items-center" >
+       <div class="bg-overlay"></div>
+
+               <div class="container">
+                   <div class="row">
+
+                    <div class="ml-auto col-lg-5 col-md-6 col-12" style="color: white">
+                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200" style=" color: #be222f;">User Detail</h2>
+
+                        <form action="/Contact" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
+
+                            
+                            <input type="text" class="form-control" name="txtname" placeholder="Name">
+
+                            <input type="email" class="form-control" name="txtemail" placeholder="Email">
+
+                            <textarea class="form-control" rows="5" name="txtmessage" placeholder="Message"></textarea>
+
+                            <button type="submit" class="form-control" style="background-color: #be222f;" id="submit-button" name="submit">Send Message</button>
+                             <label id="lbErrorMsg" name="lbErrorMsg" style="color:orange;font-weight: bolder;" >{{ErrorMsq}}</label>      
+                            <input type="hidden" name="hf_Error" id="hf_Error">
+                        </form>
+                    </div>
+                     <div class="ml-auto col-lg-5 col-md-6 col-12" style="color: white">
+                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200" style=" color: #be222f;">Accout Details</h2>
+
+                        <form action="/Contact" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
+                            <input type="text" class="form-control" name="txtname" placeholder="Name">
+
+                            <input type="email" class="form-control" name="txtemail" placeholder="Email">
+
+                            <textarea class="form-control" rows="5" name="txtmessage" placeholder="Message"></textarea>
+
+                            <button type="submit" class="form-control" style="background-color: #be222f;" id="submit-button" name="submit">Send Message</button>
+                             <label id="lbErrorMsg" name="lbErrorMsg" style="color:orange;font-weight: bolder;" >{{ErrorMsq}}</label>      
+                            <input type="hidden" name="hf_Error" id="hf_Error">
+                        </form>
+                    </div>
+                     <div class="ml-auto col-lg-5 col-md-6 col-12" style="color: white">
+                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200" style=" color: #be222f;">Home Address</h2>
+
+                        <form action="/Contact" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
+                            <input type="text" class="form-control" name="txtname" placeholder="Name">
+
+                            <input type="email" class="form-control" name="txtemail" placeholder="Email">
+
+                            <textarea class="form-control" rows="5" name="txtmessage" placeholder="Message"></textarea>
+
+                            <button type="submit" class="form-control" style="background-color: #be222f;" id="submit-button" name="submit">Send Message</button>
+                             <label id="lbErrorMsg" name="lbErrorMsg" style="color:orange;font-weight: bolder;" >{{ErrorMsq}}</label>      
+                            <input type="hidden" name="hf_Error" id="hf_Error">
+                        </form>
+                    </div>
+                     <div class="ml-auto col-lg-5 col-md-6 col-12" style="color: white">
+                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200" style=" color: #be222f;">Business Address</h2>
+
+                        <form action="/Contact" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
+                            <input type="text" class="form-control" name="txtname" placeholder="Name">
+
+                            <input type="email" class="form-control" name="txtemail" placeholder="Email">
+
+                            <textarea class="form-control" rows="5" name="txtmessage" placeholder="Message"></textarea>
+
+                            <button type="submit" class="form-control" style="background-color: #be222f;" id="submit-button" name="submit">Send Message</button>
+                             <label id="lbErrorMsg" name="lbErrorMsg" style="color:orange;font-weight: bolder;" >{{ErrorMsq}}</label>      
+                            <input type="hidden" name="hf_Error" id="hf_Error">
+                        </form>
+                    </div>
+
+                   
+                    
+               </div>
+               </div>
+    
+     <div class="Social-media">
+         <ul class="social-icon ml-lg-3 SocialList">
+                <li><a href="#" class="fa fa-facebook-f" ></a></li>
+                <li><a href="#" class="fa fa-twitter"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
+         </ul>
+    </div>
+     </section>
+ {%endblock%}

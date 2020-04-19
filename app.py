@@ -78,14 +78,14 @@ def getallusernames(username=None):
 
 @app.route('/activate/<username>')
 def activate(username=None):
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'Online.png'
-        userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
+        profilepicture = 'images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
     if username is not None:
         Accountstatus = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_ActivateAccount', {'_userName': username})
@@ -98,14 +98,14 @@ def activate(username=None):
 ##HTML pages redirect
 @app.route('/Help')
 def Help():
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'Online.png'
-        userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
+        profilepicture = 'images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
     return render_template('Help.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
                            userMenuList=userMenuList, loginUrl=loginUrl)
@@ -113,14 +113,14 @@ def Help():
 
 @app.route('/About')
 def About():
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'Online.png'
-        userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
+        profilepicture = 'images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
     return render_template('About.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
                            userMenuList=userMenuList, loginUrl=loginUrl)
@@ -128,14 +128,14 @@ def About():
 
 @app.route('/Contact', methods=['GET', 'POST'])
 def Contact():
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'Online.png'
-        userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
+        profilepicture = 'images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
 
     # client credentials are read from TWILIO_ACCOUNT_SID and AUTH_TOKEN
@@ -204,14 +204,14 @@ def WBot():
 
 @app.route('/Welcome/<username>/<email>')
 def Welcome(username=None, email=None):
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'Online.png'
-        userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
+        profilepicture = 'images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
 
     if username is not None and email is not None:
@@ -223,14 +223,14 @@ def Welcome(username=None, email=None):
 
 @app.route('/Legal')
 def Legal():
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'Online.png'
-        userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
+        profilepicture = 'images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
     return render_template('Legal.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
                            userMenuList=userMenuList, loginUrl=loginUrl)
@@ -238,16 +238,31 @@ def Legal():
 
 @app.route('/Pay')
 def Pay():
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'Online.png'
-        userMenuList = {'Sigout': '/login', 'Profile': '#', 'Customise': '#'}
+        profilepicture = 'images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
     return render_template('Pay.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
+
+
+@app.route('/Profile')
+def Profile():
+    profilepicture = 'images/Profilepictures/login.png'
+    userMenuList = {}
+    ErrorMsq = ''
+    IsSignUp = ''
+    loginUrl = '/login'
+    if IsSignedIn():
+        profilepicture = 'images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        loginUrl = '#'
+    return render_template('profile.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
@@ -283,7 +298,7 @@ def newpassword(token=None):
 
 @app.route('/Signup', methods=['GET', 'POST'])
 def Signup():
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
@@ -336,14 +351,14 @@ def google_sign_up(email, username, temp_password):
 
 @app.route('/service')
 def service():
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
         session.pop('CurrentUser')
-        session['profilepicture'] = '/images/login.png'
+        session['profilepicture'] = '/images/Profilepictures/login.png'
     return render_template('/service.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
@@ -386,7 +401,7 @@ def googleSignIn(email, username):
 @app.route('/login/<resetpassword>', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def Login(resetpassword=None, email=None, username=None):
-    profilepicture = 'login.png'
+    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
@@ -394,7 +409,7 @@ def Login(resetpassword=None, email=None, username=None):
 
     if IsSignedIn():
         session.pop('CurrentUser')
-        session['profilepicture'] = '/images/login.png'
+        session['profilepicture'] = 'images/Profilepictures/login.png'
 
     if email is not None and username is not None:
         print('Google signIn')
@@ -454,10 +469,10 @@ def index():
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
-    session['profilepicture'] = '/images/login.png'
+    session['profilepicture'] = '/images/Profilepictures/login.png'
     if IsSignedIn():
-        session['profilepicture'] = '/images/Online.png'
-        userMenuList = {'Sigout': 'javascript: sinOut();', 'Profile': '#', 'Customise': '#'}
+        session['profilepicture'] = '/images/Profilepictures/Online.png'
+        userMenuList = {'Sigout': 'javascript: sinOut();', 'Profile': '/Profile'}
         loginUrl = '#'
 
         # test = 'themba'
