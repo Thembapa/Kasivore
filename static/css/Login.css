@@ -91,18 +91,10 @@ color: white;
 margin-left: 4px;
 }
 
-.ProfilePicture
-{
-  height :75px;  
-  width: 75px%;
-  margin-top: -32px;
-  border-radius: 50%;
-  float: right;
-}
-
 .curveIcons{
-  border-radius: 100%;
+  border-radius: 5rem;
   z-index: 1;
+  
 }
 
 .form-rounded {
@@ -110,3 +102,30 @@ margin-left: 4px;
 	margin-left:-11px;
 	z-index: 0 
 }
+
+ /*---------------------------------------
+     RESPONSIVE STYLES              
+  -----------------------------------------*/
+   @media screen and (max-width: 992px) {
+   	.card{
+		height: 400px;
+		width: 390px;
+		margin-top: auto;
+		margin-bottom: auto;		
+		border-radius: 15%;
+		background-color: rgba(65, 64, 66,0.5) !important;
+		}
+    
+  }
+
+  @media screen and (max-width: 767px) {
+    .card{
+		height: 400px;
+		width: 390px
+		margin-top: auto;
+		margin-bottom: auto;
+		border-radius: 15%;
+		background-color: rgba(65, 64, 66,0.5) !important;
+		}
+    
+  }

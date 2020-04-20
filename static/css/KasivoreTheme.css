@@ -404,6 +404,47 @@ https://www.tooplate.com/view/2119-gymso-fitness
     position: relative;
   }
 
+   /*---------------------------------------
+     USER MENU              
+  -----------------------------------------*/ 
+
+  .dropdown {
+    display: inline-block;
+    font-family: montserrat;
+    color: white;
+    padding: 6px 6px;
+    margin-top: 3px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    background: #17181A;
+    display: block;
+    color: white;
+    font-size: 17px;
+  }
+  .dropdown-content a:hover {background-color: #f1f1f1}
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+
+  .dropdown:hover .dropbtn {
+    transition: .5s;
+  }
+
 
   /*---------------------------------------
      CLASS               
@@ -661,6 +702,27 @@ https://www.tooplate.com/view/2119-gymso-fitness
     color: var(--primary-color);
   }
 
+  .ProfilePicture
+  {
+    height :75px;  
+    width: 75px%;
+    margin-top: -15px;    
+    border-radius: 50%;
+    float: right;
+  }
+
+  .KasivoreLogo
+  {
+    width: 180x;
+    height: 135px; 
+    margin-top: -45px;
+  }
+  .kasiLogo
+  {
+    height: 50px;
+    width: 50px;
+  }
+
 
   /*---------------------------------------
      RESPONSIVE STYLES              
@@ -670,22 +732,38 @@ https://www.tooplate.com/view/2119-gymso-fitness
     .section {
       padding: 5rem 0;
     }
-    .Social-media
-    {
-      background-color: rgba(0, 0, 0,0.5) !important;
-      height:100px;
-      position:fixed;
-      text-align: center; 
-      bottom:-50px;
-      border-radius:45%;
-      z-index: 99;
-
-    }
     .nav-item .nav-link {
       padding: 6px;
 
     }
+    .social-icon {
+      position: relative;
+      padding: 0;
+      margin-top: 15px; 
+      margin-left: 15px;
+    }
 
+    .ProfilePicture
+    {
+      height :45px;  
+      width: 45px%;
+      margin-top: -32px;
+      border-radius: 50%;
+      float: right;
+    }
+    .kasiLogo
+    {
+      height: 25px;
+      width: 50px;
+      margin-top: 20px;
+    }
+
+    .KasivoreLogo
+    {
+      width: 150x;
+      height: 100px; 
+      margin-bottom: -1px;
+    }
     .Social-media{
       z-index: 99;
     }
@@ -702,6 +780,10 @@ https://www.tooplate.com/view/2119-gymso-fitness
     .modal-content {
       padding: 2rem;
     }
+    .Mobilefooter
+    {
+      vertical-align: middle;
+    }
   }
 
   @media screen and (max-width: 767px) {
@@ -709,24 +791,136 @@ https://www.tooplate.com/view/2119-gymso-fitness
     h1 {
       font-size: 38px;
     }
-    .Social-media
-    {
-      background-color: rgba(0, 0, 0,0.5) !important;
-      height:100px;
-      position:fixed;
-      text-align: center; 
-      bottom:-50px;
-      border-radius:45%;
-      z-index: 99;
-
-    }
     .about-working-hours {
       border-left: 0;
       padding: 22px 0 0 0;
     }
+    .ProfilePicture
+    {
+      height :45px;  
+      width: 45px%;
+      margin-top: -32px;
+      border-radius: 50%;
+      float: right;
+    }
+     .kasiLogo
+    {
+      margin-top: 25px
+    }
 
+    .KasivoreLogo
+    {
+      width: 150x;
+      height: 100px;
+
+    }
+    .Social-media{
+      z-index: 99;
+    }
     .contact h2 span {
       display: block;
     }
+     .social-icon {
+      position: relative;
+      padding: 0;
+      margin-top: 15px;
+      margin-left: 15px; 
+    }
+    .Mobilefooter
+    {
+      vertical-align: middle;
+    }
+  }
+
+/*---------------------------------------
+     USER PROFILE              
+  -----------------------------------------*/ 
+
+ .Maincard{
+  height: 650px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 1020px;
+  border-radius: 5%;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+ .SideMenu{
+  height: 640px;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: 100px;
+  border-radius: 2rem;
+  margin-left: 100px;
+  float: right;
+  display: inline-block;
+  text-align: center;
+  background-color: rgba(65, 64, 66,0.5) !important;
+  z-index: 1;
+}
+.arrow-up {
+  width: 0; 
+  height: 0;
+  margin-left: 15px; 
+  border-left: 30px solid transparent;
+  border-right: 30px solid transparent; 
+  border-bottom: 20px solid rgba(65, 64, 66,0.5) !important;;
+  margin-top: -15px;
+  z-index: 0;
+
+}
+
+.Maincard-header h3{
+color: white;
+}
+
+   @media screen and (max-width: 992px) {
+    .Maincard{
+    height: 400px;
+    width: 390px;
+    margin-top: auto;
+    margin-bottom: auto;    
+    border-radius: 15%;
+    background-color: rgba(65, 64, 66,0.5) !important;
+    }
+    
+  }
+
+  @media screen and (max-width: 767px) {
+    .Maincard{
+    height: 400px;
+    width: 390px
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 500px;
+    border-radius: 15%;
+    background-color: rgba(65, 64, 66,0.5) !important;
+    }
+    
+  }
+
+  .Maincard-footer
+  {
+      float: bottom;
+      text-align: center; 
+      margin-top: 20px
+  }
+  .MaicardInputBox
+  {
+    border-radius: 5rem;
+    display: inline-block; 
+    width: 60%;
+  }
+  .MainCardGroup
+  {
+    text-align: center;
+    height: 70px;
+  }
+  .MainCardLabel
+  {
+    display: inline-block; 
+    font-size: x-large;
+    color: white;
+    width: 20%;
+    text-align: left;
   }
 

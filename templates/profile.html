@@ -1,82 +1,93 @@
 {% extends "base.html"%}
  {% block content%}
  <!-- CONTACT -->
- 	 <div style="height: 13%; width:100% " ></div>    
-
-     <section class="hero d-flex flex-column justify-content-center align-items-center" >
-       <div class="bg-overlay"></div>
+ 	 <section class="Login d-flex flex-column justify-content-center align-items-center"  >
+       
 
                <div class="container">
-                   <div class="row">
+                <div >
+                    <div class="d-flex justify-content-center h-100">
+                        <div class="Maincard" >
+                           
+                            <div class="Maincard-body">
+                                <div>
+                                    <form id="SiginForm" name="SiginForm" action="/login" method="POST" >
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Name</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Surname</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Tel Number</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Home Address</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Nationality</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">SA ID No.</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Passport No.</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Date of birth</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                         <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Gender</label>
+                                              <label class="MainCardLabel" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Male
+                                                  </label>
+                                             <label class="MainCardLabel" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Female
+                                                  </label>
+                                             <label class="MainCardLabel" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Non-Binary
+                                                  </label>
+                                            
+                                        </div>
+                                       
 
-                    <div class="ml-auto col-lg-5 col-md-6 col-12" style="color: white">
-                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200" style=" color: #be222f;">User Detail</h2>
+                                     
+                                    </form>
+                                </div>
+                                
+                                
+                            </div>                           
+                           
 
-                        <form action="/Contact" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
+                        </div>
 
-                            
-                            <input type="text" class="form-control" name="txtname" placeholder="Name">
-
-                            <input type="email" class="form-control" name="txtemail" placeholder="Email">
-
-                            <textarea class="form-control" rows="5" name="txtmessage" placeholder="Message"></textarea>
-
-                            <button type="submit" class="form-control" style="background-color: #be222f;" id="submit-button" name="submit">Send Message</button>
-                             <label id="lbErrorMsg" name="lbErrorMsg" style="color:orange;font-weight: bolder;" >{{ErrorMsq}}</label>      
-                            <input type="hidden" name="hf_Error" id="hf_Error">
-                        </form>
-                    </div>
-                     <div class="ml-auto col-lg-5 col-md-6 col-12" style="color: white">
-                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200" style=" color: #be222f;">Accout Details</h2>
-
-                        <form action="/Contact" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
-                            <input type="text" class="form-control" name="txtname" placeholder="Name">
-
-                            <input type="email" class="form-control" name="txtemail" placeholder="Email">
-
-                            <textarea class="form-control" rows="5" name="txtmessage" placeholder="Message"></textarea>
-
-                            <button type="submit" class="form-control" style="background-color: #be222f;" id="submit-button" name="submit">Send Message</button>
-                             <label id="lbErrorMsg" name="lbErrorMsg" style="color:orange;font-weight: bolder;" >{{ErrorMsq}}</label>      
-                            <input type="hidden" name="hf_Error" id="hf_Error">
-                        </form>
-                    </div>
-                     <div class="ml-auto col-lg-5 col-md-6 col-12" style="color: white">
-                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200" style=" color: #be222f;">Home Address</h2>
-
-                        <form action="/Contact" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
-                            <input type="text" class="form-control" name="txtname" placeholder="Name">
-
-                            <input type="email" class="form-control" name="txtemail" placeholder="Email">
-
-                            <textarea class="form-control" rows="5" name="txtmessage" placeholder="Message"></textarea>
-
-                            <button type="submit" class="form-control" style="background-color: #be222f;" id="submit-button" name="submit">Send Message</button>
-                             <label id="lbErrorMsg" name="lbErrorMsg" style="color:orange;font-weight: bolder;" >{{ErrorMsq}}</label>      
-                            <input type="hidden" name="hf_Error" id="hf_Error">
-                        </form>
-                    </div>
-                     <div class="ml-auto col-lg-5 col-md-6 col-12" style="color: white">
-                        <h2 class="mb-4 pb-2" data-aos="fade-up" data-aos-delay="200" style=" color: #be222f;">Business Address</h2>
-
-                        <form action="/Contact" method="post" class="contact-form webform" data-aos="fade-up" data-aos-delay="400" role="form">
-                            <input type="text" class="form-control" name="txtname" placeholder="Name">
-
-                            <input type="email" class="form-control" name="txtemail" placeholder="Email">
-
-                            <textarea class="form-control" rows="5" name="txtmessage" placeholder="Message"></textarea>
-
-                            <button type="submit" class="form-control" style="background-color: #be222f;" id="submit-button" name="submit">Send Message</button>
-                             <label id="lbErrorMsg" name="lbErrorMsg" style="color:orange;font-weight: bolder;" >{{ErrorMsq}}</label>      
-                            <input type="hidden" name="hf_Error" id="hf_Error">
-                        </form>
-                    </div>
-
-                   
+                        <div class="SideMenu">
+                            <div class="arrow-up ">
                     
-               </div>
-               </div>
-    
+                        </div>
+                    
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
      <div class="Social-media">
          <ul class="social-icon ml-lg-3 SocialList">
                 <li><a href="#" class="fa fa-facebook-f" ></a></li>
@@ -84,5 +95,6 @@
                 <li><a href="#" class="fa fa-instagram"></a></li>
          </ul>
     </div>
+          
      </section>
  {%endblock%}

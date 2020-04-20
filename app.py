@@ -262,8 +262,7 @@ def Profile():
         profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
-    return render_template('profile.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
-                           userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('profile.html', ErrorMsq=ErrorMsq, GID=GID,  menubuttons=menubuttons, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/newpassword/<token>', methods=['GET', 'POST'])
