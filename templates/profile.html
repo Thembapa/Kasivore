@@ -1,10 +1,10 @@
 {% extends "base.html"%}
  {% block content%}
  <!-- CONTACT -->
- 	 <section class="Login d-flex flex-column justify-content-center align-items-center"  >
+ 	 <section class="Profile d-flex flex-column justify-content-center align-items-center"  >
        
 
-               <div class="container">
+               <div class="container" id="profilemain" >
                 <div >
                     <div class="d-flex justify-content-center h-100">
                         <div class="Maincard" >
@@ -53,16 +53,19 @@
                                             <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
                                             
                                         </div>
-                                         <div class="MainCardGroup">
+                                         <div class="MainCardGroup" style="margin-top: 20px;">
                                             <label class="MainCardLabel">Gender</label>
-                                              <label class="MainCardLabel" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Male
+                                              <label class="GenderRadioButton" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;&nbsp;Male
+                                                    <span class="checkmark"></span>
                                                   </label>
-                                             <label class="MainCardLabel" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Female
+                                                <label class="GenderRadioButton" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;&nbsp;Female
+                                                    <span class="checkmark"></span>
                                                   </label>
-                                             <label class="MainCardLabel" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="optradio" value="option2">Non-Binary
+                                             <label class="GenderRadioButton" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;&nbsp;Non-Binary
+                                                    <span class="checkmark"></span>
                                                   </label>
                                             
                                         </div>
@@ -79,15 +82,46 @@
                         </div>
 
                         <div class="SideMenu">
-                            <div class="arrow-up ">
-                    
+                            <div class="arrow-up ">     
+                                                
+                            </div>
+                            <label class="SideRadioButton" for="radio2">
+                                    Account details<br><br>
+                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                    
+                                 </label>
+                                 <label class="SideRadioButton" for="radio2">
+                                    Profile picture <br><br>
+                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                    
+                                 </label>
+                                 <label class="SideRadioButton" for="radio2">
+                                    Service Provider <br><br>
+                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                    
+                                 </label>
+                                 <label class="SideRadioButton" for="radio2">
+                                    Complete <br><br>
+                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                 
+                                 </label>
+                            
                         </div>
-                    
-                        </div>
+
+                         
                     </div>
                 </div>
                 
         </div>
+    <div class="ProfileButtons">
+         <div class="form-group Profile_btn-left"    >
+            <input type="submit" value="Back" id="ub_Resetpass" name="ub_Resetpass" class="btn float-right login_btn"  >
+          </div>  
+          <div class="form-group Profile_btn"    >
+            <input type="submit" value="Save" id="ub_Resetpass" name="ub_Resetpass" class="btn float-right login_btn"  >
+          </div>                  
+                            
+    </div>
      <div class="Social-media">
          <ul class="social-icon ml-lg-3 SocialList">
                 <li><a href="#" class="fa fa-facebook-f" ></a></li>

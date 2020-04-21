@@ -403,6 +403,15 @@ https://www.tooplate.com/view/2119-gymso-fitness
     min-height: 100vh;
     position: relative;
   }
+  .Profile {
+    background-image: url('../images/Backgroud/ProfileBckgroud.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    min-height: 100vh;
+    position: relative;
+  }
 
    /*---------------------------------------
      USER MENU              
@@ -432,7 +441,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
     text-decoration: none;
     background: #17181A;
     display: block;
-    color: white;
+    color: var(--white-color);
     font-size: 17px;
   }
   .dropdown-content a:hover {background-color: #f1f1f1}
@@ -845,10 +854,10 @@ https://www.tooplate.com/view/2119-gymso-fitness
   background-color: rgba(65, 64, 66,0.5) !important;
 }
  .SideMenu{
-  height: 640px;
+  height: 650px;
   margin-top: auto;
   margin-bottom: auto;
-  width: 100px;
+  width: 180px;
   border-radius: 2rem;
   margin-left: 100px;
   float: right;
@@ -860,17 +869,17 @@ https://www.tooplate.com/view/2119-gymso-fitness
 .arrow-up {
   width: 0; 
   height: 0;
-  margin-left: 15px; 
-  border-left: 30px solid transparent;
-  border-right: 30px solid transparent; 
+  margin-left: 50px; 
+  border-left: 25px solid transparent;
+  border-right: 25px solid transparent; 
   border-bottom: 20px solid rgba(65, 64, 66,0.5) !important;;
-  margin-top: -15px;
+  margin-top: -20px;
   z-index: 0;
 
 }
 
 .Maincard-header h3{
-color: white;
+color: var(--white-color);
 }
 
    @media screen and (max-width: 992px) {
@@ -919,8 +928,81 @@ color: white;
   {
     display: inline-block; 
     font-size: x-large;
-    color: white;
+    color: var(--white-color);
     width: 20%;
     text-align: left;
   }
 
+
+
+/*---------------------------------------
+     COMMON CONTROL             
+  -----------------------------------------*/ 
+
+.GenderRadioButton input[type=radio]{
+    transform:scale(3);
+    margin-top: 10px;
+    border-color: var(--white-color);
+    color: red;
+}
+.GenderRadioButton
+  {
+    display: inline-block; 
+    font-size: x-large;
+    color: white;
+    width: 20%;    
+    
+}
+
+.SideRadioButton input[type=radio]{
+    transform:scale(5);
+    border-color: var(--white-color);
+    color: red;
+    margin-left: 30px;
+}
+.SideRadioButton
+  {
+    display: block; 
+    font-size: x-large;
+    color: white;
+    width: 20%; 
+    margin-top: 50px;  
+    margin-left: 30px;
+  
+}
+
+/*---------------------------------------
+     Profile Buttons          
+  -----------------------------------------*/ 
+ .ProfileButtons{
+  height: 50px;
+  width: 250px;
+  border-radius: 2rem;
+  margin-top: 20px;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+
+#profilemain
+{
+  margin-top: 100px !important;
+}
+
+.Profile_btn-left{
+  color: black;
+  background-color: #be222f;
+  color: white;
+  border-radius: 5rem;
+  margin-top: 6px;
+  float: left;
+  margin-left: 5px;
+
+}
+
+.Profile_btn{
+  color: black;
+  background-color: #be222f;
+  color: white;
+  border-radius: 5rem;
+  margin-top: 6px;
+  margin-right: 5px;
+}
