@@ -65,6 +65,11 @@ function ValidateUser() {
 	  	document.getElementById('Error').style.display = "block";
 	  	document.getElementById( 'lbSignin' ).innerHTML = "Reset password";
 	}
+	function ProfileSlides(CurrentSection)
+	{
+		document.getElementById(CurrentSection).style.display = "block"; 
+		document.getElementById('UserData' ).style.display = "none";
+	}
 
 	function PageLoad() {
 	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
@@ -137,6 +142,12 @@ function ValidateUser() {
 	  //console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
 	   try {
            $("#profilepicture").attr('src',profile.getImageUrl());
+        }
+        catch(err) {
+          
+        }
+        try {
+           $("#Accountpp").attr('src',profile.getImageUrl());
         }
         catch(err) {
           
@@ -233,3 +244,5 @@ function ValidateUser() {
 		      break;
 		  }
   }
+
+  

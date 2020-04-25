@@ -2,11 +2,59 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24d922bd-95f5-4eea-87e9-f74fef59fa79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/images/Backgroud/ProfileBckgroud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/ProgressRing.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/alert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/alert.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/button.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/carousel.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/collapse.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/dropdown.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/index.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/modal.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/popover.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/scrollspy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/scrollspy.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/tab.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/tooltip.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/dist/util.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/alert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/button.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/carousel.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/collapse.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/dropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/modal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/popover.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/scrollspy.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/tab.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/tooltip.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/src/util.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/util.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/KasivoreTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/KasivoreTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Login.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/kasivore.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/kasivore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/About.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/About.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Contact.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Contact.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Help.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Help.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Legal.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/LogIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/LogIn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/NewPassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/NewPassword.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Pay.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Pay.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Welcome.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Welcome.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/service.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/service.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,7 +78,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="last_opened_file_path" value="C:/Projects/MBSAHR" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python-Android-support" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">

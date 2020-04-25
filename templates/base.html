@@ -20,6 +20,7 @@
      <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='/css/stylefilter.css')}}"> <!-- Resource style -->
      <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='/css/search-filter.css')}}"> <!-- Resource style -->
      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
+     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/ProgressRing.css')}}">
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="/css/KasivoreTheme.css">
 
@@ -55,7 +56,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
                             <div class="dropdown">
 
-                              <button class="dropbtn" style="background-color: transparent;border: none; margin-top: 15px"><a  href="{{loginUrl}}"><img id="profilepicture" src="{{session['profilepicture']}}" alt="Avatar" class="ProfilePicture"></a></button>
+                              <button class="dropbtn" style="background-color: transparent;border: none; margin-top: 15px"><a  href="{{loginUrl}}"><img id="profilepicture" src="{{session['profilepicture']}}"  class="ProfilePicture"></a></button>
                               <div class="dropdown-content">
                                 
                                 {% for usermenu in userMenuList%}

@@ -2,13 +2,59 @@
  {% block content%}
  <!-- CONTACT -->
  	 <section class="Profile d-flex flex-column justify-content-center align-items-center"  >
-       
+              <div class="MobileControl">
+                 <div class="MobileRadioControl">
+                            <div  class="SectionLabel">
+                              <label id="Accountlabel"  >Account Details</label>
+                            </div>
+                            <div class="RadioTop">
+                               <label class="TopButton" for="radio2">
+                                     
+                                      <input type="radio" onclick="ProfileSlides('Address')" class="form-check-input" id="radio2" name="radio" value="option2">
+                                      
+                                   </label>
+                                   <label class="TopButton" for="radio2">
+                                      <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                   
+                                   </label>
+                                   <label class="TopButton" for="radio2">
+                                      <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                      
+                                   </label>
 
+                                   <label class="TopButton" for="radio2">
+                                      <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                   
+                                   </label> 
+
+                                   
+                            </div>                             
+                             <div class="arrow-right">     
+                                                
+                              </div>
+                                               
+                                        
+                  </div>
+                  <div class ="Mobilepp">
+                    <div class="c100 p12 small dark">
+                        <span><img id="Accountpp" src="{{session['profilepicture']}}" alt="Avatar" class="ProfilePicture"></span>
+                        <div class="slice">
+                            <div class="bar"></div>
+                            <div class="fill"></div>
+
+                        </div>
+                    </div>
+
+                     
+                  </div>
+              </div>
+              
                <div class="container" id="profilemain" >
                 <div >
                     <div class="d-flex justify-content-center h-100">
-                        <div class="Maincard" >
-                           
+
+                        <div class="Maincard" id="UserData">
+                            
                             <div class="Maincard-body">
                                 <div>
                                     <form id="SiginForm" name="SiginForm" action="/login" method="POST" >
@@ -54,17 +100,17 @@
                                             
                                         </div>
                                          <div class="MainCardGroup" style="margin-top: 20px;">
-                                            <label class="MainCardLabel">Gender</label>
+                                            <label class="GenderLabel">Gender</label>
                                               <label class="GenderRadioButton" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;&nbsp;Male
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Male
                                                     <span class="checkmark"></span>
                                                   </label>
                                                 <label class="GenderRadioButton" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;&nbsp;Female
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Female
                                                     <span class="checkmark"></span>
                                                   </label>
                                              <label class="GenderRadioButton" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;&nbsp;Non-Binary
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Non-Binary
                                                     <span class="checkmark"></span>
                                                   </label>
                                             
@@ -80,6 +126,80 @@
                            
 
                         </div>
+                        <div class="Maincard" id="Address" style="display: none;">
+                            
+                            <div class="Maincard-body">
+                                <div>
+                                    <form id="SiginForm" name="SiginForm" action="/login" method="POST" >
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">ttt</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Surname</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Tel Number</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Home Address</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Nationality</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">SA ID No.</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Passport No.</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Date of birth</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                         <div class="MainCardGroup" style="margin-top: 20px;">
+                                            <label class="GenderLabel">Gender</label>
+                                              <label class="GenderRadioButton" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Male
+                                                    <span class="checkmark"></span>
+                                                  </label>
+                                                <label class="GenderRadioButton" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Female
+                                                    <span class="checkmark"></span>
+                                                  </label>
+                                             <label class="GenderRadioButton" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Non-Binary
+                                                    <span class="checkmark"></span>
+                                                  </label>
+                                            
+                                        </div>
+                                       
+
+                                     
+                                    </form>
+                                </div>
+                                
+                                
+                            </div>                           
+                           
+
+                        </div>
+                        
 
                         <div class="SideMenu">
                             <div class="arrow-up ">     
@@ -122,11 +242,14 @@
           </div>                  
                             
     </div>
+ 
+
+
      <div class="Social-media">
          <ul class="social-icon ml-lg-3 SocialList">
-                <li><a href="#" class="fa fa-facebook-f" ></a></li>
-                <li><a href="#" class="fa fa-twitter"></a></li>
-                <li><a href="#" class="fa fa-instagram"></a></li>
+                <li><a href="https://www.facebook.com/kasivoreSA/" class="fa fa-facebook-f" ></a></li>
+                <li><a href="https://twitter.com/kasivore" class="fa fa-twitter"></a></li>
+                <li><a href="https://www.instagram.com/kasivore_sa" class="fa fa-instagram"></a></li>
          </ul>
     </div>
           
