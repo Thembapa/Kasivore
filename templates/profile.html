@@ -5,26 +5,25 @@
               <div class="MobileControl">
                  <div class="MobileRadioControl">
                             <div  class="SectionLabel">
-                              <label id="Accountlabel"  >Account Details</label>
+                              <label id="Accountlabel"  >Business</label>
                             </div>
                             <div class="RadioTop">
                                <label class="TopButton" for="radio2">
                                      
-                                      <input type="radio" onclick="ProfileSlides('Address')" class="form-check-input" id="radio2" name="radio" value="option2">
+                                    <input type="radio" onclick="ProfileSlides('Businessform')" class="form-check-input" id="radioBusinessform1" name="TopMenuradio" value="Businessform">
                                       
                                    </label>
                                    <label class="TopButton" for="radio2">
-                                      <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                      <input type="radio"  onclick="ProfileSlides('Addressform')" class="form-check-input" id="radioAddressform1" name="TopMenuradio" value="Addressform">
                                    
                                    </label>
                                    <label class="TopButton" for="radio2">
-                                      <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                      <input type="radio"  onclick="ProfileSlides('Bioform')" class="form-check-input" id="radioBioform1" name="TopMenuradio" value="Bioform">
                                       
                                    </label>
 
                                    <label class="TopButton" for="radio2">
-                                      <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
-                                   
+                                      <input type="radio" onclick="ProfileSlides('AccountForm')" class="form-check-input" id="radioAccountForm1" name="TopMenuradio" value="AccountForm">                                   
                                    </label> 
 
                                    
@@ -36,7 +35,7 @@
                                         
                   </div>
                   <div class ="Mobilepp">
-                    <div class="c100 p12 small dark">
+                    <div class="c100 {{session['ProfileProgress']}} small dark">
                         <span><img id="Accountpp" src="{{session['profilepicture']}}" alt="Avatar" class="ProfilePicture"></span>
                         <div class="slice">
                             <div class="bar"></div>
@@ -53,11 +52,87 @@
                 <div >
                     <div class="d-flex justify-content-center h-100">
 
-                        <div class="Maincard" id="UserData">
+                       
+                        <div class="Maincard">
                             
                             <div class="Maincard-body">
-                                <div>
-                                    <form id="SiginForm" name="SiginForm" action="/login" method="POST" >
+
+
+                              <!-- Account Details-->
+                                    <form id="AccountForm" name="Address" action="/Profile" method="POST" style="display: none;"  >
+                                      <div class="CurrentProfilepic"> 
+                                           <span><img id="Newpp" src="{{session['profilepicture']}}" alt="Avatar" class="NewProfilePicture"></span>
+                                      </div>
+                                        <div class="pictureUpload">
+                                         
+                                          <div class="input-group custopmUploadGroup">
+                                              <div class="input-group-prepend preUpload">
+                                                <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-upload"></i></span>
+                                              </div>
+                                              <div class="custom-file">
+                                                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                  aria-describedby="inputGroupFileAddon01">
+                                                <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                              </div>
+                                            </div>
+                                            <div class="UserRating">
+                                              <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star checked"></span>
+                                                  <span class="fa fa-star star"></span>
+                                                  <span class="fa fa-star star"></span>
+                                            </div>
+                                            <div class="UserNamediv">
+                                              <label class="MainCardLabel">KAS0073</label>
+                                            </div>
+
+
+                                        </div>
+                                        <div class="ServiceProviderGroup">
+                                            <label class="MainCardLabel">Service provider</label>
+                                             <label class="ServiceRadioButton" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radioService" value="1">&nbsp;&nbsp;Yes
+                                                    <span class="checkmark"></span>
+                                                  </label>
+                                                <label class="ServiceRadioButton" for="radio2">
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radioService" value="0">&nbsp;&nbsp;NO
+                                                    <span class="checkmark"></span>
+                                                  </label>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Email</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser">
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Old Password</label>
+                                            <input type="Password" class="form-control MaicardInputBox"  id="txtUser" name="txtUser">
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">New Password</label>
+                                            <input type="Password" class="form-control MaicardInputBox"  id="txtUser" name="txtUser">
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">New Password</label>
+                                            <input type="Password" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" >
+                                            
+                                        </div>                                         
+                                    
+                                     <div class="AccountFormButtons">
+                                             <div class="form-group Profile_btn-left"    >
+                                                <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
+                                              </div>  
+                                              <div class="form-group Profile_btn"    >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('Bioform')" name="ub_Next" class="btn float-right login_btn"   >
+                                            </div>                  
+                                                                
+                                        </div>
+                                    </form>
+                                  <!--Bio form-->
+                                  <form id="Bioform" name="UserData" action="/Profile" method="POST" style="display: none;" >
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Name</label>
                                             <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
@@ -73,11 +148,7 @@
                                             <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
                                             
                                         </div>
-                                        <div class="MainCardGroup">
-                                            <label class="MainCardLabel">Home Address</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
-                                            
-                                        </div>
+                                      
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Nationality</label>
                                             <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
@@ -99,8 +170,9 @@
                                             <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
                                             
                                         </div>
-                                         <div class="MainCardGroup" style="margin-top: 20px;">
-                                            <label class="GenderLabel">Gender</label>
+                                         <div class="MainCardGroup GenderMargin">
+                                              <label class="GenderLabel">Gender</label>
+
                                               <label class="GenderRadioButton" for="radio2">
                                                     <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Male
                                                     <span class="checkmark"></span>
@@ -117,88 +189,296 @@
                                         </div>
                                        
 
+                                     <div class="BioformButtons">
+                                       <div class="form-group Profile_btn-left"    >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('AccountForm')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            </div> 
+                                             <div class="form-group Profile_btn-left"    >
+                                                <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
+                                              </div>
+                                              <div class="form-group Profile_btn"    >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('Addressform')" name="ub_Next" class="btn float-right login_btn"   >
+                                            </div>   
+                                                              
+                                                                
+                                        </div>
+                                    </form>
+
+                                     <!--Address form-->
+                                  <form id="Addressform" name="UserData" action="/Profile" method="POST" style="display: none;" >
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Street No.</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Township/Suburb</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">City/Town</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                      
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Province/State</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Country</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Postal code</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+
+                                     <div class="AddressformButtons">
+                                       <div class="form-group Profile_btn-left"    >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Bioform')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            </div> 
+                                             <div class="form-group Profile_btn-left"    >
+                                                <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
+                                              </div>
+                                              <div class="form-group Profile_btn"    >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('Businessform')" name="ub_Next" class="btn float-right login_btn"   >
+                                            </div>   
+                                                              
+                                                                
+                                        </div>
+                                    </form>
+
+                                    <!--Business details-->
+                                  <form id="Businessform" name="UserData" action="/Profile" method="POST"  style="display: none;" >
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Company Name</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Registration No.</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Full Company Name</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Tag Line</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                      
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel Companydesc" >Description</label>
+                                            <textarea class="form-control MaicardTextArea" rows="5" id="txtcomment" name="txtcomment" name="text"></textarea>
+                                            
+                                        </div>
+                                        
+                                       <div class="BusinessformButtons">
+                                       <div class="form-group Profile_btn-left"    >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Addressform')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            </div> 
+                                             <div class="form-group Profile_btn-left"    >
+                                                <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
+                                              </div>
+                                              <div class="form-group Profile_btn"    >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('BusinessAddressform')" name="ub_Next" class="btn float-right login_btn"   >
+                                            </div>   
+                                                              
+                                                                
+                                        </div>
+
                                      
                                     </form>
-                                </div>
-                                
-                                
-                            </div>                           
-                           
+                                    <!--Business Address-->
+                                  <form id="BusinessAddressform" name="UserData" action="/Profile" method="POST" style="display: none;"  >
+                                        <div class="MainCardGroup">
+                                            <label class="BusinessAddressHeader">Business Address</label>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Street No.</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Township/Suburb</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">City/Town</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                      
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Province/State</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Country</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
+                                        <div class="MainCardGroup">
+                                            <label class="MainCardLabel">Postal code</label>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            
+                                        </div>
 
-                        </div>
-                        <div class="Maincard" id="Address" style="display: none;">
-                            
-                            <div class="Maincard-body">
-                                <div>
-                                    <form id="SiginForm" name="SiginForm" action="/login" method="POST" >
+                                      <div class="BusinessAddressformButtons">
+                                       <div class="form-group Profile_btn-left"    >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Businessform')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            </div> 
+                                             <div class="form-group Profile_btn-left"    >
+                                                <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
+                                              </div>
+                                              <div class="form-group Profile_btn"    >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('showcaseForm')" name="ub_Next" class="btn float-right login_btn"   >
+                                            </div>   
+                                                              
+                                                                
+                                        </div>
+                                    </form>
+
+                                    <!--Work Done-->
+                                  <form id="showcaseForm" name="UserData" action="/Profile" method="POST" style="display: none;" >
+
                                         <div class="MainCardGroup">
-                                            <label class="MainCardLabel">ttt</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <label class="BusinessAddressHeader">Photos Of Work Done</label>
                                             
                                         </div>
-                                        <div class="MainCardGroup">
-                                            <label class="MainCardLabel">Surname</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                        <div class="footNote">
+                                           <label class="FootNoteLable">Please upload three photos to showcase the work done by your company.<br>Photos can not be larger than 2MB.
+
+                                           </label>
+                                        </div>
+                                        <div class="WorkPhotoGroup">
+                                           <div class="WorkDonePictures"> 
+                                                 <span><img id="Newpp" src="../images/ServiceProviders/plumb1.jpg" alt="Avatar" class="NewWorkPic"></span>
+                                            </div>
+                                            <div class="input-group UploadWorkDone">
+                                                    <div class="input-group-prepend preUpload">
+                                                      <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-upload"></i></span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                        aria-describedby="inputGroupFileAddon01">
+                                                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                    </div>
+                                              </div>
+                                              <div class="thumbnail">
+                                                  <label class="ThumbnailRadioButton" for="radio2">
+                                                      Thumbnail<input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                                      <span class="checkmark"></span>
+                                                   </label>
+                                              </div>
+
                                             
                                         </div>
-                                        <div class="MainCardGroup">
-                                            <label class="MainCardLabel">Tel Number</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                        <div class="WorkPhotoGroup">
+                                           <div class="WorkDonePictures"> 
+                                                 <span><img id="Newpp" src="../images/ServiceProviders/plumb2.jpg" alt="Avatar" class="NewWorkPic"></span>
+                                            </div>
+                                            <div class="input-group UploadWorkDone">
+                                                    <div class="input-group-prepend preUpload">
+                                                      <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-upload"></i></span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                        aria-describedby="inputGroupFileAddon01">
+                                                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                    </div>
+                                              </div>
+                                              <div class="thumbnail">
+                                                  <label class="ThumbnailRadioButton" for="radio2">
+                                                      Thumbnail<input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                                      <span class="checkmark"></span>
+                                                   </label>
+                                              </div>
+
                                             
                                         </div>
-                                        <div class="MainCardGroup">
-                                            <label class="MainCardLabel">Home Address</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                        <div class="WorkPhotoGroup">
+                                           <div class="WorkDonePictures"> 
+                                                 <span><img id="Newpp" src="../images/ServiceProviders/Icon_Image.png" alt="Avatar" class="NewWorkPic"></span>
+                                            </div>
+                                            <div class="input-group UploadWorkDone">
+                                                    <div class="input-group-prepend preUpload">
+                                                      <span class="input-group-text" id="inputGroupFileAddon01"><i class="fa fa-upload"></i></span>
+                                                    </div>
+                                                    <div class="custom-file">
+                                                      <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                        aria-describedby="inputGroupFileAddon01">
+                                                      <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                    </div>
+                                              </div>
+                                              <div class="thumbnail">
+                                                  <label class="ThumbnailRadioButton" for="radio2">
+                                                      Thumbnail<input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                                      <span class="checkmark"></span>
+                                                   </label>
+                                              </div>
+
                                             
                                         </div>
-                                        <div class="MainCardGroup">
-                                            <label class="MainCardLabel">Nationality</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
-                                            
+                                       
+                                        <div class="showcaseFormButtons">
+                                       <div class="form-group Profile_btn-left"    >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('BusinessAddressform')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            </div> 
+                                             <div class="form-group Profile_btn-left"    >
+                                                <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
+                                              </div>
+                                              <div class="form-group Profile_btn"    >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('WelcomeForm')" name="ub_Next" class="btn float-right login_btn"   >
+                                            </div>   
+                                                              
+                                                                
                                         </div>
+
+                                        
+                                     
+                                    </form>
+                                
+                                    <!--Welcome Note-->
+                                  <form id="WelcomeForm" name="UserData" action="/Profile" method="POST" style="display: none" >
                                         <div class="MainCardGroup">
-                                            <label class="MainCardLabel">SA ID No.</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
-                                            
-                                        </div>
-                                        <div class="MainCardGroup">
-                                            <label class="MainCardLabel">Passport No.</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <label class="BusinessAddressHeader">Congradulations! <br> Profile setup completed.</label>
                                             
                                         </div>
                                         
                                         <div class="MainCardGroup">
-                                            <label class="MainCardLabel">Date of birth</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <label class="WelcomeNote">If you did not complete all the fields, you can easily complete them under the <br> profile menu item found under your profile picture.</label>
                                             
                                         </div>
-                                         <div class="MainCardGroup" style="margin-top: 20px;">
-                                            <label class="GenderLabel">Gender</label>
-                                              <label class="GenderRadioButton" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Male
-                                                    <span class="checkmark"></span>
-                                                  </label>
-                                                <label class="GenderRadioButton" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Female
-                                                    <span class="checkmark"></span>
-                                                  </label>
-                                             <label class="GenderRadioButton" for="radio2">
-                                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">&nbsp;Non-Binary
-                                                    <span class="checkmark"></span>
-                                                  </label>
-                                            
+                                      <div class="WelcomeFormButtons">
+                                       <div class="form-group Profile_btn-left"    >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('showcaseForm')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            </div> 
+                                              <div class="form-group Profile_btn"    >
+                                                <input type="button" value="Done" id="ub_Done" onclick="IndexPage()" name="ub_Done" class="btn float-right login_btn"   >
+                                            </div>   
+                                                              
+                                                                
                                         </div>
-                                       
-
-                                     
                                     </form>
-                                </div>
-                                
-                                
+                                  <input type="hidden" name="hfCurrentForm" id="hfCurrentForm" value="{{CurrentProfileForm}}" form="Form2" />
                             </div>                           
                            
 
                         </div>
+
                         
 
                         <div class="SideMenu">
@@ -206,42 +486,38 @@
                                                 
                             </div>
                             <label class="SideRadioButton" for="radio2">
-                                    Account details<br><br>
-                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                    Account<br><br>
+                                    <input type="radio" onclick="ProfileSlides('AccountForm')" class="form-check-input" id="radioAccountForm2" 
+                                    name="SideMenuradio"  value="AccountForm">
                                     
                                  </label>
                                  <label class="SideRadioButton" for="radio2">
-                                    Profile picture <br><br>
-                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                    Biography<br><br>
+                                    <input type="radio" onclick="ProfileSlides('Bioform')" class="form-check-input" id="radioBioform2" name="SideMenuradio" value="Bioform">
                                     
                                  </label>
                                  <label class="SideRadioButton" for="radio2">
-                                    Service Provider <br><br>
-                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                    Address <br><br>
+                                    <input type="radio" onclick="ProfileSlides('Addressform')" class="form-check-input" id="radioAddressform2" 
+                                    name="SideMenuradio" value="Addressform">
                                     
                                  </label>
                                  <label class="SideRadioButton" for="radio2">
-                                    Complete <br><br>
-                                    <input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
+                                    Business <br><br>
+                                    <input type="radio" onclick="ProfileSlides('Businessform')" class="form-check-input" id="radioBusinessform2" 
+                                    name="SideMenuradio" value="Businessform">
                                  
                                  </label>
                             
                         </div>
+
 
                          
                     </div>
                 </div>
                 
         </div>
-    <div class="ProfileButtons">
-         <div class="form-group Profile_btn-left"    >
-            <input type="submit" value="Back" id="ub_Resetpass" name="ub_Resetpass" class="btn float-right login_btn"  >
-          </div>  
-          <div class="form-group Profile_btn"    >
-            <input type="submit" value="Save" id="ub_Resetpass" name="ub_Resetpass" class="btn float-right login_btn"  >
-          </div>                  
-                            
-    </div>
+    
  
 
 

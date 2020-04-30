@@ -877,3 +877,14 @@
 .c100.orange.dark:hover > span {
   color: #e08833;
 }
+
+
+ /*---------------------------------------
+     RESPONSIVE STYLES              
+  -----------------------------------------*/
+  @media screen and (max-width: 480px) {
+
+    .c100.small {
+        font-size: 45px;
+      }
+  }

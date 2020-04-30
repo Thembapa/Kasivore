@@ -40,6 +40,7 @@ function ValidateUser() {
 		
 		
 	}
+
 	function Signup_Click() {
 	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
 
@@ -67,15 +68,34 @@ function ValidateUser() {
 	}
 	function ProfileSlides(CurrentSection)
 	{
-		document.getElementById(CurrentSection).style.display = "block"; 
-		document.getElementById('UserData' ).style.display = "none";
-	}
+		document.getElementById('AccountForm' ).style.display = "none";
+		document.getElementById('Bioform' ).style.display = "none";
+		document.getElementById('Addressform' ).style.display = "none";
+		document.getElementById('Businessform' ).style.display = "none";
+		document.getElementById('BusinessAddressform' ).style.display = "none";
+		document.getElementById('showcaseForm' ).style.display = "none";
+		document.getElementById('WelcomeForm' ).style.display = "none";
+		document.getElementById(CurrentSection).style.display = "block";
 
+		var radioButtons1 = 'radio' +CurrentSection + '1';
+		var radioButtons2 = 'radio' +CurrentSection + '2';
+		
+		document.getElementById(radioButtons1 ).checked = true;
+		document.getElementById(radioButtons2 ).checked = true;
+	}
+	function IndexPage()
+	{
+		window.location.replace("/index");
+	}
 	function PageLoad() {
 	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
 	   //alert(document.getElementById('hf_IsSignup' ).value);
 	  
-
+	  
+	  if( document.getElementById('hfCurrentForm') != null) // Profile Control
+	  {
+	  	 ProfileSlides(document.getElementById('hfCurrentForm').value);
+	  }
 
 	  if(document.getElementById('hf_IsSignup' ) != null)
 	  {

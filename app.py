@@ -251,18 +251,23 @@ def Pay():
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
-@app.route('/Profile')
+@app.route('/Profile', methods=['GET', 'POST'])
 def Profile():
     profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
+    CurrentProfileForm = ''
     if IsSignedIn():
         profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
-    return render_template('profile.html', ErrorMsq=ErrorMsq, GID=GID,  menubuttons=menubuttons, userMenuList=userMenuList, loginUrl=loginUrl)
+        session["CurrentProfileForm"] = 'AccountForm'
+        CurrentProfileForm = 'AccountForm'
+    else:
+        return redirect("/login")
+    return render_template('profile.html',CurrentProfileForm= CurrentProfileForm, ErrorMsq=ErrorMsq, GID=GID,  menubuttons=menubuttons, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/newpassword/<token>', methods=['GET', 'POST'])
@@ -409,6 +414,8 @@ def Login(resetpassword=None, email=None, username=None):
     if IsSignedIn():
         session.pop('CurrentUser')
         session['profilepicture'] = 'images/Profilepictures/login.png'
+        if 'ProfileProgress' in session:
+            session.pop('ProfileProgress')
 
     if email is not None and username is not None:
         print('Google signIn')
@@ -473,6 +480,7 @@ def index():
         session['profilepicture'] = '/images/Profilepictures/Online.png'
         userMenuList = {'Sigout': 'javascript: sinOut();', 'Profile': '/Profile'}
         loginUrl = '#'
+        session['ProfileProgress'] = 'p25'
 
         # test = 'themba'
     # password = sha256_crypt.encrypt(test)

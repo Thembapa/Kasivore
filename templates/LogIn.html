@@ -19,13 +19,12 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<div>
 					<form id="SiginForm" name="SiginForm" action="/login" method="POST" >
 						<div class="input-group form-group">
 							<div class="input-group-prepend">
 								<span class="input-group-text curveIcons"><i class="fa fa-user"></i></span>
 							</div>
-							<input type="text" class="form-control" style="border-radius: 5rem;margin-left:-15px;z-index: 0; " placeholder="&nbsp;&nbsp;username" id="txtUser" name="txtUser" required>
+							<input type="text" class="form-control LogInInput" placeholder="username" id="txtUser" name="txtUser" required>
 							
 						</div>
 						
@@ -33,7 +32,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text curveIcons"><i class="fa fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control" style="border-radius: 5rem;margin-left:-15px;z-index: 0; "  placeholder="&nbsp;&nbsp;password" id="txt_pass" name="txt_pass" required>
+							<input type="password" class="form-control LogInInput"  placeholder="password" id="txt_pass" name="txt_pass" required>
 						</div>
 						<div class="row align-items-center remember">
 							<input type="checkbox">Remember Me
@@ -46,49 +45,43 @@
 						<input type="hidden" name="hf_GoogleprofilePic" id="hf_GoogleprofilePic">
 
 					</form>
-				</div>
-				<div>
-					
 					<form id="SigupForm" name="SigupForm"  action="/Signup" style="display: none;" method="POST" >
 					
 						<div class="input-group form-group" >
 							<div class="input-group-prepend">
 								<span class="input-group-text curveIcons"><i class="fa fa-user" ></i></span>
 							</div>
-							<input type="text" class="form-control" style="border-radius: 5rem;margin-left:-15px;z-index: 0; " placeholder="&nbsp;&nbsp;username" id="txtUser1" name="txtUser1" onblur="ValidateUser()"  required>
+							<input type="text" class="form-control LogInInput" placeholder="username" id="txtUser1" name="txtUser1" onblur="ValidateUser()"  required>
 							
 						</div>
 						<div class="input-group form-group" >
 							<div class="input-group-prepend">
 								<span class="input-group-text curveIcons"><i class="fa fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control" style="border-radius: 5rem;margin-left:-15px;z-index: 0; "  placeholder="&nbsp;&nbsp;password" id="txt_pass1" name="txt_pass1" onkeyup="passwordValidation()" required>
+							<input type="password" class="form-control LogInInput"  placeholder="password" id="txt_pass1" name="txt_pass1" onkeyup="passwordValidation()" required>
 
 						</div>
-						<div class="progress" style="margin-bottom: 10px">
+						<div class="progress progressKasi" >
 						  <div id="passwordStregnth" class="progress-bar" role="progressbar"  aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
 						</div>
 						<div class="input-group form-group" >
 							<div class="input-group-prepend">
 								<span class="input-group-text curveIcons"><i class="fa fa-key" ></i></span>
 							</div>
-							<input type="password" class="form-control" style="border-radius: 5rem;margin-left:-15px;z-index: 0; " id="txt_pass2" placeholder="&nbsp;&nbsp;confirm password"  name="txt_pass2" onkeyup="passwordMissMatch()"  required>
+							<input type="password" class="form-control LogInInput" id="txt_pass2" placeholder="confirm password"  name="txt_pass2" onkeyup="passwordMissMatch()"  required>
 						</div>
 						<div class="form-group"  >
 							<input type="submit" value="Signup" id="ub_Create" name="ub_Create" class="btn float-right login_btn">
 						</div>
 						<input type="hidden" name="hf_Error" id="hf_Error">
 					</form>
-				</div>
-				<div>
-					
 					<form id="frmResetPass" name="frmResetPass"  action="/login/reset" style="display: none;" method="POST" >
 					
 						<div class="input-group form-group" >
 							<div class="input-group-prepend">
 								<span class="input-group-text curveIcons"><i class="fa fa-user" ></i></span>
 							</div>
-							<input type="text" class="form-control" style="border-radius: 5rem;margin-left:-15px;z-index: 0; " placeholder="&nbsp;&nbsp;username/email" id="txtEmailReset" name="txtEmailReset" onblur="ValidateUser()"  required>
+							<input type="text" class="form-control LogInInput" placeholder="username/email" id="txtEmailReset" name="txtEmailReset" onblur="ValidateUser()"  required>
 							
 						</div>
 						
@@ -96,22 +89,27 @@
 							<input type="submit" value="RESET PASSWORD" id="ub_Resetpass" name="ub_Resetpass" class="btn float-right login_btn" style="width: 100%">
 						</div>
 					</form>
-				</div>
+				
+				
 				
 			</div>
 			
-			<div class="card-footer" style="margin-bottom: 50px;" id="footer">
-				<div class="d-flex justify-content-center links" id="ub_Signup">
+			<div class="card-footer" style="margin-bottom: 50px;" >
+				<div id="footer">
+					<div class="d-flex justify-content-center links" id="ub_Signup">
 					Don't have an account?<a href="javascript:Signup_Click()" >Sign Up</a>
-				</div>
+					</div>
 
-				<div class="d-flex justify-content-center">
-					<a href="javascript:ResetPass()" id="lbForget">Forgot your password?</a>
+					<div class="d-flex justify-content-center">
+						<a href="javascript:ResetPass()" id="lbForget">Forgot your password?</a>
+					</div>
+				</div>
+				
+				<div class="card-footer" id="Error">
+					<label id="lbErrorMsg" name="lbErrorMsg" style="color:red;font-weight: bolder;" >{{ErrorMsq}}</label>				
 				</div>
 			</div>
-			<div class="card-footer" id="Error">
-				<label id="lbErrorMsg" name="lbErrorMsg" style="color:red;font-weight: bolder;" >{{ErrorMsq}}</label>				
-			</div>
+			
 
 		</div>
 	</div>

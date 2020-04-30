@@ -29,7 +29,7 @@ Tooplate 2119 Gymso Fitness
 https://www.tooplate.com/view/2119-gymso-fitness
 -->
 </head>
-<body data-spy="scroll" data-target="#navbarNav" data-offset="50">
+<body onload="PageLoad()" data-spy="scroll" data-target="#navbarNav" data-offset="50">
     <div class="g-signin2"  data-onsuccess="onSignIn" style="display: none"></div>
     <!-- MENU BAR -->
     <nav class="navbar navbar-expand-lg fixed-top">
@@ -56,7 +56,16 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
                             <div class="dropdown">
 
-                              <button class="dropbtn" style="background-color: transparent;border: none; margin-top: 15px"><a  href="{{loginUrl}}"><img id="profilepicture" src="{{session['profilepicture']}}"  class="ProfilePicture"></a></button>
+                              <button class="dropbtn" style="background-color: transparent;border: none; margin-top: 15px"><a  href="{{loginUrl}}">
+                                  <div class="c100 {{session['ProfileProgress']}} small dark">
+                                        <span><img id="Accountpp" src="{{session['profilepicture']}}" alt="Avatar" class="ProfilePicture"></span>
+                                        <div class="slice">
+                                            <div class="bar"></div>
+                                            <div class="fill"></div>
+
+                                        </div>
+                                    </div>
+                              </a></button>
                               <div class="dropdown-content">
                                 
                                 {% for usermenu in userMenuList%}
