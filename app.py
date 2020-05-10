@@ -9,26 +9,36 @@ import KasivoreData
 import kasivoreCommon
 import secrets
 import string
+from werkzeug.utils import secure_filename
 
-from configfile import TWILIOKEY, TWILIOTOCKEN, TWILIOWHATSAPP, MYWHATSAPP, MYWHATSSMS, TWILIOSMS, GOOGLEID, EMAIL_INFO
+from configfile import TWILIOKEY, TWILIOTOCKEN, TWILIOWHATSAPP, MYWHATSAPP, MYWHATSSMS, TWILIOSMS, GOOGLEID, EMAIL_INFO, MAPS
 
 app = Flask(__name__, static_url_path='')
 app.secret_key = "kasivoretest"
 UPLOAD_FOLDER = 'static/images/'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+USER_FOLDERS = 'static/useraccounts/'
+app.config['USER_FOLDERS'] = USER_FOLDERS
 
 ## Global variebles
 # GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"  # Live
 GID = GOOGLEID  # test
+MAPS_API = 'https://maps.googleapis.com/maps/api/js?key='+ MAPS +'&callback=initAutocomplete'
 menubuttons = {'Home': '/', 'About': '/About', 'Legal': '/Legal', 'Pay': '/Pay', 'Service': '/service',
                'Contact': '/Contact', 'Help': 'Help'}
 
-
+print ('Maps: ' + MAPS_API)
 ##App functions
 def IsSignedIn():
     if 'CurrentUser' in session:
+        for user in session['CurrentUser']:
+            if user[8] != '' and user[8] is not None:
+                session['profilepicture'] = '/useraccounts/' + user[8]
+            else:
+                session['profilepicture'] = '/images/Profilepictures/login.png'
         return True
     else:
+        session['profilepicture'] = '/images/Profilepictures/login.png'
         return False
 
 
@@ -78,63 +88,55 @@ def getallusernames(username=None):
 
 @app.route('/activate/<username>')
 def activate(username=None):
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
     if username is not None:
         Accountstatus = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_ActivateAccount', {'_userName': username})
         print(Accountstatus)
 
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp, MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 ##HTML pages redirect
 @app.route('/Help')
 def Help():
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
-    return render_template('Help.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('Help.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/About')
 def About():
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
-    return render_template('About.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('About.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Contact', methods=['GET', 'POST'])
 def Contact():
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
 
@@ -171,7 +173,7 @@ def Contact():
                                from_=from_whatsapp_number,
                                to=to_whatsapp_Themba)
 
-    return render_template('Contact.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('Contact.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
@@ -204,75 +206,172 @@ def WBot():
 
 @app.route('/Welcome/<username>/<email>')
 def Welcome(username=None, email=None):
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
 
     if username is not None and email is not None:
         send_WelcomeEmail(username, email)
 
-    return render_template('Welcome.html', username=username, email=email, ErrorMsq=ErrorMsq, GID=GID,
+    return render_template('Welcome.html', username=username, email=email, ErrorMsq=ErrorMsq, GID=GID,MAPS = MAPS_API,
                            menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Legal')
 def Legal():
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
-    return render_template('Legal.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('Legal.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Pay')
 def Pay():
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
-    return render_template('Pay.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('Pay.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
+@app.route('/Profile/<formname>', methods=['GET', 'POST'])
 @app.route('/Profile', methods=['GET', 'POST'])
-def Profile():
-    profilepicture = 'images/Profilepictures/login.png'
+def Profile(formname=None):
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     CurrentProfileForm = ''
+    username = ''
+    passowrd = ''
+    userid = 0
     if IsSignedIn():
-        profilepicture = 'images/Profilepictures/Online.png'
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
         session["CurrentProfileForm"] = 'AccountForm'
         CurrentProfileForm = 'AccountForm'
+        CurrentUser = session['CurrentUser']
+
+        for user in CurrentUser:
+            username = user[1]
+            passowrd = user[2]
+            userid = user[0]
+        if request.method == 'POST':
+
+            CurrentProfileForm= formname
+            if formname == "AccountForm":
+                if request.form['hf_ppUpload'] == "1":
+                    # Change profile picture
+                    upload = request.files['ppUpload']
+                    filename = secure_filename(upload.filename)
+
+                    filename = username + '/profilepicture/' + filename
+                    folder = username + '/profilepicture'
+                    #Check if file directory exists, create new folder if not exists
+                    if (os.path.isdir(os.path.join(app.config['USER_FOLDERS'], folder))) == False:
+                        os.makedirs(os.path.join(app.config['USER_FOLDERS'], folder))
+
+                    upload.save(os.path.join(app.config['USER_FOLDERS'], filename))
+                    print('images/' + filename)
+                    session['profilepicture'] = '/useraccounts' + '/'+ filename
+
+                    ##Update Database
+                    parameters = {'_profilepicture': filename, '_userid': userid}
+                    CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
+
+                elif request.form["txt_pass2"] != '':
+                    # change Password
+                    print('passowrd 2' +request.form["txt_pass2"])
+                    if request.form["hf_Error"] != '':
+                        ErrorMsq = request.form["hf_Error"]
+                    else:
+                        print('Validate password')
+                        try:
+                            if sha256_crypt.verify(request.form["txtOldPassword"], passowrd):
+                                parameters = {'_resettoken': passowrd,
+                                              '_userpassword': sha256_crypt.encrypt(request.form["txt_pass1"])}
+                                isCreated = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_changepassword',
+                                                                                    parameters)
+                                print(isCreated)
+                                return redirect('/login')
+                            else:
+                                ErrorMsq = 'No match found!'
+
+                        except Exception as e:
+                            print(e)
+                            ErrorMsq = 'No match found!'
+                else:
+                    # change user type
+                    print('Radio: ' + request.form["radioService"])
+                    parameters = {'_usertypeid': request.form["radioService"], '_userid': userid}
+                    CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
+            elif formname == "Bioform":
+                ##Update personal details 
+                print('idno: ' + request.form["txtIDNO"])
+                parameters = {'_userid': userid, '_firstname': request.form["txtName"] , '_lastname': request.form["txtSurname"], '_Tell': request.form["txtTell"], '_nationality': request.form["country"], '_idnumber': request.form["txtIDNO"], '_passportnumber': request.form["txtPassport"], '_dateofbirth': request.form["txtbirthday"], '_gender': request.form["Gender"]}
+                # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
+                CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
+            elif formname == "Businessform":
+                ##Update personal details 
+                print('_companyname: ' + request.form["txtCompanyName"])
+                parameters = {'_addedby': userid, '_ServiceID': request.form["hf_ServiceID"] , '_companyname': request.form["txtCompanyName"] , '_registrationnumber': request.form["txtReg"], '_typeofservice': request.form["hf_Category"], '_isactive': '1', '_tagline': request.form["txttag"], '_description': request.form["txtcomment"]}
+                # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
+                CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
+            elif formname == "showcaseForm":
+                if request.form['hf_imageID'] != "":
+                    parameters = { '_addedby': userid, '_isthumbnail': '1', '_ImageID': request.form['hf_imageID']}
+                    isSaved = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
+                elif request.form['hf_ImageUpload'] == "1":
+                    # Change profile picture                   
+                    upload = request.files['WorkDoneImage']
+                    
+                    filename = secure_filename(upload.filename)
+
+                    filename = username + '/Showcase/' + filename
+                    folder = username + '/Showcase'
+                    #Check if file directory exists, create new folder if not exists
+                    if (os.path.isdir(os.path.join(app.config['USER_FOLDERS'], folder))) == False:
+                        os.makedirs(os.path.join(app.config['USER_FOLDERS'], folder))
+
+                    upload.save(os.path.join(app.config['USER_FOLDERS'], filename))
+                    print('images/' + filename)
+
+                    ##Update Database
+                    parameters = { '_addedby': userid, '_imageurl': filename, '_imagename': filename}
+                    isSaved = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
     else:
         return redirect("/login")
-    return render_template('profile.html',CurrentProfileForm= CurrentProfileForm, ErrorMsq=ErrorMsq, GID=GID,  menubuttons=menubuttons, userMenuList=userMenuList, loginUrl=loginUrl)
+
+    ##Get Fresh Data
+    Categories = KasivoreData.pgsql_call_Tablefunction('app', 'fn_gettypesofservices')
+   
+    parameters = {'_userName': username}
+    CurrentUser = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_getUser', parameters)
+    session['CurrentUser'] = CurrentUser
+
+    S_parameters = {'_userid': userid}
+    serviceprovider = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_serviceprovider',S_parameters)
+    SampleImages = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_SampleImages',S_parameters)
+    print( serviceprovider)
+    return render_template('profile.html', CurrentProfileForm=CurrentProfileForm, ErrorMsq=ErrorMsq, GID=GID, MAPS= MAPS_API,Categories = Categories,serviceprovider = serviceprovider,SampleImages = SampleImages,
+                           menubuttons=menubuttons, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/newpassword/<token>', methods=['GET', 'POST'])
 def newpassword(token=None):
-    profilepicture = '/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
@@ -296,13 +395,13 @@ def newpassword(token=None):
         print(isCreated)
         return redirect('/login')
 
-    return render_template('NewPassword.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('NewPassword.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Signup', methods=['GET', 'POST'])
 def Signup():
-    profilepicture = 'images/Profilepictures/login.png'
+
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
@@ -336,7 +435,7 @@ def Signup():
         print('Userid: ' + str(user_id))
         if user_id != '0':
             return redirect(Welcomepage)
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
@@ -355,16 +454,57 @@ def google_sign_up(email, username, temp_password):
 
 @app.route('/service')
 def service():
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
         session.pop('CurrentUser')
-        session['profilepicture'] = '/images/Profilepictures/login.png'
-    return render_template('/service.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('/service.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
+
+
+@app.route('/JsonTest', methods=['GET', 'POST'])
+def JsonTest(post=None):
+    if request.is_json:
+        req = request.get_json()
+
+        JsoanArray = {}
+        JsoanArray = {'ServerData': [
+            req
+        ]
+
+        }
+        print(JsoanArray)
+
+        return JsoanArray
+    else:
+        print("No Json")
+
+    return {'Employees': [
+        {
+            'firstname': 'Mandy',
+            'lastname': 'Sibisi',
+            'age': 65
+        },
+        {
+            'firstname': 'Nhlanhla',
+            'lastname': 'Dlamini',
+            'age': 45
+        }
+        ,
+        {
+            'firstname': 'Themba',
+            'lastname': 'Pakula',
+            'age': 75
+        }
+        ,
+        {
+            'firstname': 'Lebo',
+            'lastname': 'Zulu',
+            'age': 17
+        }
+    ]}
 
 
 def googleSignIn(email, username):
@@ -405,15 +545,14 @@ def googleSignIn(email, username):
 @app.route('/login/<resetpassword>', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
 def Login(resetpassword=None, email=None, username=None):
-    profilepicture = 'images/Profilepictures/login.png'
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
 
     if IsSignedIn():
+        session['profilepicture'] = '/images/Profilepictures/login.png'
         session.pop('CurrentUser')
-        session['profilepicture'] = 'images/Profilepictures/login.png'
         if 'ProfileProgress' in session:
             session.pop('ProfileProgress')
 
@@ -464,7 +603,7 @@ def Login(resetpassword=None, email=None, username=None):
                     print(e)
                     ErrorMsq = 'No match found!'
 
-    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
@@ -475,9 +614,7 @@ def index():
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
-    session['profilepicture'] = '/images/Profilepictures/login.png'
     if IsSignedIn():
-        session['profilepicture'] = '/images/Profilepictures/Online.png'
         userMenuList = {'Sigout': 'javascript: sinOut();', 'Profile': '/Profile'}
         loginUrl = '#'
         session['ProfileProgress'] = 'p25'
@@ -486,11 +623,11 @@ def index():
     # password = sha256_crypt.encrypt(test)
     # print(sha256_crypt.verify(test, password))
     # print(password)
-    return render_template('index.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,
+    return render_template('index.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 if __name__ == "__main__":
     # from waitress import serve
     # serve(app, host="192.168.178.1", port=8080)
-    app.run(port=8080)
+    app.run( port=8080)

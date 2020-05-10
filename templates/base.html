@@ -21,13 +21,22 @@
      <link rel="stylesheet" type="text/css"  href="{{url_for('static',filename='/css/search-filter.css')}}"> <!-- Resource style -->
      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/util.css')}}">
      <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/ProgressRing.css')}}">
+     <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500">
      <!-- MAIN CSS -->
      <link rel="stylesheet" href="/css/KasivoreTheme.css">
 
 <!--
 Tooplate 2119 Gymso Fitness
 https://www.tooplate.com/view/2119-gymso-fitness
+
 -->
+<style>
+    /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+       #map {
+        height: 100%;
+      }
+</style>
 </head>
 <body onload="PageLoad()" data-spy="scroll" data-target="#navbarNav" data-offset="50">
     <div class="g-signin2"  data-onsuccess="onSignIn" style="display: none"></div>
@@ -129,6 +138,78 @@ https://www.tooplate.com/view/2119-gymso-fitness
     <script type="text/javascript" src="{{url_for('static',filename='/js/jquery-2.1.1.js')}}"></script>
     <script type="text/javascript" src="{{url_for('static',filename='/js/jquery.mixitup.min.js')}}"></script>
     <script type="text/javascript" src="{{url_for('static',filename='/js/mainfilter.js')}}"></script>
+    <script type="text/javascript" src="{{url_for('static',filename='/js/googlemaps.js')}}"></script>
+    <!-- Google maps API-->
+    <script src="{{MAPS}}" async defer></script>
+
+
+    <!--Custom java scripty with Jinja -->
+    <script type="text/JavaScript">
+    function PageLoad() {
+	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
+	   //alert(document.getElementById('hf_IsSignup' ).value);
+
+        if( document.getElementById('country') != null) // contry options
+        {
+                var natinality = '' ;
+                {%for userDetails in session['CurrentUser']%}
+                    natinality ='{{userDetails[13]}}';
+                {%endfor%}
+                selectElement('country',natinality);
+                if(natinality !='South Africa')
+                {
+                    document.getElementById('passportdiv' ).style.display = 'Block';
+                    document.getElementById('SAiddiv' ).style.display = 'none';			
+                    document.getElementById('txtIDNO' ).required;
+                }
+                else
+                {
+                    document.getElementById('passportdiv' ).style.display = 'none';
+                    document.getElementById('SAiddiv' ).style.display = 'Block';
+                    document.getElementById('txtPassport' ).required;
+                }
+
+                {%for Provider in serviceprovider%}
+                    CategorySelect({{Provider[5]}},"{{Provider[4]}}",0) 
+                {%endfor%}
+            
+        }
+        
+        
+        
+        if( document.getElementById('hfCurrentForm') != null) // Profile Control
+        {
+            ProfileSlides(document.getElementById('hfCurrentForm').value);
+        }
+        
+
+        if(document.getElementById('hf_IsSignup' ) != null)
+        {
+            
+            if(document.getElementById('hf_IsSignup' ).value==="")	  
+            {
+                document.getElementById('SiginForm' ).style.display = "block";
+                document.getElementById('footer').style.display = "block"; 
+                document.getElementById('SigupForm' ).style.display = "none";
+                document.getElementById('Error').style.display = "none";
+                document.getElementById( 'lbSignin' ).innerHTML = "Sign in";
+                //document.getElementById('LoginDiv').style.display = "block"; 
+                //document.getElementById('div_HomePage').style.display = "none"; 
+                
+            }
+            else
+            {
+                document.getElementById( 'lbSignin' ).innerHTML = "Sign up";
+                document.getElementById('SiginForm' ).style.display = "none"; 
+                document.getElementById('SigupForm' ).style.display = "block";
+                document.getElementById('footer').style.display = "none";
+                document.getElementById('Error').style.display = "block";
+                document.getElementById( 'lbSignin' ).innerHTML = "Sign out";
+            }
+        }
+        
+        }
+    </script>
 
 </body>
 </html>

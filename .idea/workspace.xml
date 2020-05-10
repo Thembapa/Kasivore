@@ -2,22 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="24d922bd-95f5-4eea-87e9-f74fef59fa79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/static/images/ServiceProviders/Icon_Image.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/ServiceProviders/Plumb3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/ServiceProviders/plumb1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/ServiceProviders/plumb2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images/ServiceProviders/plumb4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/Backgroud/Headerbackgroud .jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/Profilepictures/kas46.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/Profilepictures/kas46.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/useraccounts/kas46/profilepicture/FB_IMG_1518036146483.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/useraccounts/kas46/profilepicture/WhatsApp_Image_2020-04-20_at_8.14.07_AM_3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/useraccounts/kas46/profilepicture/WhatsApp_Image_2020-05-05_at_12.49.41_PM_1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/useraccounts/kas46/profilepicture/john.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/useraccounts/kas46profilepicture/kas46.jpeg.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/css/KasivoreTheme.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/KasivoreTheme.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/Login.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/Login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/ProgressRing.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/ProgressRing.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/js/kasivore.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/kasivore.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/Legal.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/Legal.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/LogIn.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/LogIn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/profile.html" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,8 +38,13 @@
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Python-Android-support" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
@@ -49,18 +55,6 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Themba\Kasivore\KasivoreWebApp\Kasivore" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager" selected="Python.app">
     <configuration name="KasivoreData" type="PythonConfigurationType" factoryName="Python" temporary="true">
@@ -75,6 +69,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KasivoreData.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -96,6 +91,7 @@
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KasivoreWebApp.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -117,6 +113,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/KasivoreWebAppFlask.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -138,6 +135,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -159,6 +157,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/emailTest.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
@@ -188,23 +187,77 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582563192888</updated>
+      <workItem from="1588689651270" duration="245000" />
+      <workItem from="1588689938907" duration="1066000" />
+      <workItem from="1588694495305" duration="14532000" />
+      <workItem from="1588747625961" duration="48000" />
+      <workItem from="1588759565580" duration="1500000" />
+      <workItem from="1588919565711" duration="19000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="934" height="260" key="GridCell.Tab.0.bottom" timestamp="1588714162764">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="934" height="260" key="GridCell.Tab.0.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588714162764" />
+    <state width="934" height="154" key="GridCell.Tab.0.bottom/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588690862720" />
+    <state width="934" height="260" key="GridCell.Tab.0.center" timestamp="1588714162764">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="934" height="260" key="GridCell.Tab.0.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588714162764" />
+    <state width="934" height="154" key="GridCell.Tab.0.center/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588690862720" />
+    <state width="934" height="260" key="GridCell.Tab.0.left" timestamp="1588714162764">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="934" height="260" key="GridCell.Tab.0.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588714162764" />
+    <state width="934" height="154" key="GridCell.Tab.0.left/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588690862720" />
+    <state width="934" height="260" key="GridCell.Tab.0.right" timestamp="1588714162764">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="934" height="260" key="GridCell.Tab.0.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588714162764" />
+    <state width="934" height="154" key="GridCell.Tab.0.right/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588690862720" />
+    <state width="938" height="348" key="GridCell.Tab.1.bottom" timestamp="1588712096314">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588712096314" />
+    <state width="938" height="348" key="GridCell.Tab.1.center" timestamp="1588712096314">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588712096314" />
+    <state width="938" height="348" key="GridCell.Tab.1.left" timestamp="1588712096314">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588712096314" />
+    <state width="938" height="348" key="GridCell.Tab.1.right" timestamp="1588712096314">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1588712096314" />
+    <state x="461" y="165" key="SettingsEditor" timestamp="1588759846913">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="165" key="SettingsEditor/1920.0.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1588759846913" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Kasivore$app.coverage" NAME="app Coverage Results" MODIFIED="1588714162754" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Kasivore$KasivoreData.coverage" NAME="KasivoreData Coverage Results" MODIFIED="1588704324133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

@@ -58,7 +58,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text curveIcons"><i class="fa fa-key"></i></span>
 							</div>
-							<input type="password" class="form-control LogInInput"  placeholder="password" id="txt_pass1" name="txt_pass1" onkeyup="passwordValidation()" required>
+							<input type="password" class="form-control LogInInput"  placeholder="password" id="txt_pass1" name="txt_pass1" onkeyup="passwordValidation('txt_pass1')" required>
 
 						</div>
 						<div class="progress progressKasi" >
@@ -68,7 +68,7 @@
 							<div class="input-group-prepend">
 								<span class="input-group-text curveIcons"><i class="fa fa-key" ></i></span>
 							</div>
-							<input type="password" class="form-control LogInInput" id="txt_pass2" placeholder="confirm password"  name="txt_pass2" onkeyup="passwordMissMatch()"  required>
+							<input type="password" class="form-control LogInInput" id="txt_pass2" placeholder="confirm password"  name="txt_pass2" onkeyup="passwordMissMatch('txt_pass1','txt_pass2')"  required>
 						</div>
 						<div class="form-group"  >
 							<input type="submit" value="Signup" id="ub_Create" name="ub_Create" class="btn float-right login_btn">
