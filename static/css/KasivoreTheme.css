@@ -1010,17 +1010,17 @@ https://www.tooplate.com/view/2119-gymso-fitness
   -----------------------------------------*/ 
  .AccountFormButtons{
   height: 50px;
-  width: 250px;
+  width: 320px;
   border-radius: 2rem;
-  margin-top:  17px;
-  margin-left: 370px;
+  margin-top: 30px;
+  margin-left: 300px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
 .BioformButtons{
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top: 70px;
+  margin-top:  80px;
   margin-left: 300px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
@@ -1028,7 +1028,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top: 90px;
+  margin-top: 100px;
   margin-left: 300px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
@@ -1036,7 +1036,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top: 210px;
+  margin-top: 220px;
   margin-left: 300px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
@@ -1044,7 +1044,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top: 150px;
+  margin-top: 100px;
   margin-left: 300px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
@@ -1058,10 +1058,10 @@ https://www.tooplate.com/view/2119-gymso-fitness
 }
 .WelcomeFormButtons{
   height: 50px;
-  width: 250px;
+  width:  320px;
   border-radius: 2rem;
-  margin-top:  450px;
-  margin-left: 370px;
+  margin-top:  460px;
+  margin-left: 300px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
 
@@ -1227,67 +1227,68 @@ https://www.tooplate.com/view/2119-gymso-fitness
         {
           color: red;
         }
-   @media screen and (max-width: 992px) {
+@media screen and (max-width: 992px) {
 
     /*---------------------------------------
      Profile Buttons          
   -----------------------------------------*/ 
- .AccountFormButtons{
-  height: 50px;
-  width: 250px;
-  border-radius: 2rem;
-  margin-top:  100px;
-  margin-left: 150px;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
-.BioformButtons{
-  height: 50px;
-  width: 320px;
-  border-radius: 2rem;
-  margin-top:20px;
-  margin-left: 100px;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
-.AddressformButtons{
-  height: 50px;
-  width: 320px;
-  border-radius: 2rem;
-  margin-top:160px;
-  margin-left: 100px;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
-.BusinessformButtons{
-  height: 50px;
-  width: 320px;
-  border-radius: 2rem;
-  margin-top:220px;
-  margin-left: 100px;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
-.BusinessAddressformButtons{
-  height: 50px;
-  width: 320px;
-  border-radius: 2rem;
-  margin-top:100px;
-  margin-left: 100px;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
-.showcaseFormButtons{
-  height: 50px;
-  width: 320px;
-  border-radius: 2rem;
-  margin-top:150px;
-  margin-left: 100px;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
-.WelcomeFormButtons{  
-  height: 50px;
-  width: 250px;
-  border-radius: 2rem;
-  margin-top:  400px;
-  margin-left: 150px;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
+  .AccountFormButtons{
+    height: 50px;
+    width: 250px;
+    border-radius: 2rem;
+    margin-top:  3px;
+    width: 320px;
+    margin-left: 100px;
+    background-color: rgba(65, 64, 66,0.5) !important;
+  }
+  .BioformButtons{
+    height: 50px;
+    width: 320px;
+    border-radius: 2rem;
+    margin-top:10px;
+    margin-left: 100px;
+    background-color: rgba(65, 64, 66,0.5) !important;
+  }
+  .AddressformButtons{
+    height: 50px;
+    width: 320px;
+    border-radius: 2rem;
+    margin-top:30px;
+    margin-left: 100px;
+    background-color: rgba(65, 64, 66,0.5) !important;
+  }
+  .BusinessformButtons{
+    height: 50px;
+    width: 320px;
+    border-radius: 2rem;
+    margin-top:150px;
+    margin-left: 100px;
+    background-color: rgba(65, 64, 66,0.5) !important;
+  }
+  .BusinessAddressformButtons{
+    height: 50px;
+    width: 320px;
+    border-radius: 2rem;
+    margin-top:30px;
+    margin-left: 100px;
+    background-color: rgba(65, 64, 66,0.5) !important;
+  }
+  .showcaseFormButtons{
+    height: 50px;
+    width: 320px;
+    border-radius: 2rem;
+    margin-top:217px;
+    margin-left: 100px;
+    background-color: rgba(65, 64, 66,0.5) !important;
+  }
+  .WelcomeFormButtons{  
+    height: 50px;
+    width: 320px;
+    border-radius: 2rem;
+    margin-top:  390px;
+    margin-left: 100px;
+    background-color: rgba(65, 64, 66,0.5) !important;
+  }
 
     .arrow-right  {
       width: 0; 
@@ -1328,22 +1329,22 @@ https://www.tooplate.com/view/2119-gymso-fitness
     text-align: left;
 
   }
-    .WorkPhotoGroup
-        {
-          text-align: center;
-          height: 78px !important;
-          width: 100%;
-          margin-top: 10px;
-         
-        }
-     .UploadWorkDone
-    {
-      float: left;
-      width: 70%;
-      margin-left: 20px;
-      margin-top: 2px;
-
+  .WorkPhotoGroup
+  {
+    text-align: center;
+    height: 250px !important;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0px;
     }
+  .UploadWorkDone
+  {
+  float: left;
+  width: 70%;
+  margin-left:70px;
+  margin-top: 2px;
+
+  }
      .WorkDonePictures
     {
       float: left;
@@ -1362,21 +1363,18 @@ https://www.tooplate.com/view/2119-gymso-fitness
         background-color: white !important;
     }
     .ThumbnailRadioButton input[type=radio]{
-        transform:scale(1.5);
-        margin-top: 8px;
-        border-color: var(--white-color);
-        color: red;
-        margin-left: 50px;
-    }
-    .ThumbnailRadioButton
-      {
-        display: inline-block; 
-        font-size: large;
-        color: white; 
-        float: left; 
-        margin-left: 20px;
-        
-    }
+      transform:scale(1.5);
+      border-color: var(--white-color);
+      margin-left:-25px;
+      margin-top: 25px;
+      }
+      .ThumbnailRadioButton
+        {
+          display: inline-block; 
+          color: white; 
+          float: left;         
+          
+      }
     .CurrentProfilepic
     {
       float: left;
@@ -1565,7 +1563,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
       .MainCardLabel
       {
         display: inline-block; 
-        font-size: medium; !important;
+        font-size: medium;
         color: var(--white-color);
         width: 30%;
         text-align: left;
@@ -1573,7 +1571,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
        .BusinessAddressHeader
       {
         display: inline-block; 
-        font-size: medium; !important;
+        font-size: medium; 
         color: var(--white-color);
         width: 100%;
         margin-top: 45px;
@@ -1627,8 +1625,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
         width: 60%;
         height: 35px;
   }
-  }
-
+}
   @media screen and (max-width: 767px) {
     /*---------------------------------------
      Profile Buttons          
@@ -1637,15 +1634,16 @@ https://www.tooplate.com/view/2119-gymso-fitness
       height: 50px;
       width: 250px;
       border-radius: 2rem;
-      margin-top:  100px;
-      margin-left: 150px;
+      margin-top:  3px;
+      width: 320px;
+      margin-left: 100px;
       background-color: rgba(65, 64, 66,0.5) !important;
     }
     .BioformButtons{
       height: 50px;
       width: 320px;
       border-radius: 2rem;
-      margin-top:20px;
+      margin-top:10px;
       margin-left: 100px;
       background-color: rgba(65, 64, 66,0.5) !important;
     }
@@ -1653,7 +1651,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
       height: 50px;
       width: 320px;
       border-radius: 2rem;
-      margin-top:160px;
+      margin-top:30px;
       margin-left: 100px;
       background-color: rgba(65, 64, 66,0.5) !important;
     }
@@ -1661,7 +1659,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
       height: 50px;
       width: 320px;
       border-radius: 2rem;
-      margin-top:220px;
+      margin-top:150px;
       margin-left: 100px;
       background-color: rgba(65, 64, 66,0.5) !important;
     }
@@ -1669,7 +1667,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
       height: 50px;
       width: 320px;
       border-radius: 2rem;
-      margin-top:100px;
+      margin-top:30px;
       margin-left: 100px;
       background-color: rgba(65, 64, 66,0.5) !important;
     }
@@ -1677,16 +1675,16 @@ https://www.tooplate.com/view/2119-gymso-fitness
       height: 50px;
       width: 320px;
       border-radius: 2rem;
-      margin-top:0px;
+      margin-top:45px;
       margin-left: 100px;
       background-color: rgba(65, 64, 66,0.5) !important;
     }
     .WelcomeFormButtons{  
       height: 50px;
-      width: 250px;
+      width: 320px;
       border-radius: 2rem;
-      margin-top:  400px;
-      margin-left: 150px;
+      margin-top:  390px;
+      margin-left: 100px;
       background-color: rgba(65, 64, 66,0.5) !important;
     }
 
@@ -1740,15 +1738,16 @@ https://www.tooplate.com/view/2119-gymso-fitness
     .WorkPhotoGroup
         {
           text-align: center;
-          height: 78px !important;
+          height: 250px !important;
           width: 100%;
           margin-top: 10px;
+          margin-left: 0px;
         }
      .UploadWorkDone
     {
       float: left;
       width: 70%;
-      margin-left: 20px;
+      margin-left:70px;
       margin-top: 2px;
 
     }
@@ -1770,21 +1769,19 @@ https://www.tooplate.com/view/2119-gymso-fitness
         background-color: white !important;
     }
     .ThumbnailRadioButton input[type=radio]{
-        transform:scale(1.5);
-        margin-top: 8px;
-        border-color: var(--white-color);
-        color: red;
-        margin-left: 50px;
-    }
-    .ThumbnailRadioButton
-      {
-        display: inline-block; 
-        font-size: large;
-        color: white; 
-        float: left; 
-        margin-left: 20px;
-        
-    }
+      transform:scale(1.5);
+      border-color: var(--white-color);
+      margin-left:-25px;
+      margin-top: 25px;
+      }
+      .ThumbnailRadioButton
+        {
+          display: inline-block; 
+          color: white; 
+          float: left;
+          
+          
+      }
      .CurrentProfilepic
     {
       float: left;
@@ -1835,7 +1832,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   }
   .preUpload
   {
-    margin-top: -21px;
+    margin-top: -20px;
   }
   .ServiceRadioButton input[type=radio]{
           transform:scale(1.5) !important;

@@ -51,6 +51,12 @@ def changetolowercase(Distionary):
     return outdict
 
 
+def error_Report(ErrorType, msg):
+    
+    kasivoreCommon.sendmail(ErrorType, msg, 'themba@kasivore.com')
+    
+
+
 def get_user(username):
     user_details = {}
 
@@ -275,22 +281,26 @@ def Profile(formname=None):
             if formname == "AccountForm":
                 if request.form['hf_ppUpload'] == "1":
                     # Change profile picture
-                    upload = request.files['ppUpload']
-                    filename = secure_filename(upload.filename)
+                    try:
+                        upload = request.files['ppUpload']
+                        filename = secure_filename(upload.filename)
 
-                    filename = username + '/profilepicture/' + filename
-                    folder = username + '/profilepicture'
-                    #Check if file directory exists, create new folder if not exists
-                    if (os.path.isdir(os.path.join(app.config['USER_FOLDERS'], folder))) == False:
-                        os.makedirs(os.path.join(app.config['USER_FOLDERS'], folder))
+                        filename = username + '/profilepicture/' + filename
+                        folder = username + '/profilepicture'
+                        #Check if file directory exists, create new folder if not exists
+                        if (os.path.isdir(os.path.join(app.config['USER_FOLDERS'], folder))) == False:
+                            os.makedirs(os.path.join(app.config['USER_FOLDERS'], folder))
 
-                    upload.save(os.path.join(app.config['USER_FOLDERS'], filename))
-                    print('images/' + filename)
-                    session['profilepicture'] = '/useraccounts' + '/'+ filename
+                        upload.save(os.path.join(app.config['USER_FOLDERS'], filename))
+                        print('images/' + filename)
+                        session['profilepicture'] = '/useraccounts' + '/'+ filename
 
-                    ##Update Database
-                    parameters = {'_profilepicture': filename, '_userid': userid}
-                    CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
+                        ##Update Database
+                        parameters = {'_profilepicture': filename, '_userid': userid}
+                        CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
+                    except Exception as identifier:
+                        error_Report('Kasivore uploadError' , str(identifier) )
+                    
 
                 elif request.form["txt_pass2"] != '':
                     # change Password
@@ -320,13 +330,23 @@ def Profile(formname=None):
                     CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
             elif formname == "Bioform":
                 ##Update personal details 
-                print('idno: ' + request.form["txtIDNO"])
+                print('txtbirthday: ' + request.form["txtbirthday"])
                 parameters = {'_userid': userid, '_firstname': request.form["txtName"] , '_lastname': request.form["txtSurname"], '_Tell': request.form["txtTell"], '_nationality': request.form["country"], '_idnumber': request.form["txtIDNO"], '_passportnumber': request.form["txtPassport"], '_dateofbirth': request.form["txtbirthday"], '_gender': request.form["Gender"]}
                 # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
+            elif formname == "Addressform":
+                print('txt_Address1: ' + request.form["txt_Address1"])
+                parameters = {'_userid': userid, '_addedby': userid , '_addressestype':1, '_addreslabel':'Home', '_physical1': request.form["txt_Address1"], '_physical2': request.form["txt_Address2"], '_physical3': request.form["txt_Address3"], '_physical4': request.form["txt_Address4"], '_physical5': request.form["txt_Address5"], '_physicalcode': request.form["txt_PostalCode"]}
+                # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
+                CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_Address', parameters)
+            elif formname == "BusinessAddressform":
+                print('txt_Address1: ' + request.form["txt_Address1"])
+                parameters = {'_userid': userid, '_addedby': userid , '_addressestype':2, '_addreslabel':'Business', '_physical1': request.form["txt_Address1"], '_physical2': request.form["txt_Address2"], '_physical3': request.form["txt_Address3"], '_physical4': request.form["txt_Address4"], '_physical5': request.form["txt_Address5"], '_physicalcode': request.form["txt_PostalCode"]}
+                # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
+                CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_Address', parameters)
             elif formname == "Businessform":
                 ##Update personal details 
-                print('_companyname: ' + request.form["txtCompanyName"])
+                print('txtbirthday: ' + request.form["txtbirthday"])
                 parameters = {'_addedby': userid, '_ServiceID': request.form["hf_ServiceID"] , '_companyname': request.form["txtCompanyName"] , '_registrationnumber': request.form["txtReg"], '_typeofservice': request.form["hf_Category"], '_isactive': '1', '_tagline': request.form["txttag"], '_description': request.form["txtcomment"]}
                 # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
@@ -365,7 +385,6 @@ def Profile(formname=None):
     S_parameters = {'_userid': userid}
     serviceprovider = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_serviceprovider',S_parameters)
     SampleImages = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_SampleImages',S_parameters)
-    print( serviceprovider)
     return render_template('profile.html', CurrentProfileForm=CurrentProfileForm, ErrorMsq=ErrorMsq, GID=GID, MAPS= MAPS_API,Categories = Categories,serviceprovider = serviceprovider,SampleImages = SampleImages,
                            menubuttons=menubuttons, userMenuList=userMenuList, loginUrl=loginUrl)
 

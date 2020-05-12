@@ -2,6 +2,7 @@
  {% block content%}
  <!-- CONTACT -->
  	 <section class="Profile d-flex flex-column justify-content-center align-items-center"  >
+             {%for userDetails in session['CurrentUser']%}
               <div class="MobileControl">
                  <div class="MobileRadioControl">
                             <div  class="SectionLabel">
@@ -9,7 +10,6 @@
                             </div>
                             <div class="RadioTop">
                               
-                                   {%for userDetails in session['CurrentUser']%}
                                    {%if userDetails[9] != 'Buyer' %}
                                     <label class="TopButton" for="radio2">
                                       
@@ -17,8 +17,6 @@
                                         
                                     </label>
                                       {%endif%}
-                                    
-                                    {%endfor%}
                                    <label class="TopButton" for="radio2">
                                       <input type="radio"  onclick="ProfileSlides('Addressform')" class="form-check-input" id="radioAddressform1" name="TopMenuradio" value="Addressform">
                                    
@@ -69,7 +67,7 @@
                                       <div class="CurrentProfilepic"> 
                                            <span><img id="Newpp" src="{{session['profilepicture']}}" alt="Avatar" class="NewProfilePicture"></span>
                                       </div>
-                                      {%for userDetails in session['CurrentUser']%}
+                                     
                                         <div class="pictureUpload">
                                          
                                           <div class="input-group custopmUploadGroup">
@@ -476,9 +474,9 @@
                                               <label class="RequiredLabel">*</label>
                                             </label>
                                             {% if userDetails[16] is not none %}
-                                              <input type="date" class="form-control MaicardInputBox"  id="txtbirthday" name="txtbirthday" value="{{userDetails[16]}}" required>
+                                              <input type="date" class="form-control MaicardInputBox"  id="txtbirthday" name="txtbirthday" value="{{userDetails[16]}}"  required>
                                             {%else%}
-                                              <input type="date" class="form-control MaicardInputBox"  id="txtbirthday" name="txtbirthday"  required>
+                                              <input type="date" class="form-control MaicardInputBox"  id="txtbirthday" name="txtbirthday"   required>
                                             {%endif%}
                                             
                                         </div>
@@ -488,7 +486,7 @@
                                               </label>
                                               <label class="GenderRadioButton" for="radio2">
                                                     {% if userDetails[17] =='Male'%}
-                                                      <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Male" checked>&nbsp;Male
+                                                      <input type="radio" class="form-check-input" id="radio2" name="Gender"  value="Male" checked>&nbsp;Male
                                                     {%else%}
                                                       <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Male">&nbsp;Male
                                                     {%endif%}
@@ -497,17 +495,17 @@
                                                   </label>
                                                 <label class="GenderRadioButton" for="radio2">
                                                   {% if userDetails[17] =='Female'%}
-                                                    <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Male" checked>&nbsp;Female
+                                                    <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Female" checked>&nbsp;Female
                                                   {%else%}
-                                                    <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Male">&nbsp;Female
+                                                    <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Female">&nbsp;Female
                                                   {%endif%}
                                                     <span class="checkmark"></span>
                                                   </label>
                                              <label class="GenderRadioButton" for="radio2">
                                                   {% if userDetails[17] =='Non-Binary' or userDetails[17] ==''%}
-                                                    <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Male" checked>&nbsp;Non-Binary
+                                                    <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Non-Binary" checked>&nbsp;Non-Binary
                                                   {%else%}
-                                                    <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Male">&nbsp;Non-Binary
+                                                    <input type="radio" class="form-check-input" id="radio2" name="Gender" value="Non-Binary">&nbsp;Non-Binary
                                                   {%endif%}
                                                     <span class="checkmark"></span>
                                                   </label>
@@ -516,7 +514,7 @@
                                        
                                         
 
-                                     <div class="BioformButtons">
+                                     <div class="BioformButtons" >
                                        <div class="form-group Profile_btn-left"    >
                                                 <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('AccountForm')" name="ub_Prev" class="btn float-right login_btn"   >
                                             </div> 
@@ -540,37 +538,37 @@
                                       <label class="BusinessAddressHeader">Home Address</label>                                      
                                     </div>  
                                     <div class="MainCardGroup" id="locationField">
-                                          <input type="text" class="form-control MaicardInputBox" placeholder="Enter your address" style="width:90%;"  onFocus="geolocate()"  id="autocomplete" name="autocomplete" required>                                      
+                                          <input type="text" class="form-control MaicardInputBox" placeholder="Enter your address" style="width:90%;"  onFocus="geolocate()"  id="autocomplete" name="autocomplete" readonly>                                      
                                        </div> 
                                        <div class="MainCardGroup">
                                             <label class="MainCardLabel">Street No.</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="street_number" name="street_number" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address1" name="txt_Address1" value="{{userDetails[18]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Township/Suburb</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address2" name="txt_Address2" value="{{userDetails[19]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">City/Town</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address3" name="txt_Address3" value="{{userDetails[20]}}" required>
                                             
                                         </div>
                                       
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Province/State</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address4" name="txt_Address4" value="{{userDetails[21]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Country</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address5" name="txt_Address5" value="{{userDetails[22]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Postal code</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_PostalCode" name="txt_PostalCode" value="{{userDetails[23]}}" required>
                                             
                                         </div>
 
@@ -594,7 +592,7 @@
                                                               
                                                                 
                                         </div>
-                                        {%endfor%}
+                                       
                                         
                                     </form>
 
@@ -665,35 +663,38 @@
                                             <label class="BusinessAddressHeader">Business Address</label>
                                             
                                         </div>
-                                        <div class="MainCardGroup">
+                                        <div class="MainCardGroup" id="locationField">
+                                          <input type="text" class="form-control MaicardInputBox" placeholder="Enter your address" style="width:90%;"  onFocus="geolocate()"  id="autocomplete" name="autocomplete" readonly>                                      
+                                       </div> 
+                                       <div class="MainCardGroup">
                                             <label class="MainCardLabel">Street No.</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address1" name="txt_Address1" value="{{userDetails[24]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Township/Suburb</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address2" name="txt_Address2" value="{{userDetails[25]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">City/Town</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address3" name="txt_Address3" value="{{userDetails[26]}}" required>
                                             
                                         </div>
                                       
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Province/State</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address4" name="txt_Address4" value="{{userDetails[27]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Country</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address5" name="txt_Address5" value="{{userDetails[28]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Postal code</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txtUser" name="txtUser" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="txt_PostalCode" name="txt_PostalCode" value="{{userDetails[23]}}" required>
                                             
                                         </div>
 
@@ -752,12 +753,6 @@
                                                       <label class="custom-file-label" id="lbImageName" for="inputGroupFile01">Choose file</label>
                                                     </div>
                                               </div>
-                                             <!--<div class="thumbnail">
-                                                  <label class="ThumbnailRadioButton" for="radio2">
-                                                      Thumbnail<input type="radio" class="form-check-input" id="radio2" name="radio" value="option2">
-                                                      <span class="checkmark"></span>
-                                                   </label>
-                                              </div>-->
                                             
                                         </div>
                                        
@@ -789,8 +784,14 @@
                                             
                                         </div>
                                       <div class="WelcomeFormButtons">
+                                        
                                        <div class="form-group Profile_btn-left"    >
-                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('showcaseForm')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            {%if userDetails[9] == 'Buyer' %}
+                                              <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Addressform')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            {% else%}
+                                              <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('showcaseForm')" name="ub_Prev" class="btn float-right login_btn"   >
+                                            {%endif%}
+                                                
                                             </div> 
                                               <div class="form-group Profile_btn"    >
                                                 <input type="button" value="Done" id="ub_Done" onclick="IndexPage()" name="ub_Done" class="btn float-right login_btn"   >
@@ -828,7 +829,6 @@
                                     name="SideMenuradio" value="Addressform">
                                     
                                  </label>
-                                 {%for userDetails in session['CurrentUser']%}
                                     {%if userDetails[9] != 'Buyer' %}
                                       <label class="SideRadioButton" for="radio2">
                                           Business <br><br>
@@ -837,8 +837,6 @@
                                       
                                       </label>
                                     {%endif%}
-                                  
-                                 {%endfor%}
                                  
                             
                         </div>
@@ -849,6 +847,7 @@
                 </div>
                 
         </div>
+        {%endfor%}
     
  
 
