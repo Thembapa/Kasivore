@@ -842,7 +842,7 @@
 }
 .c100.dark .bar,
 .c100.dark .fill {
-  border-color: #be222f; !important;
+  border-color: #be222f; 
 }
 .c100.dark > span {
   color: #777777;
@@ -885,6 +885,6 @@
   @media screen and (max-width: 480px) {
 
     .c100.small {
-        font-size: 45px;
+        font-size: 50px;
       }
   }

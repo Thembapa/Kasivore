@@ -98,6 +98,9 @@ def activate(username=None):
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
+    print('activation')
+    print(username)
+        
     if IsSignedIn():
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
@@ -346,7 +349,6 @@ def Profile(formname=None):
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_Address', parameters)
             elif formname == "Businessform":
                 ##Update personal details 
-                print('txtbirthday: ' + request.form["txtbirthday"])
                 parameters = {'_addedby': userid, '_ServiceID': request.form["hf_ServiceID"] , '_companyname': request.form["txtCompanyName"] , '_registrationnumber': request.form["txtReg"], '_typeofservice': request.form["hf_Category"], '_isactive': '1', '_tagline': request.form["txttag"], '_description': request.form["txtcomment"]}
                 # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
@@ -385,6 +387,8 @@ def Profile(formname=None):
     S_parameters = {'_userid': userid}
     serviceprovider = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_serviceprovider',S_parameters)
     SampleImages = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_SampleImages',S_parameters)
+    print('serviceprovider')
+    print(serviceprovider)
     return render_template('profile.html', CurrentProfileForm=CurrentProfileForm, ErrorMsq=ErrorMsq, GID=GID, MAPS= MAPS_API,Categories = Categories,serviceprovider = serviceprovider,SampleImages = SampleImages,
                            menubuttons=menubuttons, userMenuList=userMenuList, loginUrl=loginUrl)
 
@@ -602,9 +606,7 @@ def Login(resetpassword=None, email=None, username=None):
                 print(CurrentUser)
                 password = ''
                 for user in CurrentUser:
-                    password = user[2]
-
-                try:
+                    password = user[2]                
                     print(sha256_crypt.verify(request.form["txt_pass"], password))
                     if sha256_crypt.verify(request.form["txt_pass"], password):
                         for values in CurrentUser:
@@ -617,10 +619,6 @@ def Login(resetpassword=None, email=None, username=None):
                                 ErrorMsq = 'Account not active!'
                     else:
                         ErrorMsq = 'No match found!'
-
-                except Exception as e:
-                    print(e)
-                    ErrorMsq = 'No match found!'
 
     return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
