@@ -2160,7 +2160,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
           text-align: center;
           height:350px !important;
           width: 90%;
-          margin-left: 10px;
+          margin-left: 25px;
           margin-top: 10px;
           
         }
@@ -2177,14 +2177,14 @@ https://www.tooplate.com/view/2119-gymso-fitness
     {
       float: left;
       width: 20%;
-      margin-right: 20px;
+      margin-right: 5px;
       display: inline-block;
 
     }
     .NewWorkPic
     {
-        height :85px;  
-        width: 85px;
+        height :75px;  
+        width: 75x;
         display: inline-block;
         border-radius: 1rem;
         float: left;
@@ -2516,6 +2516,13 @@ https://www.tooplate.com/view/2119-gymso-fitness
         .progressKasi
         {
           margin-top: 10px !important;
+        }
+
+        .dropdownSelect {
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          margin-top: 20px;
         }
   }
 

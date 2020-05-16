@@ -77,7 +77,7 @@ def send_WelcomeEmail(user_name, email):
 
 @app.route('/UserNames/<username>')
 def getallusernames(username=None):
-    currentUser = ""
+    currentUser = ''
     DBemails = KasivoreData.pgsql_call_Tablefunction('app', 'fn_getEmails')
     matchdoc = []
     for users in DBemails:
@@ -88,7 +88,7 @@ def getallusernames(username=None):
         if username.lower() in matchdoc:
             currentUser = "Error: In use:  " + username
         else:
-            currentUser = ""
+            currentUser = ''
     return currentUser
 
 
@@ -558,10 +558,10 @@ def googleSignIn(email, username):
 
     else:
 
-        parameters = {'_userName': username}
+        parameters = {'_userName': email}
         CurrentUser = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_getUser', parameters)
         session['CurrentUser'] = CurrentUser
-        print('SignIn')
+        print(CurrentUser)
 
 
 @app.route('/login/<email>/<username>', methods=['GET', 'POST'])
@@ -601,24 +601,28 @@ def Login(resetpassword=None, email=None, username=None):
                 ErrorMsq = request.form["hf_Error1"]
                 print('error:' + ErrorMsq)
             else:
-                parameters = {'_userName': request.form["txtUser"]}
-                CurrentUser = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_getUser', parameters)
-                print(CurrentUser)
-                password = ''
-                for user in CurrentUser:
-                    password = user[2]                
-                    print(sha256_crypt.verify(request.form["txt_pass"], password))
-                    if sha256_crypt.verify(request.form["txt_pass"], password):
-                        for values in CurrentUser:
-                            print(values[10])
-                            if values[10] != '0':
-                                session['CurrentUser'] = CurrentUser
-                                print('You are loged in: ' + str(CurrentUser))
-                                return redirect('/')
-                            else:
-                                ErrorMsq = 'Account not active!'
-                    else:
-                        ErrorMsq = 'No match found!'
+                try:
+                    parameters = {'_userName': request.form["txtUser"]}
+                    CurrentUser = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_getUser', parameters)
+                    print(CurrentUser)
+                    password = ''
+                    for user in CurrentUser:
+                        password = user[2]                
+                        print(sha256_crypt.verify(request.form["txt_pass"], password))
+                        if sha256_crypt.verify(request.form["txt_pass"], password):
+                            for values in CurrentUser:
+                                print(values[10])
+                                if values[10] != '0':
+                                    session['CurrentUser'] = CurrentUser
+                                    print('You are loged in: ' + str(CurrentUser))
+                                    return redirect('/')
+                                else:
+                                    ErrorMsq = 'Account not active!'
+                        else:
+                            ErrorMsq = 'No match found!'
+                except Exception as identifier: 
+                    ErrorMsq = 'Server Error!!!'                   
+                    error_Report('Login Error uploadError' , str(identifier) ) 
 
     return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
