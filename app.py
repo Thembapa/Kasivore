@@ -86,7 +86,7 @@ def getallusernames(username=None):
 
     if username is not None:
         if username.lower() in matchdoc:
-            currentUser = "Error: In use:  " + username
+            
             currentUser = 'Error: In use:  ' + username
         else:
             currentUser = ''
