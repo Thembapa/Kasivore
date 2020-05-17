@@ -4,10 +4,30 @@
 {%block content%}
 
 <section class="hero d-flex flex-column justify-content-center align-items-center" >
-
- <p style="color: white; font-size: large; float: left; display: inline-block;">
- 	Welcome to kasivore an email has been sent to {{email}}. please confirm to activate your account then <a href="/login"> Signin </a> 
-	You can use your email as username or use kasivore username:&nbsp;  <b> {{username}} </b> </p>
+       <div class="container" id="profilemain" >
+              <div class="d-flex justify-content-center h-100">
+                     <div class="Maincard">
+                            <div class="Maincard-body">
+                                   <div class="Headergroup">
+                                          <label class="BusinessAddressHeader">Welcome to Kasivore!!!</label>
+                                          
+                                      </div>
+                                      <div class="MainCardGroup">
+                                          <label class="WelcomeNote">
+                                                 Welcome to kasivore an email has been sent to {{email}}. <br>
+                                                 Please confirm to activate your account then <a href="/login" style="color:red;"> Signin </a> 
+                                                 <br>
+                                                 You can use your email as username or use kasivore username:&nbsp;  <b> {{username}} </b> 
+                                          </label>
+                                          
+                                      </div>
+                                   
+                            </div>
+                     </div>
+              </div>
+             
+       </div>
+ 
 
   <div class="Social-media">
          <ul class="social-icon ml-lg-3 SocialList">

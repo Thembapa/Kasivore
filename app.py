@@ -63,17 +63,6 @@ def get_user(username):
     return user_details
 
 
-def send_WelcomeEmail(user_name, email):
-    if 'activatetocken' in session:
-        tocken = session['activatetocken']
-        print('tocken' + tocken)
-        subject = 'Welcome to Kasivore'
-        link = 'https://kasivore.com/activate/' + tocken
-        Body = 'Please click the link to activate you account: ' + link
-        kasivoreCommon.sendmail(subject, Body, email)
-        session.pop('activatetocken')
-        print('send email to' + email + 'for ' + user_name)
-
 
 @app.route('/UserNames/<username>')
 def getallusernames(username=None):
@@ -86,7 +75,7 @@ def getallusernames(username=None):
 
     if username is not None:
         if username.lower() in matchdoc:
-            
+
             currentUser = 'Error: In use:  ' + username
         else:
             currentUser = ''
@@ -214,20 +203,61 @@ def WBot():
     return str(resp)
 
 
-@app.route('/Welcome/<username>/<email>')
-def Welcome(username=None, email=None):
+@app.route('/Welcome')
+def Welcome():
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
+    email =''
+    user_name =''
     if IsSignedIn():
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
 
-    if username is not None and email is not None:
-        send_WelcomeEmail(username, email)
+    if 'activatetocken' in session:
+        tocken = session['activatetocken']
+        email  =  session['newuseremail']
+        user_name =  session['newusername']
+        
+        print('tocken' + tocken)
+        subject = 'Welcome to Kasivore'
+        link = 'https://kasivore.com/activate/' + tocken
+        Body = 'Please click the link to activate you account: ' + link
 
-    return render_template('Welcome.html', username=username, email=email, ErrorMsq=ErrorMsq, GID=GID,MAPS = MAPS_API,
+        htmlbody = """\
+                    Hello, <br><br>
+                    We are happy you’re here!<br><br>
+
+                    The concept is simple, use our app to find services providers/offer your services withing your area so that the money stays in the community longer. This with strengthen your local area economy and encourages job creation.
+                    By default, your account is created as a consumer account but you can change it once activated if you would like to be a services provider.<br><br>
+                    Your username is: """+email+"""<br>
+                    Your user ID is: """+user_name+"""<br><br>
+                    The first step is to activate your account, and then we will ask some basic details so that the searches will be more relevant to you. After this you are ready for business. Click the button below to activate your account.<br><br>
+                        <a href="https://kasivore.com/activate/"""+ tocken+"""" style=" background-color: #be222f; /* Green */
+                        border: none;
+                        color: white;
+                        padding: 15px 32px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        position: relative;
+                        font-size: 16px;"> Activate now
+                        </a><br><br>
+                    We’re excited to have you on board!<br>
+                    The Kasivore team<br><br>
+                    P.S Please do not reply to this email. The mailbox that generated this email is not monitored for replies.<br><br> 
+                    P.P.S If the activation button above does not work, please copy and past the URL below in a new browser window to complete the setup: https://kasivore.com/activate/"""+tocken+"""
+            """
+        kasivoreCommon.sendmail(subject, Body, email,htmlbody)
+        session.pop('newuseremail')
+        session.pop('newusername')
+        session.pop('activatetocken')
+        print('send email to' + email + 'for ' + user_name)
+    else:
+        return redirect('/Login')
+
+    return render_template('Welcome.html', username=user_name, email=email, ErrorMsq=ErrorMsq, GID=GID,MAPS = MAPS_API,
                            menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
@@ -449,16 +479,15 @@ def Signup():
         username = ''
         email = ''
         activatetocken = ''
-        Welcomepage = '/Welcome/'
         for id in CreatedID:
             user_id = id[0]
-            username = id[1]
-            email = id[2]
+            session['newusername'] = id[1]
+            session['newuseremail'] = id[2]
             session['activatetocken'] = id[3]
-            Welcomepage = Welcomepage + username + '/' + email
-        print('Userid: ' + str(user_id))
+
+        print('Email Adress : ' + str(session['newuseremail']))
         if user_id != '0':
-            return redirect(Welcomepage)
+            return redirect('/Welcome')
     return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
@@ -626,6 +655,22 @@ def Login(resetpassword=None, email=None, username=None):
                     error_Report('Login Error uploadError' , str(identifier) ) 
 
     return render_template('LogIn.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
+                           userMenuList=userMenuList, loginUrl=loginUrl)
+
+
+
+@app.route('/TestEmail')
+def TestEmail():
+    userMenuList = {}
+    ErrorMsq = ''
+    IsSignUp = ''
+    loginUrl = '/login'  
+
+        # test = 'themba'
+    # password = sha256_crypt.encrypt(test)
+    # print(sha256_crypt.verify(test, password))
+    # print(password)
+    return render_template('EmailNotifications.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 
