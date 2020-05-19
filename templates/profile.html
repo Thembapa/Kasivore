@@ -538,37 +538,37 @@
                                       <label class="BusinessAddressHeader">Home Address</label>                                      
                                     </div>  
                                     <div class="MainCardGroup" id="locationField">
-                                          <input type="text" class="form-control MaicardInputBox" placeholder="Enter your address" style="width:90%;"  onFocus="geolocate()"  id="autocomplete" name="autocomplete" readonly>                                      
+                                          <input type="text" class="form-control MaicardInputBox" placeholder="Enter your address" style="width:90%;"  onFocus="geolocate()"  id="txt_addressSearch" name="txt_addressSearch">                                      
                                        </div> 
                                        <div class="MainCardGroup">
                                             <label class="MainCardLabel">Street No.</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address1" name="txt_Address1" value="{{userDetails[18]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="street_number" name="txt_Address1" value="{{userDetails[18]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Township/Suburb</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address2" name="txt_Address2" value="{{userDetails[19]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="route" name="txt_Address2" value="{{userDetails[19]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">City/Town</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address3" name="txt_Address3" value="{{userDetails[20]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="locality" name="txt_Address3" value="{{userDetails[20]}}" required>
                                             
                                         </div>
                                       
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Province/State</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address4" name="txt_Address4" value="{{userDetails[21]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="administrative_area_level_1" name="txt_Address4" value="{{userDetails[21]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Country</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address5" name="txt_Address5" value="{{userDetails[22]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="country" name="txt_Address5" value="{{userDetails[22]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Postal code</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_PostalCode" name="txt_PostalCode" value="{{userDetails[23]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="postal_code" name="txt_PostalCode" value="{{userDetails[23]}}" required>
                                             
                                         </div>
 
@@ -592,7 +592,8 @@
                                                               
                                                                 
                                         </div>
-                                       
+                                       <input type="hidden" id="hf_longitude" name="hf_longitude">
+                                       <input type="hidden" id="hf_latitude" name="hf_latitude">
                                         
                                     </form>
 
@@ -664,37 +665,37 @@
                                             
                                         </div>
                                         <div class="MainCardGroup" id="locationField">
-                                          <input type="text" class="form-control MaicardInputBox" placeholder="Enter your address" style="width:90%;"  onFocus="geolocate()"  id="autocomplete" name="autocomplete" readonly>                                      
+                                          <input type="text" class="form-control MaicardInputBox" placeholder="Enter your address" style="width:90%;"  onFocus="geolocate()"  id="txtbusAddress" name="txtbusAddress">                                      
                                        </div> 
                                        <div class="MainCardGroup">
                                             <label class="MainCardLabel">Street No.</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address1" name="txt_Address1" value="{{userDetails[24]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="street_number2" name="txt_Address1" value="{{userDetails[24]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Township/Suburb</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address2" name="txt_Address2" value="{{userDetails[25]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="route2" name="txt_Address2" value="{{userDetails[25]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">City/Town</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address3" name="txt_Address3" value="{{userDetails[26]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="locality2" name="txt_Address3" value="{{userDetails[26]}}" required>
                                             
                                         </div>
                                       
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Province/State</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address4" name="txt_Address4" value="{{userDetails[27]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="administrative_area_level_12" name="txt_Address4" value="{{userDetails[27]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Country</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_Address5" name="txt_Address5" value="{{userDetails[28]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="country2" name="txt_Address5" value="{{userDetails[28]}}" required>
                                             
                                         </div>
                                         <div class="MainCardGroup">
                                             <label class="MainCardLabel">Postal code</label>
-                                            <input type="text" class="form-control MaicardInputBox"  id="txt_PostalCode" name="txt_PostalCode" value="{{userDetails[23]}}" required>
+                                            <input type="text" class="form-control MaicardInputBox"  id="postal_code2" name="txt_PostalCode" value="{{userDetails[29]}}" required>
                                             
                                         </div>
 
@@ -711,6 +712,8 @@
                                                               
                                                                 
                                         </div>
+                                        <input type="hidden" id="hf_longitude2" name="hf_longitude">
+                                       <input type="hidden" id="hf_latitude2" name="hf_latitude">
                                     </form>
                                     {%endfor%}
                                     <!--Work Done-->

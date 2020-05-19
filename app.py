@@ -23,7 +23,7 @@ app.config['USER_FOLDERS'] = USER_FOLDERS
 ## Global variebles
 # GID = "67980471209-beho86sujost0htubv5iti646qeal2ab.apps.googleusercontent.com"  # Live
 GID = GOOGLEID  # test
-MAPS_API = 'https://maps.googleapis.com/maps/api/js?key='+ MAPS +'&callback=initAutocomplete'
+MAPS_API = 'https://maps.googleapis.com/maps/api/js?key='+ MAPS +'&libraries=places&callback=initAutocomplete'
 menubuttons = {'Home': '/', 'About': '/About', 'Legal': '/Legal', 'Pay': '/Pay', 'Service': '/service',
                'Contact': '/Contact', 'Help': 'Help'}
 
@@ -370,12 +370,12 @@ def Profile(formname=None):
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
             elif formname == "Addressform":
                 print('txt_Address1: ' + request.form["txt_Address1"])
-                parameters = {'_userid': userid, '_addedby': userid , '_addressestype':1, '_addreslabel':'Home', '_physical1': request.form["txt_Address1"], '_physical2': request.form["txt_Address2"], '_physical3': request.form["txt_Address3"], '_physical4': request.form["txt_Address4"], '_physical5': request.form["txt_Address5"], '_physicalcode': request.form["txt_PostalCode"]}
+                parameters = {'_userid': userid, '_addedby': userid , '_addressestype':1, '_addreslabel':'Home', '_physical1': request.form["txt_Address1"], '_physical2': request.form["txt_Address2"], '_physical3': request.form["txt_Address3"], '_physical4': request.form["txt_Address4"], '_physical5': request.form["txt_Address5"], '_physicalcode': request.form["txt_PostalCode"], '_longitude': request.form["hf_longitude"], '_latitude': request.form["hf_latitude"]}
                 # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_Address', parameters)
             elif formname == "BusinessAddressform":
-                print('txt_Address1: ' + request.form["txt_Address1"])
-                parameters = {'_userid': userid, '_addedby': userid , '_addressestype':2, '_addreslabel':'Business', '_physical1': request.form["txt_Address1"], '_physical2': request.form["txt_Address2"], '_physical3': request.form["txt_Address3"], '_physical4': request.form["txt_Address4"], '_physical5': request.form["txt_Address5"], '_physicalcode': request.form["txt_PostalCode"]}
+                print('hf_latitude: ' + request.form["hf_latitude"])
+                parameters = {'_userid': userid, '_addedby': userid , '_addressestype':2, '_addreslabel':'Business', '_physical1': request.form["txt_Address1"], '_physical2': request.form["txt_Address2"], '_physical3': request.form["txt_Address3"], '_physical4': request.form["txt_Address4"], '_physical5': request.form["txt_Address5"], '_physicalcode': request.form["txt_PostalCode"], '_longitude': request.form["hf_longitude"], '_latitude': request.form["hf_latitude"]}
                 # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_Address', parameters)
             elif formname == "Businessform":
