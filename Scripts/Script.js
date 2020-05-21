@@ -5,6 +5,7 @@ function onSignIn(googleUser) {
    $("#lb_User").text(profile.getName());
    $("#lb_UserID").text(profile.getId());
    $("#ppPic").attr('src',profile.getImageUrl());
+   $("#hf_GoogleprofilePic").value(profile.getImageUrl());
    $(".limiter").css("display","none");
    $(".limiter-Signedin").css("display","block");
   //window.location.replace("/Home");

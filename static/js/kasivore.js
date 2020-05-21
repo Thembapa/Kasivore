@@ -264,24 +264,17 @@ function ValidateUser() {
 	  //console.log('Name: ' + profile.getName());
 	  //console.log('Image URL: ' + profile.getImageUrl());
 	  //console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
-	   try {
-           $("#profilepicture").attr('src',profile.getImageUrl());
-        }
-        catch(err) {
-          
-        }
-        try {
-           $("#Accountpp").attr('src',profile.getImageUrl());
-        }
-        catch(err) {
-          
-        }
-	  Url = '/login/' + profile.getEmail()+'/'+ profile.getName()
-	  
-	  if(document.getElementById('hf_GoogleprofilePic' ) != null)
-	  {
-	       window.location.replace(Url);
-	  }
+	   
+		try {
+			document.getElementById('hf_GoogleprofilePic').value =  profile.getImageUrl();
+			alert(document.getElementById('hf_GoogleprofilePic').value);
+			document.getElementById('hf_Email').value =  profile.getEmail();
+			document.getElementById('hf_GmailName').value = profile.getName();
+		 }
+		 catch(err) {
+		   
+		 }
+		document.getElementById("frmGoogleSignIn").submit();
 	 
 	}
 

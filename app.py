@@ -33,7 +33,7 @@ def IsSignedIn():
     if 'CurrentUser' in session:
         for user in session['CurrentUser']:
             if user[8] != '' and user[8] is not None:
-                session['profilepicture'] = '/useraccounts/' + user[8]
+                session['profilepicture'] =  user[8]
             else:
                 session['profilepicture'] = '/images/Profilepictures/login.png'
         return True
@@ -330,7 +330,7 @@ def Profile(formname=None):
                         session['profilepicture'] = '/useraccounts' + '/'+ filename
 
                         ##Update Database
-                        parameters = {'_profilepicture': filename, '_userid': userid}
+                        parameters = {'_profilepicture': session['profilepicture'] , '_userid': userid}
                         CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
                     except Exception as identifier:
                         error_Report('Kasivore uploadError' , str(identifier) )
@@ -560,7 +560,7 @@ def JsonTest(post=None):
     ]}
 
 
-def googleSignIn(email, username):
+def googleSignIn(email, username, googlepp):
     print(email)
     print(username)
     Name = username.split(' ')
@@ -570,9 +570,10 @@ def googleSignIn(email, username):
 
         alphabet = string.ascii_letters + string.digits
         password = ''.join(secrets.choice(alphabet) for i in range(20))
+        
 
         parameters = {'_usertypeid': '2', '_emailaddress': email,
-                      '_userpassword': sha256_crypt.encrypt(password)}
+                      '_userpassword': sha256_crypt.encrypt(password),'_profilepicture': googlepp}
         CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
 
         for createduser in CreatedID:
@@ -594,10 +595,10 @@ def googleSignIn(email, username):
         print(CurrentUser)
 
 
-@app.route('/login/<email>/<username>', methods=['GET', 'POST'])
+@app.route('/login/google/<action>', methods=['GET', 'POST'])
 @app.route('/login/<resetpassword>', methods=['GET', 'POST'])
 @app.route('/login', methods=['GET', 'POST'])
-def Login(resetpassword=None, email=None, username=None):
+def Login(resetpassword=None, action=None):
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
@@ -609,10 +610,13 @@ def Login(resetpassword=None, email=None, username=None):
         if 'ProfileProgress' in session:
             session.pop('ProfileProgress')
 
-    if email is not None and username is not None:
-        print('Google signIn')
-        print(request.method)
-        googleSignIn(email, username)
+    if action is not None:
+        print('Google signIn' + request.method)
+        
+        email = request.form["hf_Email"]
+        username = request.form["hf_GmailName"]
+        ProfilePic =  request.form["hf_GoogleprofilePic"]
+        googleSignIn(email, username, ProfilePic)
         return redirect('/')
 
     elif request.method == 'POST':

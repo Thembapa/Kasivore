@@ -42,7 +42,7 @@
 						</div>
 						<input type="hidden" name="hf_Error1" id="hf_Error1">
 						<input type="hidden" id="hf_IsSignup" name="hf_IsSignup" value="{{Signup}}" >
-						<input type="hidden" name="hf_GoogleprofilePic" id="hf_GoogleprofilePic">
+						
 
 					</form>
 					<form id="SigupForm" name="SigupForm"  action="/Signup" style="display: none;" method="POST" >
@@ -88,6 +88,11 @@
 						<div class="form-group"    >
 							<input type="submit" value="RESET PASSWORD" id="ub_Resetpass" name="ub_Resetpass" class="btn float-right login_btn" style="width: 100%">
 						</div>
+					</form>
+					<form id="frmGoogleSignIn"  action="/login/google/Signin" style="display: none;" method="POST" >
+						<input type="hidden" name="hf_GoogleprofilePic" id="hf_GoogleprofilePic">
+						<input type="hidden" name="hf_Email" id="hf_Email">
+						<input type="hidden" name="hf_GmailName" id="hf_GmailName">
 					</form>
 				
 				
