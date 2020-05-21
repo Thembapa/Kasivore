@@ -267,7 +267,6 @@ function ValidateUser() {
 	   
 		try {
 			document.getElementById('hf_GoogleprofilePic').value =  profile.getImageUrl();
-			alert(document.getElementById('hf_GoogleprofilePic').value);
 			document.getElementById('hf_Email').value =  profile.getEmail();
 			document.getElementById('hf_GmailName').value = profile.getName();
 		 }
