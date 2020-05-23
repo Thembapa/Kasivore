@@ -7,6 +7,8 @@
        <div class="container" id="profilemain" >
               <div class="d-flex justify-content-center h-100">
                      <div class="Maincard">
+                            
+                            {%if Loginlink == ''%}
                             <div class="Maincard-body">
                                    <div class="Headergroup">
                                           <label class="BusinessAddressHeader">Welcome to Kasivore!!!</label>
@@ -23,6 +25,25 @@
                                       </div>
                                    
                             </div>
+                            {%else%}
+                            <div class="Maincard">
+                                   <div class="Maincard-body">
+                                          <div class="Headergroup">
+                                                 <label class="BusinessAddressHeader">Password Reset</label>
+                                                 
+                                          </div>
+                                          <div class="MainCardGroup">
+                                                 <label class="WelcomeNote">
+                                                        Password reset link has been sent to your email: {{email}}. <br>
+                                                        Go back to login page <a href="/login" style="color:red;"> Signin </a> 
+                                                        <br>
+                                                 </label>
+                                                 
+                                          </div>
+                                          
+                                   </div>
+                            </div>
+                            {%endif%}
                      </div>
               </div>
              

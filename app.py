@@ -211,6 +211,7 @@ def Welcome():
     loginUrl = '/login'
     email =''
     user_name =''
+    Loginlink = ''
     if IsSignedIn():
         userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
         loginUrl = '#'
@@ -257,8 +258,7 @@ def Welcome():
     else:
         return redirect('/Login')
 
-    return render_template('Welcome.html', username=user_name, email=email, ErrorMsq=ErrorMsq, GID=GID,MAPS = MAPS_API,
-                           menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
+    return render_template('Welcome.html', username=user_name, email=email, ErrorMsq=ErrorMsq, GID=GID,MAPS = MAPS_API,Loginlink = Loginlink,menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl)
 
 
 @app.route('/Legal')
@@ -496,13 +496,38 @@ def passwordresetEmail(email, resetcode):
     subject = 'Kasivore Password Reset'
     link = 'https://kasivore.com/newpassword/' + resetcode
     Body = 'Please follow the link to set a new password: ' + link
-    kasivoreCommon.sendmail(subject, Body, email)
+    htmlbody = """\
+                    Hello, <br><br>
+
+                    We have received your request to reset your password.<br>
+                    Please follow the link below to change your password, if you did not request a password do not act on this email.<br>
+                    Password reset link: """+link+"""<br><br>
+                   
+                    The Kasivore team<br><br>
+                    P.S Please do not reply to this email. The mailbox that generated this email is not monitored for replies.<br><br>                    
+            """
+    kasivoreCommon.sendmail(subject, Body, email,htmlbody)
 
 
 def google_sign_up(email, username, temp_password):
     subject = 'Welcome to Kasivore'
     Body = 'Your account details are as follows, Username: ' + username + ' Password: ' + temp_password
-    kasivoreCommon.sendmail(subject, Body, email)
+    htmlbody = """\
+                    Hello, <br><br>
+                    We are happy you’re here!<br><br>
+
+                    The concept is simple, use our app to find services providers/offer your services withing your area so that the money stays in the community longer. <br>
+                    This with strengthen your local area economy and encourages job creation.
+                    By default, your account is created as a consumer account but you can change it to become a services provider.<br><br>
+                    Your username is: """+email+"""<br>
+                    Your user ID is: """+username+"""<br>
+                    Your password is: """+temp_password+"""<br><br>
+                   
+                    We’re excited to have you on board!<br>
+                    The Kasivore team<br><br>
+                    P.S Please do not reply to this email. The mailbox that generated this email is not monitored for replies.<br><br>                    
+            """
+    kasivoreCommon.sendmail(subject, Body, email,htmlbody)
 
 
 @app.route('/service')
@@ -629,7 +654,7 @@ def Login(resetpassword=None, action=None):
                 else:
                     passwordresetEmail(request.form["txtEmailReset"], resetCode)
                     Loginlink = '/login'
-                    return '''Email sent to reset password <a href=''' + Loginlink + '''>Signin</a>'''
+                    return render_template('Welcome.html',GID=GID, email = request.form["txtEmailReset"],MAPS = MAPS_API,menubuttons=menubuttons, Signup=IsSignUp, userMenuList=userMenuList, loginUrl=loginUrl, Loginlink = Loginlink)
         else:
             if request.form["hf_Error1"] != '':
                 ErrorMsq = request.form["hf_Error1"]
