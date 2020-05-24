@@ -284,7 +284,11 @@ function ValidateUser() {
 		 catch(err) {
 		   
 		 }
-		document.getElementById("frmGoogleSignIn").submit();
+		if(document.getElementById('hf_GoogleprofilePic') != null)
+		{
+			document.getElementById("frmGoogleSignIn").submit();
+		}
+		
 	 
 	}
 

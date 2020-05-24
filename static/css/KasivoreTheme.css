@@ -386,6 +386,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
   .hero {
     background-image: url('../images/Backgroud/LoginBckgroud.jpg');
+    background-color: rgb(32, 9, 9);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -395,6 +396,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   }
   .service {
     background-image: url('../images/Backgroud/LoginBckgroud.jpg');
+    background-color: rgb(32, 9, 9);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -404,6 +406,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   }
   .Login {
     background-image: url('../images/Backgroud/LoginBckgroud.jpg');
+    background-color: rgb(32, 9, 9);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -413,6 +416,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
   }
   .Profile {
     background-image: url('../images/Backgroud/ProfileBckgroud.jpg');
+    background-color: rgb(32, 9, 9);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -2559,6 +2563,10 @@ Email Notifications
         #lbUserlabel
         {
           margin-right: 5px !important;
+        }
+        .Profile 
+        {
+          margin-bottom: 100px;
         }
   }
 
