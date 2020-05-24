@@ -2444,7 +2444,7 @@ Email Notifications
         color: var(--white-color);
         width: 100%;
         text-align: left;
-        margin-left: 10px;
+        margin-left: 5px;
         margin-bottom: -20px;
       }
       .BusinessAddressHeader
@@ -2549,11 +2549,7 @@ Email Notifications
         {
           margin-top: 10px !important;
         }
-        .UserNamediv
-        {
-          margin-left: 15px;
-        }
-
+        
         .dropdownSelect {
           position: relative;
           display: inline-block;
