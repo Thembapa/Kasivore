@@ -1551,8 +1551,8 @@ Email Notifications
       height: 50px;
       width: 500px;
       border-radius: 2rem;
-       margin-bottom: -80px;
-       margin-top: 30px;
+      margin-bottom: -80px;
+      margin-top: -70px !important;
       float: left;
        display: inline-block;
     }
@@ -1681,6 +1681,7 @@ Email Notifications
   .Inputdropbtn {
     height: 35px;
   }
+  
     #Accountpp
     {
       margin-top: 4.5px;
@@ -1953,13 +1954,13 @@ Email Notifications
       width: 500px;
       border-radius: 2rem;
        margin-bottom: -80px;
-       margin-top: 30px;
+       margin-top: -70px !important;
       float: left;
        display: inline-block;
     }
     .MobileRadioControl{
       height: 50px;
-       width: 400px;
+      width: 400px;
       border-radius: 1rem;
       float: left;
       text-align: center;
@@ -2566,7 +2567,7 @@ Email Notifications
         }
         .Profile 
         {
-          margin-bottom: 100px;
+          height: 100% !important;
         }
   }
 
