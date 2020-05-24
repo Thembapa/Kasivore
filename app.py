@@ -542,7 +542,12 @@ def service():
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        session.pop('CurrentUser')
+        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        loginUrl = '#'
+        session["CurrentProfileForm"] = 'AccountForm'
+        CurrentProfileForm = 'AccountForm'
+        CurrentUser = session['CurrentUser']
+        
     return render_template('/service.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 

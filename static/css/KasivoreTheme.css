@@ -2549,6 +2549,10 @@ Email Notifications
         {
           margin-top: 10px !important;
         }
+        .UserNamediv
+        {
+          margin-left: 15px;
+        }
 
         .dropdownSelect {
           position: relative;
