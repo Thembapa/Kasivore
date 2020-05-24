@@ -2090,7 +2090,7 @@ Email Notifications
      Profile Buttons          
   -----------------------------------------*/
   .Inputdropbtn {
-    height: 20px;
+    height: 30px;
   }
     #Accountpp
     {
@@ -2188,7 +2188,7 @@ Email Notifications
     color: var(--white-color);
     width: 80%;
     margin-left: 10px !important;
-    margin-top: 0px;
+    margin-top: 20px !important;
     text-align: center;
 
   }
@@ -2386,7 +2386,7 @@ Email Notifications
       width: 325px;
       border-radius: 2rem;
        margin-bottom: -80px;
-       margin-top: 90px;
+      margin-top: 10px !important;
       float: left;
        display: inline-block;
     }
@@ -2563,11 +2563,19 @@ Email Notifications
         }
         #lbUserlabel
         {
-          margin-right: 5px !important;
+          margin-right: 10px !important;
         }
         .Profile 
         {
           height: 100% !important;
+        }
+        #txtbusAddress
+        {
+          width: 100% !important;
+        }
+        #txt_addressSearch
+        {
+          width: 100% !important;
         }
   }
 
