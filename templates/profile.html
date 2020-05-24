@@ -120,7 +120,7 @@
                                                   {%if userDetails[9] != 'Buyer' %}
                                                     <input type="radio" class="form-check-input" id="radio2" name="radioService" value="3" checked="">&nbsp;&nbsp;Yes
                                                   {% else%}
-                                                    <input type="radio" class="form-check-input" id="radio2" name="radioService" value="3">&nbsp;&nbsp;Yes
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radioService" onclick="ChangeAccountType()" value="3">&nbsp;&nbsp;Yes
                                                   {%endif%}
                                                     
                                                     <span class="checkmark"></span>
@@ -129,7 +129,7 @@
                                                     {%if userDetails[9] == 'Buyer' %}
                                                     <input type="radio" class="form-check-input" id="radio2" name="radioService" value="2" checked="">&nbsp;&nbsp;NO
                                                   {% else%}
-                                                    <input type="radio" class="form-check-input" id="radio2" name="radioService" value="2">&nbsp;&nbsp;NO
+                                                    <input type="radio" class="form-check-input" id="radio2" name="radioService" onclick="ChangeAccountType()" value="2">&nbsp;&nbsp;NO
                                                   {%endif%}
                                                     <span class="checkmark"></span>
                                                   </label>
@@ -204,7 +204,7 @@
                                             <label class="MainCardLabel">Nationality
                                               <label class="RequiredLabel">*</label>
                                           </label>
-                                          <select id="country" name="country" class="form-control MaicardInputBox"  onchange="changeFunc(value);" required >
+                                          <select id="User_country" name="country" class="form-control MaicardInputBox"  onchange="changeFunc(value);" required >
                                             <option value="Afganistan">Afghanistan</option>
                                             <option value="Albania">Albania</option>
                                             <option value="Algeria">Algeria</option>

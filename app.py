@@ -34,6 +34,7 @@ def IsSignedIn():
         for user in session['CurrentUser']:
             if user[8] != '' and user[8] is not None:
                 session['profilepicture'] =  user[8]
+                session['ProfileProgress']  = 'p' +  str(user[30])
             else:
                 session['profilepicture'] = '/images/Profilepictures/login.png'
         return True
@@ -386,7 +387,7 @@ def Profile(formname=None):
             elif formname == "showcaseForm":
                 if request.form['hf_imageID'] != "":
                     parameters = { '_addedby': userid, '_isthumbnail': '1', '_ImageID': request.form['hf_imageID']}
-                    isSaved = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
+                    isSaved = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider_gallery', parameters)
                 elif request.form['hf_ImageUpload'] == "1":
                     # Change profile picture                   
                     upload = request.files['WorkDoneImage']
@@ -404,7 +405,7 @@ def Profile(formname=None):
 
                     ##Update Database
                     parameters = { '_addedby': userid, '_imageurl': filename, '_imagename': filename}
-                    isSaved = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
+                    isSaved = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider_gallery', parameters)
     else:
         return redirect("/login")
 
@@ -414,6 +415,10 @@ def Profile(formname=None):
     parameters = {'_userName': username}
     CurrentUser = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_getUser', parameters)
     session['CurrentUser'] = CurrentUser
+    
+    #update Progress 
+    if IsSignedIn():
+        print('Session updated')
 
     S_parameters = {'_userid': userid}
     serviceprovider = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_serviceprovider',S_parameters)
@@ -713,7 +718,7 @@ def index():
     if IsSignedIn():
         userMenuList = {'Sigout': 'javascript: sinOut();', 'Profile': '/Profile'}
         loginUrl = '#'
-        session['ProfileProgress'] = 'p25'
+        
 
         # test = 'themba'
     # password = sha256_crypt.encrypt(test)

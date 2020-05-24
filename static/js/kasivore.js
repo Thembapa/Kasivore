@@ -92,6 +92,10 @@ function ValidateUser() {
 		document.getElementById(CurrentSection).style.display = "block";
 		document.getElementById('Accountlabel' ).innerHTML = CurrentSection.replace('form','').replace('Form','')
 		
+		if(CurrentSection == 'BusinessAddressform' || CurrentSection =='showcaseForm')
+		{
+			CurrentSection = 'Businessform';
+		}
 
 		var radioButtons1 = 'radio' +CurrentSection + '1';
 		var radioButtons2 = 'radio' +CurrentSection + '2';
@@ -99,6 +103,13 @@ function ValidateUser() {
 		document.getElementById(radioButtons1 ).checked = true;
 		document.getElementById(radioButtons2 ).checked = true;
 	}
+	//Change Account Type
+	function ChangeAccountType(){
+		document.getElementById("AccountForm").submit();
+	           
+	}
+
+
 	function IndexPage()
 	{
 		window.location.replace("/index");
