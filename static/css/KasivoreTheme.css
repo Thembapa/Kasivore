@@ -2444,7 +2444,7 @@ Email Notifications
         color: var(--white-color);
         width: 100%;
         text-align: left;
-        margin-left: 5px;
+        margin-left: 10px;
         margin-bottom: -20px;
       }
       .BusinessAddressHeader
@@ -2555,6 +2555,10 @@ Email Notifications
           display: inline-block;
           width: 100%;
           margin-top: 20px;
+        }
+        #lbUserlabel
+        {
+          margin-right: 5px !important;
         }
   }
 
