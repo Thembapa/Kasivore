@@ -10,7 +10,7 @@ import kasivoreCommon
 import secrets
 import string
 from werkzeug.utils import secure_filename
-
+import DistanceCalc
 from configfile import TWILIOKEY, TWILIOTOCKEN, TWILIOWHATSAPP, MYWHATSAPP, MYWHATSSMS, TWILIOSMS, GOOGLEID, EMAIL_INFO, MAPS
 
 app = Flask(__name__, static_url_path='')
@@ -51,7 +51,22 @@ def changetolowercase(Distionary):
 
     return outdict
 
+def GetDistance (Providers, long, lat):
+    ServiceProviders = []
+    lat = float(lat)
+    long = float(long)
+    
 
+    for prov in Providers:
+        lat2 = float(prov[3])
+        long2 = float(prov[4])
+        TempList = list(prov)
+        TempList.append(round(DistanceCalc.estimatedDistance (long,lat,long2,lat2),2))
+        prov =  tuple(TempList)
+        ServiceProviders.append(prov)
+
+    print(ServiceProviders)
+    return ServiceProviders
 def error_Report(ErrorType, msg):
     
     kasivoreCommon.sendmail(ErrorType, msg, 'themba@kasivore.com')
@@ -93,7 +108,7 @@ def activate(username=None):
     print(username)
         
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
     if username is not None:
         Accountstatus = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_ActivateAccount', {'_userName': username})
@@ -111,7 +126,7 @@ def Help():
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
     return render_template('Help.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
@@ -124,7 +139,7 @@ def About():
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
     return render_template('About.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
@@ -137,7 +152,7 @@ def Contact():
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
 
     # client credentials are read from TWILIO_ACCOUNT_SID and AUTH_TOKEN
@@ -214,7 +229,7 @@ def Welcome():
     user_name =''
     Loginlink = ''
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
 
     if 'activatetocken' in session:
@@ -269,7 +284,7 @@ def Legal():
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
     return render_template('Legal.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
@@ -282,7 +297,7 @@ def Pay():
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
     return render_template('Pay.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
                            userMenuList=userMenuList, loginUrl=loginUrl)
@@ -300,7 +315,7 @@ def Profile(formname=None):
     passowrd = ''
     userid = 0
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
         session["CurrentProfileForm"] = 'AccountForm'
         CurrentProfileForm = 'AccountForm'
@@ -381,7 +396,7 @@ def Profile(formname=None):
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_Address', parameters)
             elif formname == "Businessform":
                 ##Update personal details 
-                parameters = {'_addedby': userid, '_ServiceID': request.form["hf_ServiceID"] , '_companyname': request.form["txtCompanyName"] , '_registrationnumber': request.form["txtReg"], '_typeofservice': request.form["hf_Category"], '_isactive': '1', '_tagline': request.form["txttag"], '_description': request.form["txtcomment"]}
+                parameters = {'_addedby': userid, '_ServiceID': request.form["hf_ServiceID"] , '_companyname': request.form["txtCompanyName"] , '_registrationnumber': request.form["txtReg"], '_typeofservice': request.form["hf_Category"], '_isactive': '1', '_tagline': request.form["txttag"], '_description': request.form["txtcomment"].replace("'","")}
                 # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
             elif formname == "showcaseForm":
@@ -542,7 +557,7 @@ def service():
     IsSignUp = ''
     loginUrl = '/login'
     if IsSignedIn():
-        userMenuList = {'Sigout': '/login', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
         session["CurrentProfileForm"] = 'AccountForm'
         CurrentProfileForm = 'AccountForm'
@@ -715,21 +730,36 @@ def TestEmail():
 
 @app.route('/')
 @app.route('/index')
-def index():
+@app.route('/index/<long>/<lat>')
+def index(long = None,lat = None ):
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
     loginUrl = '/login'
+    userid  = 0
+    ServiceProviders = []
     if IsSignedIn():
-        userMenuList = {'Sigout': 'javascript: sinOut();', 'Profile': '/Profile'}
+        userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
-        
+    
+    parameters = { '_userid': userid}
+    ServiceProviders = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_SPs', parameters)
+    if long is not None and lat is not None:
+        session['Pos_long'] = long
+        session['Pos_lat'] = lat
+    
+    if 'Pos_long' in session:
+        long = session['Pos_long'] 
+        lat = session['Pos_lat'] 
+    ##Get Fresh Data
+    Categories = KasivoreData.pgsql_call_Tablefunction('app', 'fn_gettypesofservices')
+    ProviderDistance = GetDistance(ServiceProviders,long,lat )
 
         # test = 'themba'
     # password = sha256_crypt.encrypt(test)
     # print(sha256_crypt.verify(test, password))
     # print(password)
-    return render_template('index.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,
+    return render_template('index.html', ErrorMsq=ErrorMsq, GID=GID, menubuttons=menubuttons, Signup=IsSignUp,MAPS = MAPS_API,ServiceProviders = ProviderDistance,Categories = Categories,
                            userMenuList=userMenuList, loginUrl=loginUrl)
 
 

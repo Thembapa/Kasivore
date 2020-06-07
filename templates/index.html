@@ -2,28 +2,141 @@
 <!-- HERO -->
 {% block content%}
     
-  <section class="hero d-flex flex-column justify-content-center align-items-center" id="home">
+  <section class="service d-flex flex-column justify-content-center align-items-center" id="home">
 
-            <div class="bg-overlay"></div>
+           <!--<div class="bg-overlay"></div>-->
+               
+               <div class="IndexMainCard">
+                    <div class="Mainsearch">
+                         <input type="text" class="form-control MaicardInputBox mianSeachBox" placeholder="SEARCH"  id="txt_advSearch" name="txt_advSearch">
+                    </div>
+                    <div class="IndexInnercard">
+                         <div class="Leftpane">                              
+                              <div class="UserButtons">
+                                   <input type="button" value="MY PROJECTS" class="btn float-right bt_leftpane"   >
+                                   <input type="button" value="CREATE PROJECT" class="btn float-right bt_leftpane"   >
+                                   <input type="button" value="VIEW MESSAGES" class="btn float-right bt_leftpane"   >
+                              </div>
+                              <div class="WokButtons">
+                                   <input type="button" value="WORK PROJECTS" class="btn float-right bt_leftpane"   >
+                              </div>
+                             
+                         </div>
+                         <div class="centerpane">
+                              <label class="Indexheader">SERVICE PROVIDERS</label>
+                              <button type="button" class="collapsible">ADVANCED SEARCH</button>
+                              <div class="content">  
+                                   <form id="frm_Adv_Search" action="/index" method="POST" >
+                                        <div class="MainCardGroup">
+                                             <label class="MainCardLabel">Speciality</label>
+                                             <div class="dropdownSelect">
+                                                  <button id="btCategory" onclick="myFunction(); return false;" class="Inputdropbtn" >Category</button>
+                                                  <div id="myDropdown" class="dropdownSelect-content">
+                                                    <input type="text" class="MaicardInputBox filterwidth" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                                                    {%for cat in Categories%}
+                                                    <a href='javascript: CategorySelect({{cat[0]}},"{{cat[1]}}",1);'>{{cat[1]}}</a>
+                                                    {%endfor%}
+                                                    
+                                                  </div>
+                                                </div>
+                                             
+                                        </div>
+                                        <div class="MainCardGroup">
+                                             <label class="MainCardLabel">Distance</label>
+                                             <input type="text" class="form-control MaicardInputBox"  id="txt_advSearch" name="txt_advSearch">
+                                             
+                                        </div>
+                                        <div class="MainCardGroup" >
+                                             <label class="MainCardLabel">Sort By</label>
+                                             <input type="text" class="form-control MaicardInputBox"  id="txt_advSearch" name="txt_advSearch">
+                                             
+                                        </div>
+                                        <div class="MainCardGroup" style="margin-bottom: 10px;">
+                                             <input type="text" placeholder="SEARCH"  class="form-control MaicardInputBox"  id="txt_advSearch" name="txt_advSearch">
+                                             <input type="button" value="SEARCH" class="btn float-right bt_ServicesSearch"   >
+                                        </div>
+                                        <input type="hidden" id="hf_long" name="hf_long" value="{{Pos_long}}">
+                                        <input type="hidden" id="hf_lat" name="hf_lat" value="{{Pos_lat}}">
+                                        <input type="hidden" id="hf_Category" name="hf_Category">
+                                        <input type="hidden" id="hf_CategoryName" name="hf_CategoryName">
+                                   </form>                              
+                                  
 
-               <div class="container">
-                    <div class="row">
-
-                         <div class="col-lg-8 col-md-10 mx-auto col-12">
-                              <div class="hero-text mt-5 text-center">
-
-                                    <h6 data-aos="fade-up" data-aos-delay="300">We connect Kasi with their local service providers!</h6>
-
-                                    <h1 class="text-white" data-aos="fade-up" data-aos-delay="500">Services on your finger tips, search for yours below.</h1>
-
-                                    <a href="/service" style="font-size: 20px" class="btn custom-btn mt-3" data-aos="fade-up" data-aos-delay="600">Services</a>
-
-                                    <a href="#about" class="btn custom-btn bordered mt-3" style="color: red" data-aos="fade-up" data-aos-delay="700">learn more</a>
+                                   
                                    
                               </div>
+                              {%for providers in ServiceProviders%}
+                                   <div class="services">
+                                        <div class="serviceThumbnail">
+                                             <span><img id="Newpp" src="{{providers[6]}} " alt="Avatar" class="serviceThumbnailPicture"></span>
+                                             <label class="serviceRating"> RATING: {{providers[7]}} ({{providers[9]}} Reviews)</label>
+                                             <label class="serviceRating"> KV VARIFIED: {{providers[10]}} </label>
+                                        
+                                        </div>
+                                        <div class="ServiceDetails">
+                                             <label class="serviceRating"> {{providers[1]}}</label>
+                                             <label class="serviceRating"> {{providers[2]}}</label>
+                                             <label class="serviceRating"> Distance: {{providers[11]}} km</label>
+                                             <label class="serviceRating"> Completed project: {{providers[8]}}</label>
+                                             <label class="serviceRating"> Speciality: {{providers[5]}}</label>
+                                             <input type="button" value="SEE MORE" class="btn float-right bt_ServicesMore"   >
+                                        </div>
+
+                                   </div>
+                              {%endfor%}
+                             
+                              <div class="services">
+                                   <div class="serviceThumbnail">
+                                        <span><img id="Newpp" src="../images/ServiceProviders/plumb2.jpg" alt="Avatar" class="serviceThumbnailPicture"></span>
+                                        <label class="serviceRating"> RATING: ***** (5 Reviews)</label>
+                                        <label class="serviceRating"> KV VARIFIED: YES</label>
+                                      
+                                   </div>
+                                   <div class="ServiceDetails">
+                                        <label class="serviceRating"> TEEPEE electrical</label>
+                                        <label class="serviceRating"> We keep the lights on 24/7</label>
+                                        <label class="serviceRating"> Distance: 15 km</label>
+                                        <label class="serviceRating"> Completed project: 8</label>
+                                        <label class="serviceRating"> Speciality: Electrical</label>
+                                        <input type="button" value="SEE MORE" class="btn float-right bt_ServicesMore"   >
+                                   </div>
+                              </div>
+                               <div class="services">
+                                   <div class="serviceThumbnail">
+                                        <span><img id="Newpp" src="../images/ServiceProviders/Plumb3.jpeg" alt="Avatar" class="serviceThumbnailPicture"></span>
+                                        <label class="serviceRating"> RATING: ***** (5 Reviews)</label>
+                                        <label class="serviceRating"> KV VARIFIED: YES</label>
+                                      
+                                   </div>
+                                   <div class="ServiceDetails">
+                                        <label class="serviceRating"> BDS Cleaning</label>
+                                        <label class="serviceRating"> Home and office cleaning</label>
+                                        <label class="serviceRating"> Distance: 12 km</label>
+                                        <label class="serviceRating"> Completed project: 2</label>
+                                        <label class="serviceRating"> Speciality: Cleaning</label>
+                                        <input type="button" value="SEE MORE" class="btn float-right bt_ServicesMore"   >
+                                   </div>
+                              </div>
+                              
                          </div>
+                          <div class="rightpane">
+                              <label class="RecommendedHeader">RECOMMENDED FOR YOU</label>
+                              <div class="Recommendetion">
+                                   <p id="demo"></p>
+                              </div>
+                              <div class="Recommendetion">
+
+                              </div>
+                              <div class="Recommendetion">
+
+                              </div>
+                          </div>
+                         
 
                     </div>
+                    
+                    
+                                   
                </div>
 
         <div class="Social-media">

@@ -45,7 +45,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
 
-            <a href="/" class="kasiLogo"><img src="../images/icons/Logo_White.png" class="KasivoreLogo" ></a>
+            <a href="/"><img src="../images/icons/Logo_White.png" class="KasivoreLogo" ></a>
 
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -55,7 +55,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-lg-auto" >
                      {%for menu in menubuttons%}
-                          <li class="nav-item" ><a class="nav-link smoothScroll"  href="{{menubuttons[menu]}}">{{menu}}</a></li>
+                          <li class="nav-item" ><a class="nav-link smoothScroll customNav"  href="{{menubuttons[menu]}}">{{menu}}</a></li>
                      {%endfor%}
                   
                 </ul>
@@ -66,7 +66,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
                             <div class="dropdown">
 
-                              <button class="dropbtn" style="background-color: transparent;border: none; margin-top: 15px"><a  href="{{loginUrl}}">
+                              <button class="dropbtn bt_Profile" ><a  href="{{loginUrl}}">
                                   <div class="c100 {{session['ProfileProgress']}} small dark">
                                         <span><img id="Accountpp" src="{{session['profilepicture']}}" alt="Avatar" class="ProfilePicture"></span>
                                         <div class="slice">
@@ -148,10 +148,29 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
     <!--Custom java scripty with Jinja -->
     <script type="text/JavaScript">
+    var x = document.getElementById("demo");
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var content = this.nextElementSibling;
+        if (content.style.display === "block") {
+        content.style.display = "none";
+        } else {
+        content.style.display = "block";
+        }
+    });
+    }
     function PageLoad() {
 	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
-	   //alert(document.getElementById('hf_IsSignup' ).value);
-
+       //alert(document.getElementById('hf_IsSignup' ).value);
+       if(document.getElementById('hf_long') != null)
+       {
+            getLocation();
+       }
+        
         if( document.getElementById('User_country') != null) // contry options
         {
                 var natinality = '' ;
@@ -314,6 +333,28 @@ https://www.tooplate.com/view/2119-gymso-fitness
             });
         }
         }
+
+      /*===================== Get cuurent Location============================*/
+        
+
+        function getLocation() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(showPosition);
+        } else { 
+           alert("Geolocation is not supported by this browser.");
+        }
+        }
+
+        function showPosition(position) {
+        alert(long)
+            if( long =='' || long =='None')
+            {
+                window.location.replace("/index/" + position.coords.longitude+ "/"  + position.coords.latitude );
+            }
+        
+        }
+
+  
     </script>
 
 </body>
