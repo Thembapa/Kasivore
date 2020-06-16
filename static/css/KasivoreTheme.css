@@ -2476,6 +2476,14 @@ Email Notifications
             height: 35px;
       }
       /* index page style*/
+      .IndexMainCard{
+        margin-top: 60px;
+      }
+
+      .centerpane
+      {
+        height: 63vh;
+      }
       .ServiceDetails
       {
         width: 50%;
@@ -2523,9 +2531,10 @@ Email Notifications
       .serviceThumbnailPicture
       {
           height :180px;  
-          width: 260px;
+          width:220px;
           margin-top: 10px; 
-          margin-left: 5%;
+          margin-left: 10%;
+          margin-right: 10%;
           display: inline-block;
           border-radius: 1rem;
           float: left;
