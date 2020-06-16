@@ -156,19 +156,54 @@ https://www.tooplate.com/view/2119-gymso-fitness
     coll[i].addEventListener("click", function() {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
-        if (content.style.display === "block") {
+        if (content.style.display != "none") {
         content.style.display = "none";
         } else {
         content.style.display = "block";
         }
     });
     }
+
+    $('#txt_Search').keydown( function( event ) {
+    if ( event.which === 13 ) {
+            // Do something
+            // Disable sending the related form
+            serviceSearch(document.getElementById("txt_Search").value)
+            return false;
+        }
+    });
+
+    // Service search 
+	function serviceSearch(searchtext, category= null,distance= null, sortby= null)
+	{
+		if (category == null)
+		{
+            if(searchtext ==='')
+            {
+                window.location.replace("index/search/Clear");
+            }
+            else
+            {
+                window.location.replace("index/search/" + searchtext);
+            }
+           
+		}
+		else
+		{
+			window.location.replace("/index/search/searchtext/category/distance/sortby");
+		}
+		
+	}
     function PageLoad() {
 	  //document.getElementById("txtUsername").style.backgroundColor = "yellow";
        //alert(document.getElementById('hf_IsSignup' ).value);
        if(document.getElementById('hf_long') != null)
        {
             getLocation();
+            document.getElementById('txt_Search' ).value= "{{session['search']}}"  ;  
+            document.getElementById('txt_Search_Adv' ).value= "{{session['search']}}"    ;   
+            document.getElementById('txt_Search_Adv1' ).value= "{{session['search']}}"  ;
+            //openForm('frmInvoiceNotes') 
        }
         
         if( document.getElementById('User_country') != null) // contry options
@@ -227,6 +262,8 @@ https://www.tooplate.com/view/2119-gymso-fitness
                 document.getElementById( 'lbSignin' ).innerHTML = "Sign out";
             }
         }
+
+        document.getElementById("txt_Search").focus();
         
         }
         // This sample uses the Autocomplete widget to help the user select a
@@ -346,7 +383,7 @@ https://www.tooplate.com/view/2119-gymso-fitness
         }
 
         function showPosition(position) {
-        alert(long)
+        long  = "{{session['Pos_long']}}"
             if( long =='' || long =='None')
             {
                 window.location.replace("/index/" + position.coords.longitude+ "/"  + position.coords.latitude );

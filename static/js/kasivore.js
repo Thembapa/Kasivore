@@ -376,3 +376,15 @@ function ValidateUser() {
 		  }
   }
 
+	//Locattion Request Javascript
+	function openForm(formname) {
+		document.getElementById(formname).style.display = "block";
+		
+	}
+	
+
+	function closeForm(formname) {
+		document.getElementById(formname).style.display = "none";
+		
+	}
+

@@ -8,130 +8,172 @@
                
                <div class="IndexMainCard">
                     <div class="Mainsearch">
-                         <input type="text" class="form-control MaicardInputBox mianSeachBox" placeholder="SEARCH"  id="txt_advSearch" name="txt_advSearch">
+                         <input type="text" class="form-control MaicardInputBox mianSeachBox" placeholder="SEARCH"  id="txt_Search" name="txt_Search" onkeyup="">
                     </div>
                     <div class="IndexInnercard">
-                         <div class="Leftpane">                              
-                              <div class="UserButtons">
-                                   <input type="button" value="MY PROJECTS" class="btn float-right bt_leftpane"   >
-                                   <input type="button" value="CREATE PROJECT" class="btn float-right bt_leftpane"   >
-                                   <input type="button" value="VIEW MESSAGES" class="btn float-right bt_leftpane"   >
-                              </div>
-                              <div class="WokButtons">
-                                   <input type="button" value="WORK PROJECTS" class="btn float-right bt_leftpane"   >
-                              </div>
+                        
+                         <div class="Leftpane">       
+                              {% if session['CurrentUser'] %}
+                                   <div class="UserButtons">
+                                        
+                                        <button type="button" class="btn float-right collapsible">ADVANCED SEARCH</button>
+                                        <div class="content">  
+                                             <form id="frm_Adv_Search" action="/index" method="POST" >
+                                                  <div class="SearchCardGroup">
+                                                       <input type="text" placeholder="SEARCH"  class="form-control SearchcardInputBox"  id="txt_Search_Adv" name="txt_Search_Adv">
+                                                  </div>
+                                                  <div class="SearchCardGroup">
+                                                       <div class="dropdownSelectSearch">
+                                                            <button id="btCategory" onclick="myFunction(); return false;" class="Inputdropbtn" >Category</button>
+                                                            <div id="myDropdown" class="dropdownSelectSearch-content">
+                                                            <input type="text" class="SearchcardInputBox filterwidth" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                                                            {%for cat in Categories%}
+                                                            <a href='javascript: CategorySelect({{cat[0]}},"{{cat[1]}}",1);'>{{cat[1]}}</a>
+                                                            {%endfor%}
+                                                            
+                                                            </div>
+                                                       </div>
+                                                       
+                                                  </div>
+                                                  <div class="SearchCardGroup">
+                                                       <input type="text" class="form-control SearchcardInputBox" placeholder="Distance"  id="txt_advSearch" name="txt_advSearch">
+                                                       
+                                                  </div>
+                                                  <div class="SearchCardGroup" >
+                                                       <input type="text" class="form-control SearchcardInputBox" placeholder="Sort By"  id="txt_advSearch" name="txt_advSearch">
+                                                       
+                                                  </div>
+                                                  
+                                                  <div class="SearchCardGroup" style="margin-bottom: 10px;" >
+                                                       <input type="button" value="SEARCH" class="btn float-right bt_ServicesSearch"   >
+                                                  </div>
+                                                  <input type="hidden" id="hf_long" name="hf_long" value="{{Pos_long}}">
+                                                  <input type="hidden" id="hf_lat" name="hf_lat" value="{{Pos_lat}}">
+                                                  <input type="hidden" id="hf_Category" name="hf_Category">
+                                                  <input type="hidden" id="hf_CategoryName" name="hf_CategoryName">
+                                             </form>                              
+                                        
+
+                                             
+                                             
+                                        </div>
+                                        
+                                        <input type="button" value="VIEW MESSAGES" class="btn float-right bt_leftpane"   >
+                                        
+                                   </div>
+                                   
+                              {%else%}
+                                   <div class="UserButtons">
+                                        
+                                        <button type="button" class="btn float-right collapsible">ADVANCED SEARCH</button>
+                                        <div class="content">  
+                                             <form id="frm_Adv_Search" action="/index" method="POST" >
+                                                  <div class="SearchCardGroup">
+                                                       <input type="text" placeholder="SEARCH"  class="form-control SearchcardInputBox"  id="txt_Search_Adv1" name="txt_Search_Adv1">
+                                                  </div>
+                                                  <div class="SearchCardGroup">
+                                                       <div class="dropdownSelectSearch">
+                                                            <button id="btCategory" onclick="myFunction(); return false;" class="Inputdropbtn" >Category</button>
+                                                            <div id="myDropdown" class="dropdownSelectSearch-content">
+                                                            <input type="text" class="SearchcardInputBox filterwidth" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                                                            {%for cat in Categories%}
+                                                            <a href='javascript: CategorySelect({{cat[0]}},"{{cat[1]}}",1);'>{{cat[1]}}</a>
+                                                            {%endfor%}
+                                                            
+                                                            </div>
+                                                       </div>
+                                                       
+                                                  </div>
+                                                  <div class="SearchCardGroup">
+                                                       <input type="text" class="form-control SearchcardInputBox" placeholder="Distance"  id="txt_advSearch" name="txt_advSearch">
+                                                       
+                                                  </div>
+                                                  <div class="SearchCardGroup" >
+                                                       <input type="text" class="form-control SearchcardInputBox" placeholder="Sort By"  id="txt_advSearch" name="txt_advSearch">
+                                                       
+                                                  </div>
+                                                  
+                                                  <div class="SearchCardGroup" style="margin-bottom: 10px;" >
+                                                       <input type="button" value="SEARCH" class="btn float-right bt_ServicesSearch"   >
+                                                  </div>
+                                                  <input type="hidden" id="hf_long" name="hf_long" value="{{Pos_long}}">
+                                                  <input type="hidden" id="hf_lat" name="hf_lat" value="{{Pos_lat}}">
+                                                  <input type="hidden" id="hf_Category" name="hf_Category">
+                                                  <input type="hidden" id="hf_CategoryName" name="hf_CategoryName">
+                                             </form>                              
+                                        
+
+                                             
+                                             
+                                        </div>
+                                        
+                                   </div>
+                                   
+                              {%endif%}                       
+                             
                              
                          </div>
                          <div class="centerpane">
                               <label class="Indexheader">SERVICE PROVIDERS</label>
-                              <button type="button" class="collapsible">ADVANCED SEARCH</button>
-                              <div class="content">  
-                                   <form id="frm_Adv_Search" action="/index" method="POST" >
-                                        <div class="MainCardGroup">
-                                             <label class="MainCardLabel">Speciality</label>
-                                             <div class="dropdownSelect">
-                                                  <button id="btCategory" onclick="myFunction(); return false;" class="Inputdropbtn" >Category</button>
-                                                  <div id="myDropdown" class="dropdownSelect-content">
-                                                    <input type="text" class="MaicardInputBox filterwidth" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
-                                                    {%for cat in Categories%}
-                                                    <a href='javascript: CategorySelect({{cat[0]}},"{{cat[1]}}",1);'>{{cat[1]}}</a>
-                                                    {%endfor%}
-                                                    
-                                                  </div>
-                                                </div>
-                                             
-                                        </div>
-                                        <div class="MainCardGroup">
-                                             <label class="MainCardLabel">Distance</label>
-                                             <input type="text" class="form-control MaicardInputBox"  id="txt_advSearch" name="txt_advSearch">
-                                             
-                                        </div>
-                                        <div class="MainCardGroup" >
-                                             <label class="MainCardLabel">Sort By</label>
-                                             <input type="text" class="form-control MaicardInputBox"  id="txt_advSearch" name="txt_advSearch">
-                                             
-                                        </div>
-                                        <div class="MainCardGroup" style="margin-bottom: 10px;">
-                                             <input type="text" placeholder="SEARCH"  class="form-control MaicardInputBox"  id="txt_advSearch" name="txt_advSearch">
-                                             <input type="button" value="SEARCH" class="btn float-right bt_ServicesSearch"   >
-                                        </div>
-                                        <input type="hidden" id="hf_long" name="hf_long" value="{{Pos_long}}">
-                                        <input type="hidden" id="hf_lat" name="hf_lat" value="{{Pos_lat}}">
-                                        <input type="hidden" id="hf_Category" name="hf_Category">
-                                        <input type="hidden" id="hf_CategoryName" name="hf_CategoryName">
-                                   </form>                              
-                                  
-
-                                   
-                                   
-                              </div>
+                              
                               {%for providers in ServiceProviders%}
                                    <div class="services">
                                         <div class="serviceThumbnail">
                                              <span><img id="Newpp" src="{{providers[6]}} " alt="Avatar" class="serviceThumbnailPicture"></span>
                                              <label class="serviceRating"> RATING: {{providers[7]}} ({{providers[9]}} Reviews)</label>
-                                             <label class="serviceRating"> KV VARIFIED: {{providers[10]}} </label>
                                         
                                         </div>
                                         <div class="ServiceDetails">
-                                             <label class="serviceRating"> {{providers[1]}}</label>
-                                             <label class="serviceRating"> {{providers[2]}}</label>
-                                             <label class="serviceRating"> Distance: {{providers[11]}} km</label>
-                                             <label class="serviceRating"> Completed project: {{providers[8]}}</label>
-                                             <label class="serviceRating"> Speciality: {{providers[5]}}</label>
+                                             <label class="serviceProvider"> {{providers[1]}}</label>
+                                             <label class="TagLine"> {{providers[2]}}</label>
+                                             <label class="ServiceDetailsgroup" >
+                                                  <label class="Leftcolumn">Distance:</label> 
+                                                  <label class="RightColumn">{{providers[11]}} km</label>
+                                             </label>
+                                             <label class="ServiceDetailsgroup" >
+                                                  <label class="Leftcolumn">Completed project:</label> 
+                                                  <label class="RightColumn">{{providers[8]}}</label>
+                                             </label>
+                                             <label class="ServiceDetailsgroup">
+                                                  <label class="Leftcolumn">Speciality:</label> 
+                                                  <label class="RightColumn">{{providers[5]}}</label>
+                                             </label>
                                              <input type="button" value="SEE MORE" class="btn float-right bt_ServicesMore"   >
                                         </div>
 
                                    </div>
                               {%endfor%}
                              
-                              <div class="services">
-                                   <div class="serviceThumbnail">
-                                        <span><img id="Newpp" src="../images/ServiceProviders/plumb2.jpg" alt="Avatar" class="serviceThumbnailPicture"></span>
-                                        <label class="serviceRating"> RATING: ***** (5 Reviews)</label>
-                                        <label class="serviceRating"> KV VARIFIED: YES</label>
-                                      
-                                   </div>
-                                   <div class="ServiceDetails">
-                                        <label class="serviceRating"> TEEPEE electrical</label>
-                                        <label class="serviceRating"> We keep the lights on 24/7</label>
-                                        <label class="serviceRating"> Distance: 15 km</label>
-                                        <label class="serviceRating"> Completed project: 8</label>
-                                        <label class="serviceRating"> Speciality: Electrical</label>
-                                        <input type="button" value="SEE MORE" class="btn float-right bt_ServicesMore"   >
-                                   </div>
-                              </div>
-                               <div class="services">
-                                   <div class="serviceThumbnail">
-                                        <span><img id="Newpp" src="../images/ServiceProviders/Plumb3.jpeg" alt="Avatar" class="serviceThumbnailPicture"></span>
-                                        <label class="serviceRating"> RATING: ***** (5 Reviews)</label>
-                                        <label class="serviceRating"> KV VARIFIED: YES</label>
-                                      
-                                   </div>
-                                   <div class="ServiceDetails">
-                                        <label class="serviceRating"> BDS Cleaning</label>
-                                        <label class="serviceRating"> Home and office cleaning</label>
-                                        <label class="serviceRating"> Distance: 12 km</label>
-                                        <label class="serviceRating"> Completed project: 2</label>
-                                        <label class="serviceRating"> Speciality: Cleaning</label>
-                                        <input type="button" value="SEE MORE" class="btn float-right bt_ServicesMore"   >
-                                   </div>
-                              </div>
                               
                          </div>
-                          <div class="rightpane">
-                              <label class="RecommendedHeader">RECOMMENDED FOR YOU</label>
-                              <div class="Recommendetion">
-                                   <p id="demo"></p>
-                              </div>
-                              <div class="Recommendetion">
+                         {% if session['CurrentUser'] %}
+                              <div class="rightpane">
+                                   <label class="RecommendedHeader">RECOMMENDED FOR YOU</label>
+                                   <div class="Recommendetion">
+                                        <p id="demo"></p>
+                                   </div>
+                                   <div class="Recommendetion">
 
-                              </div>
-                              <div class="Recommendetion">
+                                   </div>
+                                   <div class="Recommendetion">
 
+                                   </div>
                               </div>
-                          </div>
-                         
+                         {%else%}
+                              <div class="rightpane">
+                                   <label class="RecommendedHeader">TRANDING DEALS</label>
+                                   <div class="Recommendetion">
+                                        <p id="demo"></p>
+                                   </div>
+                                   <div class="Recommendetion">
+
+                                   </div>
+                                   <div class="Recommendetion">
+
+                                   </div>
+                              </div>
+                         {% endif %}
+                                                  
 
                     </div>
                     
@@ -146,6 +188,23 @@
                 <li><a href="https://www.instagram.com/kasivore_sa" class="fa fa-instagram"></a></li>
          </ul>
     </div>  
+    <div class="form-popup" id="frmInvoiceNotes">
+          <form action="/index/frmNotes" class="form-container" method="POST">
+               
+               <div id="AddNotes"  class="NoteConatiner"  >
+                    <div class="AddNoteContainer">
+                         <textarea id="txtNotes" name="txtNotes" rows="15" class="NotesTextArea"> </textarea>
+                    </div>
+
+               </div>
+               <div class="formButtons">
+                    <button type="button" class="btn btn-primary"  onclick="closeForm('frmInvoiceNotes')">Close</button>
+               </div>
+     
+          
+          </form>
+     </div>
+ 
      </section>
 {%endblock%}
     

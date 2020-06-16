@@ -531,7 +531,32 @@ https://www.tooplate.com/view/2119-gymso-fitness
   {
     width:100% !important;
   }
-
+  .dropdownSelectSearch {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+  }
+  .dropdownSelectSearch-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    width:100%;
+    overflow: auto;
+    border: 1px solid #ddd;
+    z-index: 1;
+  }
+  
+  .dropdownSelectSearch-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdownSelectSearch a:hover {background-color: #ddd;}
+  
+  
   /*---------------------------------------
      CLASS               
   -----------------------------------------*/
@@ -1160,6 +1185,12 @@ https://www.tooplate.com/view/2119-gymso-fitness
     display: inline-block; 
     width: 60%;
   }
+  .SearchcardInputBox
+  {
+    border-radius: 5rem;
+    display: inline-block; 
+    width: 100%;
+  }
   .MaicardTextArea
   {
     border-radius: 1rem;
@@ -1210,6 +1241,11 @@ https://www.tooplate.com/view/2119-gymso-fitness
         height: 60px !important;
         margin-left: 5px;
         margin-right:  5px;
+      }
+      .SearchCardGroup
+      {
+        text-align: center;
+        height: 60px !important;
       }
       .Headergroup
       {
@@ -1263,8 +1299,340 @@ Email Notifications
   float: left;
 }
 
+
+/*----------------------------------------------
+   index page styles 
+----------------------------------------------*/
+.IndexMainCard{
+  height: 700px;
+  width: 1300px;
+  margin-top: 80px;  
+  border-radius:2rem;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+
+.IndexInnercard
+{
+  width: 100%;
+  height: 550px;  
+  
+}
+
+.collapsible {
+  background-color:  #be222f;
+  color: white;
+  font-size: small;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 5%;
+  width: 90%;
+  border-radius: 2rem;
+
+}
+
+.active, .collapsible:hover {
+  color: black;
+}
+
+.content {
+  padding: 0 18px;
+  display: block;
+  overflow: hidden;
+  border-bottom: solid #be222f 2px;
+}
+.bt_ServicesSearch
+{
+  background-color:  #be222f;
+  color: white;
+  font-size: medium;
+  margin-top: 20px;
+  width: 100%;
+  
+  border-radius: 2rem;
+}
+.services {
+  padding: 0 18px;
+  display: block;
+  height: 180px;
+  width: 96%;
+  margin-top: 10px;
+  border-radius: 2rem;
+  background-color: white;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.ServiceProfile{
+ width: 30%;
+ height: 178px;
+ float: left;
+ background-color: red;
+ 
+}
+.serviceThumbnail
+{
+  width: 30%;
+  display: inline-block;
+
+}
+.serviceThumbnailPicture
+{
+    height :120px;  
+    width: 150px;
+    margin-top: 10px;   
+    display: inline-block;
+    border-radius: 1rem;
+    float: left;
+}
+.ServiceDetailsgroup
+{
+  width: 100%;
+  margin: 0;
+}
+.serviceRating
+{
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: 0;
+  color: black;
+  width: 68%;
+  display: inline-block;
+  text-align: left;
+}
+.Leftcolumn
+{
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 0;
+  padding: 0;
+  color: black;
+  display: inline-block;
+  width: 30%;
+  text-align: left;
+}
+.RightColumn
+{
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 0;
+  padding: 0;
+  color: black;
+  width: 68%;
+  display: inline-block;
+  text-align: left;
+}
+.TagLine
+{
+  font-size: 12px;
+  margin-bottom: 0;
+  font-style: italic;
+  padding: 0;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+.serviceProvider
+{
+  font-size: 12px;
+  font-weight: bolder;
+  margin-bottom: 0;
+  padding: 0;
+  color: black;
+  width: 100%;
+  text-align: left;
+}
+.ServiceDetails{
+  width: 70%;
+  height: 178px;
+  float: right;
+  display: inline-block;
+  
+ }
+ .bt_ServicesMore
+ {
+   background-color:  #be222f;
+   color: white;
+   font-size: small;
+   margin-top: 20px;
+   border-radius: 2rem;
+ }
+.Recommendetion {
+  padding: 0 18px;
+  display: block;
+  height: 130px;
+  width: 80%;
+  margin-top: 10px;
+  border-radius: 2rem;
+  background-color: white;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.Indexheader
+{
+  color: white;
+  font-size: large;
+  text-align: left;
+  font-weight: bold;
+  margin-left: 2%;
+}
+.RecommendedHeader
+{
+  color: white;
+  font-size: large;
+  text-align: left;
+  margin-left: 15%;
+}
+.Mainsearch
+{
+  width: 100%;
+  height: 100px;
+}
+.mianSeachBox
+{
+  float: right;
+  width: 30%;
+  margin-right: 5%;
+  text-align: center;
+}
+.Leftpane
+{
+  float: left;
+  width: 25%;
+  height: 60vh;  
+  border-right: solid  #be222f 2px;
+}
+.bt_leftpane
+{
+  background-color:  #be222f;
+  color: white;
+  font-size: small;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-right: 5%;
+  width: 90%;
+  border-radius: 2rem;
+}
+.UserButtons
+{
+  width: 90%;
+  margin-right: 5%;
+  margin-left: 5%;
+  height: 80px;
+}
+
+.centerpane
+{
+  width: 50%;
+  float: left;
+  height: 60vh;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
+.centerpane::-webkit-scrollbar {
+  width: 10px;
+}
+.centerpane::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+
+ 
+/* Handle */
+.centerpane::-webkit-scrollbar-thumb {
+  background: #be222f ; 
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.centerpane::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+.Providers
+{
+  width: 100%;
+  float: left;
+  height: 100vh;
+  border-right: solid  #be222f 2px;
+}
+.rightpane
+{
+  float: right;
+  width: 24%;
+  margin-left: 1%;
+  height: 60vh;  
+  border-left: solid  #be222f 2px;
+  
+}
+
+
+  /*---------------------------------
+  pop up input form 
+  --------------------------------*/
+/* The popup form - hidden by default */
+.form-popup {
+	display: none;
+	position: fixed;
+	bottom: 0;
+	right: 15px;
+	height: 500px;
+	border: 3px solid #f1f1f1;
+	background-color: black;
+	opacity: 0.8;
+	z-index: 9;
+  }
+  
+
+  /* notes container*/
+  .NoteConatiner
+  {
+	  height: 440px;
+	  width:400px;;
+  }
+
+  .NoteConatiner h1
+  {
+	  color: white;
+	  width: 100%;
+  }
+
+  /* control Buttons*/
+  .formButtons
+  {
+	  text-align: right;
+  }
+
+  /*Notes Text Area */
+  .NotesTextArea
+  {
+	  width: 100%;
+  }
+  
+  /* Current notes */
+  .Notehistory
+  {
+	  width: 100%;
+	  color: white;
+	  font-size: medium;
+  }
+
+.AddNoteContainer
+{
+	height: 400px;
+}
+
+
 @media screen and (max-width: 992px) {
 
+  
+  /* hide Divs on Mobile*/
+  .Leftpane
+  {
+    display: none;
+  }
+  .rightpane
+  {
+    display: none;
+  }
     /*---------------------------------------
      Profile Buttons          
   -----------------------------------------*/ 
@@ -1677,237 +2045,27 @@ Email Notifications
         width: 60%;
         height: 35px;
   }
-}
 
-/*----------------------------------------------
-   index page styles 
-----------------------------------------------*/
-.IndexMainCard{
-  height: 700px;
-  width: 1300px;
-  margin-top: 80px;  
-  border-radius:2rem;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
-
-.IndexInnercard
-{
-  width: 100%;
-  height: 550px;  
-  
-}
-
-.collapsible {
-  background-color: #be222f ;
-  color: white;
-  cursor: pointer;
-  padding: 18px;
-  width: 96%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  margin-left: 2%;
-  margin-right: 2%;
-
-}
-
-.active, .collapsible:hover {
-  color: black;
-}
-
-.content {
-  padding: 0 18px;
-  display: none;
-  overflow: hidden;
-  margin-left: 2%;
-  margin-right: 2%;
-  border-bottom: solid #be222f 2px;
-}
-.bt_ServicesSearch
-{
-  background-color:  #be222f;
-  color: white;
-  font-size: medium;
-  margin-right: 5%;
-  margin-top: 20px;
-  width: 30%;
-  
-  border-radius: 2rem;
-}
-.services {
-  padding: 0 18px;
-  display: block;
-  height: 180px;
-  width: 96%;
-  margin-top: 10px;
-  border-radius: 2rem;
-  background-color: white;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-.ServiceProfile{
- width: 30%;
- height: 178px;
- float: left;
- background-color: red;
+  /* index page styles */
+  .mianSeachBox
+  {
+     width: 90% !important;
+     float: left;
+     margin-left:5%;
+     margin-right: 5%;
+  }
+  .IndexMainCard{
+   width: 90%;
+   margin-left: 5%;
+   margin-right: 5%;
+  }
+  .centerpane
+  {
+    width: 100%;
+  }
  
 }
-.serviceThumbnail
-{
-  width: 30%;
-  display: inline-block;
 
-}
-.serviceThumbnailPicture
-{
-    height :120px;  
-    width: 150px;
-    margin-top: 10px;   
-    display: inline-block;
-    border-radius: 1rem;
-    float: left;
-}
-.serviceRating
-{
-  font-size: 10px;
-  font-weight: bold;
-  margin-bottom: 0;
-  padding: 0;
-  color: black;
-  width: 100%;
-  text-align: left;
-}
-.ServiceDetails{
-  width: 70%;
-  height: 178px;
-  float: right;
-  display: inline-block;
-  
- }
- .bt_ServicesMore
- {
-   background-color:  #be222f;
-   color: white;
-   font-size: small;
-   margin-top: 20px;
-   border-radius: 2rem;
- }
-.Recommendetion {
-  padding: 0 18px;
-  display: block;
-  height: 130px;
-  width: 80%;
-  margin-top: 10px;
-  border-radius: 2rem;
-  background-color: white;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-.Indexheader
-{
-  color: white;
-  font-size: large;
-  text-align: left;
-  font-weight: bold;
-  margin-left: 2%;
-}
-.RecommendedHeader
-{
-  color: white;
-  font-size: large;
-  text-align: left;
-  margin-left: 15%;
-}
-.Mainsearch
-{
-  width: 100%;
-  height: 100px;
-}
-.mianSeachBox
-{
-  float: right;
-  width: 30%;
-  margin-right: 5%;
-  text-align: center;
-}
-.Leftpane
-{
-  float: left;
-  width: 25%;
-  height: 60vh;  
-  border-right: solid  #be222f 2px;
-}
-.bt_leftpane
-{
-  background-color:  #be222f;
-  color: white;
-  font-size: small;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 5%;
-  width: 90%;
-  border-radius: 2rem;
-}
-.UserButtons
-{
-  width: 90%;
-  margin-right: 5%;
-  margin-left: 5%;
-  border-bottom: solid  #be222f 2px;
-  height: 230px;
-}
-.WokButtons
-{
-  width: 90%;
-  margin-right: 5%;
-  margin-left: 5%;
-  margin-top: 20px;
-  border-top: solid  #be222f 2px;
-}
-.centerpane
-{
-  width: 50%;
-  float: left;
-  height: 60vh;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-}
-.centerpane::-webkit-scrollbar {
-  width: 10px;
-}
-.centerpane::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
-
- 
-/* Handle */
-.centerpane::-webkit-scrollbar-thumb {
-  background: #be222f ; 
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-.centerpane::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-}
-.Providers
-{
-  width: 100%;
-  float: left;
-  height: 100vh;
-  border-right: solid  #be222f 2px;
-}
-.rightpane
-{
-  float: right;
-  width: 24%;
-  margin-left: 1%;
-  height: 60vh;  
-  border-left: solid  #be222f 2px;
-  
-}
   @media screen and (max-width: 767px) {
     /*---------------------------------------
      Profile Buttons          
@@ -2317,8 +2475,65 @@ Email Notifications
             width: 60%;
             height: 35px;
       }
+      /* index page style*/
+      .ServiceDetails
+      {
+        width: 50%;
+      }
+      .Leftcolumn
+      {
+        width: 30%;
+        display: inline-block;
+        text-align: left;
+      }
+      .RightColumn
+      {
+        width: 68%;
+        display: inline-block;
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .serviceRating
+      {
+        font-size: 10px;
+        width: 100%;
+      }
+      .services {
+        padding: 0 18px;
+        display: block;
+        height: 420px;
+        width: 75%;
+        margin-top: 10px;
+        border-radius: 2rem;
+        background-color: white;
+        margin-left: 12.5%;
+        margin-right: 12.5%;
+      }
+      .serviceThumbnail
+      {
+        width: 100%;
+      }
+      .ServiceDetails{
+        width: 100%;
+        height: 178px;
+        float: left;
+      }
+      .serviceThumbnailPicture
+      {
+          height :180px;  
+          width: 260px;
+          margin-top: 10px; 
+          margin-left: 5%;
+          display: inline-block;
+          border-radius: 1rem;
+          float: left;
+      }  
+     
   }
 
+  
 @media screen and (max-width: 480px) {
     /*---------------------------------------
      Profile Buttons          
@@ -2812,6 +3027,8 @@ Email Notifications
         {
           width: 100% !important;
         }
+
+        
   }
 
   

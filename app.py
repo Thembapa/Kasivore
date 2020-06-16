@@ -53,8 +53,11 @@ def changetolowercase(Distionary):
 
 def GetDistance (Providers, long, lat):
     ServiceProviders = []
+    print('long: ' + str(long))
+    print('lat: ' + str(lat))
     lat = float(lat)
     long = float(long)
+    
     
 
     for prov in Providers:
@@ -731,7 +734,11 @@ def TestEmail():
 @app.route('/')
 @app.route('/index')
 @app.route('/index/<long>/<lat>')
-def index(long = None,lat = None ):
+@app.route('/index/search/')
+@app.route('/index/search/<searchtext>')
+@app.route('/index/search/<searchtext>/<category>/<distance>/<sortby>')
+
+def index(long = None,lat = None,searchtext = None,category = None, distance = None,sortby = None):
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
@@ -741,20 +748,39 @@ def index(long = None,lat = None ):
     if IsSignedIn():
         userMenuList = {'SIGNOUT': 'javascript: sinOut();', 'PROFILE': '/Profile'}
         loginUrl = '#'
+
+   
+    if searchtext != None:
+        if searchtext =='Clear':
+           session['search']= ''
+        else:
+            session['search']= searchtext
+        return redirect ('/')
+    elif searchtext ==None and 'search' in session:
+        searchtext = session['search']
+    else:
+        searchtext =''
     
-    parameters = { '_userid': userid}
+    print('searchtext' + searchtext)
+    parameters = { '_userid': userid, '_searchtext': searchtext}
     ServiceProviders = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_SPs', parameters)
     if long is not None and lat is not None:
         session['Pos_long'] = long
         session['Pos_lat'] = lat
+
+        return redirect('/')
     
     if 'Pos_long' in session:
         long = session['Pos_long'] 
         lat = session['Pos_lat'] 
+    else:
+        long =28.1122679
+        lat =-26.27075929
+
     ##Get Fresh Data
     Categories = KasivoreData.pgsql_call_Tablefunction('app', 'fn_gettypesofservices')
     ProviderDistance = GetDistance(ServiceProviders,long,lat )
-
+    ProviderDistance.sort(key=lambda x:x[11])
         # test = 'themba'
     # password = sha256_crypt.encrypt(test)
     # print(sha256_crypt.verify(test, password))
