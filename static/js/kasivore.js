@@ -137,6 +137,12 @@ function ValidateUser() {
 	}
 	function SelectThumbnail(imageid){
 		document.getElementById("hf_imageID").value = imageid;
+		document.getElementById("hf_Remove").value = '0';
+        document.getElementById("showcaseForm").submit();
+	}
+	function Removeimage(imageid){
+		document.getElementById("hf_imageID").value = imageid;
+		document.getElementById("hf_Remove").value = '1';		
         document.getElementById("showcaseForm").submit();
 	}
 	function UpLoadWorkDone(input) {

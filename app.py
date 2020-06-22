@@ -404,7 +404,7 @@ def Profile(formname=None):
                 CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider', parameters)
             elif formname == "showcaseForm":
                 if request.form['hf_imageID'] != "":
-                    parameters = { '_addedby': userid, '_isthumbnail': '1', '_ImageID': request.form['hf_imageID']}
+                    parameters = { '_addedby': userid, '_isthumbnail': '1', '_ImageID': request.form['hf_imageID'], '_isdeleted': request.form['hf_Remove']}
                     isSaved = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_add_serviceprovider_gallery', parameters)
                 elif request.form['hf_ImageUpload'] == "1":
                     # Change profile picture                   

@@ -6,1206 +6,2438 @@ https://www.tooplate.com/view/2119-gymso-fitness
 
 */
 
-  @font-face {fsocial-icon
-      font-family: 'Plain';
-      src: url('../fonts/Plain-Regular.woff2') format('woff2'),
-          url('../fonts/Plain-Regular.woff') format('woff');
-      font-weight: normal;
-      font-style: normal;
-  }
+@font-face {fsocial-icon
+  font-family: 'Plain';
+  src: url('../fonts/Plain-Regular.woff2') format('woff2'),
+      url('../fonts/Plain-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
-  @font-face {
-      font-family: 'Plain';
-      src: url('../fonts/Plain-Light.woff2') format('woff2'),
-          url('../fonts/Plain-Light.woff') format('woff');
-      font-weight: 300;
-      font-style: normal;
-  }
+@font-face {
+  font-family: 'Plain';
+  src: url('../fonts/Plain-Light.woff2') format('woff2'),
+      url('../fonts/Plain-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
 
-  @font-face {
-      font-family: 'Plain';
-      src: url('../fonts/Plain-Bold.woff2') format('woff2'),
-          url('../fonts/Plain-Bold.woff') format('woff');
-      font-weight: bold;
-      font-style: normal;
-  }
+@font-face {
+  font-family: 'Plain';
+  src: url('../fonts/Plain-Bold.woff2') format('woff2'),
+      url('../fonts/Plain-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
 
-  @font-face {
-      font-family: 'Plain';
-      src: url('../fonts/Plain-Bold.woff2') format('woff2'),
-          url('../fonts/Plain-Bold.woff') format('woff');
-      font-weight: bold;
-      font-style: normal;
-  }
-  @font-face { font-family:Ubuntu-Bold; 
-       src: url('../fonts/Ubuntu-Bold.ttf'); } 
-       @font-face { font-family:Ubuntu-Regular; 
-       src: url('../fonts/Ubuntu-Regular.ttf'); } 
+@font-face {
+  font-family: 'Plain';
+  src: url('../fonts/Plain-Bold.woff2') format('woff2'),
+      url('../fonts/Plain-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face { font-family:Ubuntu-Bold; 
+   src: url('../fonts/Ubuntu-Bold.ttf'); } 
+   @font-face { font-family:Ubuntu-Regular; 
+   src: url('../fonts/Ubuntu-Regular.ttf'); } 
 
-  :root {
-    --primary-color:        #be222f;
-    --white-color:          white;
+:root {
+--primary-color:        #be222f;
+--white-color:          white;
 
-    --dark-color:           #171819;
-    --about-bg-color:       #f9f9f9;
+--dark-color:           #171819;
+--about-bg-color:       #f9f9f9;
 
-    --gray-color:           #909090;
-    --link-color:           #404040;
-    --p-color:              #666262;
+--gray-color:           #909090;
+--link-color:           #404040;
+--p-color:              #666262;
 
-    --base-font-family:     'Ubuntu-Regular';
-    --font-weight-bold:     bold;
-    --font-weight-normal:   normal;
-    --font-weight-light:    300;
-    --font-weight-thin:     100;
+--base-font-family:     'Ubuntu-Regular';
+--font-weight-bold:     bold;
+--font-weight-normal:   normal;
+--font-weight-light:    300;
+--font-weight-thin:     100;
 
-    --h1-font-size:         48px;
-    --h2-font-size:         36px;
-    --h3-font-size:         28px;
-    --h4-font-size:         24px;
-    --h5-font-size:         22px;
-    --h6-font-size:         22px;
-    --p-font-size:          18px;
-    --base-font-size:       16px;
-    --menu-font-size:       large;
+--h1-font-size:         48px;
+--h2-font-size:         36px;
+--h3-font-size:         28px;
+--h4-font-size:         24px;
+--h5-font-size:         22px;
+--h6-font-size:         22px;
+--p-font-size:          18px;
+--base-font-size:       16px;
+--menu-font-size:       large;
 
-    --border-radius-large:  100%;
-    --border-radius-small:  2px;
-  }
-
-
-  body {
-    background: var(--white-color);
-    font-family: var(--base-font-family);
-  }
+--border-radius-large:  100%;
+--border-radius-small:  2px;
+}
 
 
-  /*---------------------------------------
-     TYPOGRAPHY              
-  -----------------------------------------*/
+body {
+background: var(--white-color);
+font-family: var(--base-font-family);
+}
 
-  h1,h2,h3,h4,h5,h6 {
-    font-weight: var(--font-weight-thin);
-    line-height: normal;
-  }
 
-  h1 {
-    font-size: var(--h1-font-size);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: -1px;
-    text-transform: uppercase;
-    margin: 20px 0;
-  }
+/*---------------------------------------
+ TYPOGRAPHY              
+-----------------------------------------*/
 
-  h2 {
-    font-size: var(--h2-font-size);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: -2px;
-  }
+h1,h2,h3,h4,h5,h6 {
+font-weight: var(--font-weight-thin);
+line-height: normal;
+}
 
-  h3 {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-weight-bold);
-    letter-spacing: -1px;
-    margin: 0;
-  }
+h1 {
+font-size: var(--h1-font-size);
+font-weight: var(--font-weight-bold);
+letter-spacing: -1px;
+text-transform: uppercase;
+margin: 20px 0;
+}
 
-  h4 {
-    font-size: var(--h4-font-size);
-  }
+h2 {
+font-size: var(--h2-font-size);
+font-weight: var(--font-weight-bold);
+letter-spacing: -2px;
+}
 
-  h5 {
-    font-size: var(--h5-font-size);
-  }
+h3 {
+font-size: var(--h3-font-size);
+font-weight: var(--font-weight-bold);
+letter-spacing: -1px;
+margin: 0;
+}
 
-  h6 {
-    color: var(--gray-color);
-    font-size: var(--h6-font-size);
-    line-height: inherit;
-    margin: 0;
-  }
+h4 {
+font-size: var(--h4-font-size);
+}
 
-  p {
-    color: var(--p-color);
-    font-size: var(--p-font-size);
-    font-weight: var(--font-weight-light);
-    line-height: 1.5em;
-  }
+h5 {
+font-size: var(--h5-font-size);
+}
 
-  b, 
-  strong {
-    font-weight: var(--font-weight-bold);
-    letter-spacing: 0;
-  }
+h6 {
+color: var(--gray-color);
+font-size: var(--h6-font-size);
+line-height: inherit;
+margin: 0;
+}
 
-  .section {
-    padding: 7rem 0;
-  }
+p {
+color: var(--p-color);
+font-size: var(--p-font-size);
+font-weight: var(--font-weight-light);
+line-height: 1.5em;
+}
+
+b, 
+strong {
+font-weight: var(--font-weight-bold);
+letter-spacing: 0;
+}
+
+.section {
+padding: 7rem 0;
+}
 
 .WelcomeMsg
 {
-  color: white; 
-  font-size: large; 
-  float: left; 
-  display: inline-block;
+color: white; 
+font-size: large; 
+float: left; 
+display: inline-block;
 }
 
 
-  /* BUTTON */
-
-  .custom-btn {
-    background: transparent;
-    border-radius: var(--border-radius-small);
-    padding: 14px 24px;
-    color: var(--white-color);
-    font-size: var(--menu-font-size);
-    font-weight: var(--font-weight-normal);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    white-space: nowrap;
-    transition: all 0.3s ease;
-  }
-
-  .custom-btn:hover {
-    color: var(--primary-color);
-  }
-
-  .custom-btn:focus {
-    box-shadow: none;
-  }
-
-  .custom-btn.bordered:hover,
-  .custom-btn.bordered:focus,
-
-  .custom-btn.bg-color:hover,
-  .custom-btn.bg-color:focus {
-    background: var(--white-color);
-    border-color: transparent;
-    color: var(--primary-color);
-  }
-
-  .bordered {
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-  }
-
-  .bg-color {
-    background: var(--primary-color);
-    color: var(--white-color);
-  }
-
-
-
-  /*---------------------------------------
-     GENERAL               
-  -----------------------------------------*/
-
-  * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  *::before,
-  *::after {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
-
-  a {
-    color: var(--link-color);
-    font-weight: normal;
-    text-decoration: none;
-    transition: all 0.3s ease;
-  }
-
-  a:hover, 
-  a:active, 
-  a:focus {
-    color: var(--primary-color);
-    outline: none;
-    text-decoration: none;
-  }
-
-
-  /* BG OVERLAY */
-
-  .bg-overlay {
-    background: var(--dark-color);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.85;
-  }
-
-
-  /*---------------------------------------
-     MODAL              
-  -----------------------------------------*/
-
-  .modal-content {
-    padding: 2rem 3rem;
-  }
-
-  .modal-header,
-  .modal-body,
-  .modal-footer {
-    border: 0;
-    padding: 0;
-  }
-
-  .membership-form a {
-    color: var(--primary-color);
-  }
-
-
-  /*---------------------------------------
-    FEATURE          
-  -----------------------------------------*/
-
-  .feature {
-    background: var(--dark-color);
-    padding: 5rem 0;
-  }
-
-
-  /*---------------------------------------
-     MENU             
-  -----------------------------------------*/
-
-  .navbar {
-    background: var(--dark-color);
-    padding: 1rem;
-   
-  }
-
-  .navbar-expand-lg .navbar-nav .nav-link {
-    padding-right: 1.5rem;
-    padding-left: 1.5rem;
-  }
-
-  .navbar-brand {
-    color: var(--white-color);
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-weight-bold);
-    line-height: normal;
-    padding-top: 0;
-  }
-
-  .nav-item .nav-link {
-    display: block;
-    color: var(--white-color);
-    font-size: var(--menu-font-size);
-    font-weight: var(--font-weight-normal);
-    text-transform: uppercase;
-    padding: 2px 6px;
-  }
-
-  .nav-item .nav-link.active,
-  .nav-item .nav-link:hover {
-    color: var(--primary-color);
-  }
-
-  .navbar .social-icon li a {
-    color: var(--white-color);
-  }
-
-  .navbar-toggler {
-    border: 0;
-    padding: 0;
-    cursor: pointer;
-    margin: 0 10px 0 0;
-    width: 30px;
-    height: 35px;
-    outline: none;
-  }
-
-  .navbar-toggler:focus {
-    outline: none;
-  }
-
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
-    background: transparent;
-  }
-
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
-    transition: top 300ms 50ms ease, transform 300ms 350ms ease;
-    transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
-    top: 0;
-  }
-
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
-    transform: rotate(45deg);
-  }
-
-  .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
-    transform: rotate(-45deg);
-  }
-
-  .navbar-toggler .navbar-toggler-icon {
-    background: var(--primary-color);
-    transition: background 10ms 300ms ease;
-    display: block;
-    width: 30px;
-    height: 2px;
-    position: relative;
-  }
-
-  .navbar-toggler .navbar-toggler-icon::before,
-  .navbar-toggler .navbar-toggler-icon::after {
-    transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
-    transition: top 300ms 350ms ease, transform 300ms 50ms ease;
-    transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
-    position: absolute;
-    right: 0;
-    left: 0;
-    background: var(--primary-color);
-    width: 30px;
-    height: 2px;
-    content: '';
-  }
-
-  .navbar-toggler .navbar-toggler-icon::before {
-    top: -8px;
-  }
-
-  .navbar-toggler .navbar-toggler-icon::after {
-    top: 8px;
-  }
-
-  /*---------------------------------------
-     HERO              
-  -----------------------------------------*/
-
-  .hero {
-    background-image: url('../images/Backgroud/ServicesBackground.jpg');
-    background-color: rgb(32, 9, 9);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    min-height: 100vh;
-    position: relative;
-  }
-  .service {
-    background-image: url('../images/Backgroud/ServicesBackground.jpg');
-    background-color: rgb(32, 9, 9);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    min-height: 100vh;
-    position: relative;
-  }
-  .Login {
-    background-image: url('../images/Backgroud/LoginBckgroud.jpg');
-    background-color: rgb(32, 9, 9);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    min-height: 100vh;
-    position: relative;
-  }
-  .Profile {
-    background-image: url('../images/Backgroud/ProfileBckgroud.jpg');
-    background-color: rgb(32, 9, 9);
-    background-size: cover;
-    background-position: top;
-    background-repeat: no-repeat;
-    vertical-align: middle;
-    min-height: 100vh;
-    position: relative;
-  }
-
-   /*---------------------------------------
-     USER MENU              
-  -----------------------------------------*/ 
-
-  .dropdown {
-    display: inline-block;
-    color: white;
-    padding: 6px 6px;
-    margin-top: 3px;
-  }
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-
-  }
-
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    background: #17181A;
-    display: block;
-    color: var(--white-color);
-    font-size: 17px;
-  }
-  .dropdown-content a:hover {background-color: #f1f1f1}
-
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-
-  .dropdown:hover .dropbtn {
-    transition: .5s;
-  }
-
-  /*------------------------------------------
-  drop down Select 
-  ----------------------------------------*/
-  .Inputdropbtn {
-    background-color: rgb(255, 255, 255);
-    color: rgb(77, 74, 74);
-    font-size: large;  
-    padding: 5px;  
-    border-radius: 1rem;
-    width: 100%;
-    height: 40px;
-    border: none;
-    cursor: pointer;
-    text-align: left;
-  }
-  
-  
-  .Inputdropbtn:hover, .dropbtn:focus {
-    background-color:  rgb(209, 206, 206);;
-    
-  }
-  
-  #myInput {
-    box-sizing: border-box;
-    background-image: url('searchicon.png');
-    background-position: 14px 12px;
-    background-repeat: no-repeat;
-    font-size: 16px;
-    padding: 14px 20px 12px 45px;
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-  
-  #myInput:focus {outline: 3px solid #ddd;}
-  
-  .dropdownSelect {
-    position: relative;
-    display: inline-block;
-    width: 60%;
-    margin-top: 20px;
-  }
-  
-  .dropdownSelect-content {
-    display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    width:100%;
-    overflow: auto;
-    border: 1px solid #ddd;
-    z-index: 1;
-  }
-  
-  .dropdownSelect-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdownSelect a:hover {background-color: #ddd;}
-  
-  .show {display: block;}
-  .filterwidth
-  {
-    width:100% !important;
-  }
-  .dropdownSelectSearch {
-    position: relative;
-    display: inline-block;
-    width: 100%;
-    margin-top: 20px;
-  }
-  .dropdownSelectSearch-content {
-    display: none;
-    position: absolute;
-    background-color: #f6f6f6;
-    width:100%;
-    overflow: auto;
-    border: 1px solid #ddd;
-    z-index: 1;
-  }
-  
-  .dropdownSelectSearch-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdownSelectSearch a:hover {background-color: #ddd;}
-  
-  
-  /*---------------------------------------
-     CLASS               
-  -----------------------------------------*/
-
-  .class-info {
-    background: var(--white-color);
-    box-shadow: 6px 0 38px rgba(20,20,20,0.10);
-    border-radius: 0 0 2px 2px;
-    padding: 1rem 2rem;
-    position: relative;
-  }
-
-  .class-info img {
-    border-radius: 2px 2px 0 0;
-  }
-
-  .class-info strong {
-    color: var(--gray-color);
-  }
-
-  .class-price {
-    background: var(--primary-color);
-    border-radius: var(--border-radius-large);
-    color: var(--white-color);
-    font-weight: var(--font-weight-bold);
-    display: block;
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    width: 3.5rem;
-    height: 3.5rem;
-    line-height: 3.5rem;
-    text-align: center;
-  }
-
-
-  /*---------------------------------------
-     SCHEDULE             
-  -----------------------------------------*/
-
-  .schedule {
-    background: var(--dark-color);
-  }
-
-  .schedule-table {
-    display: table;
-    border: 0;
-    text-align: center;
-  }
-
-  .schedule-table strong,
-  .schedule-table span {
-    display: block;
-    text-align: center;
-  }
-
-  .schedule-table strong {
-    color: var(--white-color);
-  }
-
-  .schedule-table span {
-    color: var(--gray-color);
-  }
-
-  .schedule-table span,
-  .schedule-table small {
-    font-size: var(--menu-font-size);
-    text-transform: uppercase;
-  }
-
-  .schedule-table small {
-    position: relative;
-    top: 10px;
-  }
-
-  .table .thead-light th,
-  .schedule-table tr td:first-child {
-    background: var(--primary-color);
-    border: 1px solid #212122;
-    color: var(--white-color);
-  }
-
-  .schedule-table .thead-light th {
-    border-bottom: 0;
-    text-transform: uppercase;
-  }
-
-  .table-bordered td, 
-  .table-bordered th {
-    border: 1px solid #212122;
-  }
-
-  .table-bordered td {
-    padding-bottom: 22px;
-  }
-
-  .table td, .table th {
-    padding: 1rem;
-  }
-
-
-  /*---------------------------------------
-      ABOUT & TEAM            
-  -----------------------------------------*/
-
-  .about {
-    background: var(--about-bg-color);
-  }
-
-  .about-working-hours {
-    border-left: 2px solid;
-    padding-left: 3.5rem;
-  }
-
-  .about-working-hours strong {
-    color: var(--white-color);
-    opacity: 0.85;
-  }
-
-  .team-thumb {
-    position: relative;
-  }
-
-  .team-info {
-    background: var(--white-color);
-    border-radius: 0 0 2px 2px;
-    box-shadow: 6px 0 38px rgba(20,20,20,0.10);
-    padding: 20px;
-    position: relative;
-  }
-
-  .team-info span {
-    font-weight: var(--font-weight-light);
-    opacity: 0.85;
-  }
-
-  .team-info .social-icon {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-  }
-
-  .team-info .social-icon li {
-    display: block;
-  }
-
-
-  /*---------------------------------------
-     CONTACT              
-  -----------------------------------------*/
-
-  .webform input,
-  button#submit-button {
-    height: calc(2.25rem + 20px);
-  }
-
-  .form-control {
-    border-radius: var(--border-radius-small);
-    margin: 1.3rem 0;
-  }
-
-  .form-control:focus {
-    box-shadow: none;
-    border-color: var(--dark-color);
-  }
-
-  button#submit-button {
-    background: var(--dark-color);
-    border-color: transparent;
-    color: var(--white-color);
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
-
-  button#submit-button:hover {
-    background: var(--primary-color);
-  }
-
-  .contact h2 + p {
-    max-width: 90%;
-  }
-
-  .google-map {
-    border-top: 1px solid #efebeb;
-    margin-top: 2.5rem;
-    padding-top: 2.5rem;
-  }
-
-  .google-map iframe {
-    width: 100%;
-  }
-
-
-  /*---------------------------------------
-     FOOTER              
-  -----------------------------------------*/
-
-  .site-footer {
-    border-top: 1px solid #efebeb;
-    padding: 3rem 0;
-  }
-
-  .site-footer a {
-    color: var(--p-color);
-    font-weight: var(--font-weight-light);
-  }
-
-  .site-footer p {
-    font-size: var(--base-font-size);
-  }
-
-  .contact .fa,
-  .site-footer .fa {
-    color: var(--primary-color);
-  }
-
-
-  /*---------------------------------------
-     SOCIAL ICON              
-  -----------------------------------------*/
-  .Social-media
-  {
-    background-color: rgba(0, 0, 0,0.5) !important;
-    height:100px;
-    position:fixed;
-    text-align: center; 
-    bottom:-50px;
-    border-radius:45%;
-    z-index: 99;
-
-  }
-  .social-icon {
-    position: relative;
-    padding: 0;
-    margin-top: 15px; margin-right: 19px; 
-  }
-
-  .social-icon li {
-    display: inline-block;
-    list-style: none;
-  }
-
-  .social-icon li a {
-    text-decoration: none;
-    display: inline-block;
-    color: var(--white-color);
-    font-size: var(--white-color);
-    font-weight: var(--font-weight-bold);
-    margin: 5px 10px;
-    text-align: center;
-  }
-
-  .social-icon li a:hover {
-    color: var(--primary-color);
-  }
-
-  .ProfilePicture
-  {
-    height :55px;  
-    width: 55px;
-    margin-top: -15px;  
-    border-radius: 50%;
-    float: right;
-  }
-  .bt_Profile
-  {
-    border: none; 
-    margin-top: -5px;
-    background-color: transparent;
-  }
-  .customNav
-  {
-    font-size: x-large !important;
-  }
-  .NewProfilePicture
-  {
-      height :150px;  
-      width: 150px;
-      display: inline-block;
-      border-radius: 1rem;
-      float: left;
-      background-color: rgba(65, 64, 75,0.5) !important;
-  }
-  .CurrentProfilepic
-  {
-    float: left;
-    width: 20%;
-    margin-top: 20px;
-    margin-left: 20px;
-    display: inline-block;
-
-  }
-
-  .custopmUploadGroup
-  {
-    float: left;
-    width: 70%;
-    margin-left: 20px;
-    margin-bottom: 20px;
-
-  }
-  .footNote
-  {
-      border-radius: 1rem;
-     background-color: rgba(65, 64, 75,0.5) !important;
-  }
-  .FootNoteLable
-  {
-    display: inline-block; 
-    font-size: large;
-    color: var(--white-color);
-    width: 100%;
-    text-align: center;
-
-  }
-  .WelcomeNote
-  {
-    display: inline-block; 
-    font-size: large;
-    color: var(--white-color);
-    width: 100%;
-    margin-top: 50px;
-    margin-left: 35px;    
-    text-align: left;
-
-  }
-  .WorkPhotoGroup
-      {
-        text-align: center;
-        height: 370px !important;
-        width:85%;
-        margin-left: 85px;
-        margin-top: 10px;
-      }
-   .UploadWorkDone
-  {
-    float: left;
-    width:90%;
-    margin-left: 40px;
-    margin-top: 30px;
-
-  }
-   .WorkDonePictures
-  {
-    float: left;
-    width: 20%;
-    margin-left: 20px;
-    display: inline-block;
-
-  }
-  .NewWorkPic
-  {
-      height :150px;  
-      width: 150px;
-      margin-top: 20px;;
-      display: inline-block;
-      border-radius: 1rem;
-      float: left;      
-      background-color: white !important;
-  }
-  .pictureUpload
-  {
-    height: 150px !important;
-    width: 75%;
-    margin-top: 20px;
-    margin-right: 20px;
-    display: inline-block;
-  }
-  .preUpload
-  {
-    margin-top: -20px;
-  }
-  .UserRating
-  {
-    width: 50%;
-    text-align: left;
-    margin-left: 20px;
-  }
-  .UserNamediv
-  {
-    width: 50%;
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 20px;
-  }
-  .checked {
-    color: var(--primary-color);
-  }
-  .star
-  {
-    color: white;
-  }
-
-  .KasivoreLogo
-  {
-    width: 180x;
-    height: 100px;
-    margin-top: -10px;
-  }
-
-
-  /*---------------------------------------
-     USER PROFILE              
-  -----------------------------------------*/ 
-
- .Maincard{
-  height: 650px;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 1020px;
-  border-radius: 5%;
-  background-color: rgba(65, 64, 66,0.5) !important;
+/* BUTTON */
+
+.custom-btn {
+background: transparent;
+border-radius: var(--border-radius-small);
+padding: 14px 24px;
+color: var(--white-color);
+font-size: var(--menu-font-size);
+font-weight: var(--font-weight-normal);
+text-transform: uppercase;
+letter-spacing: 0.5px;
+white-space: nowrap;
+transition: all 0.3s ease;
 }
- .SideMenu{
-  height: 650px;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 180px;
-  border-radius: 2rem;
-  margin-left: 100px;
-  float: right;
+
+.custom-btn:hover {
+color: var(--primary-color);
+}
+
+.custom-btn:focus {
+box-shadow: none;
+}
+
+.custom-btn.bordered:hover,
+.custom-btn.bordered:focus,
+
+.custom-btn.bg-color:hover,
+.custom-btn.bg-color:focus {
+background: var(--white-color);
+border-color: transparent;
+color: var(--primary-color);
+}
+
+.bordered {
+border: 1px solid var(--primary-color);
+color: var(--primary-color);
+}
+
+.bg-color {
+background: var(--primary-color);
+color: var(--white-color);
+}
+
+
+
+/*---------------------------------------
+ GENERAL               
+-----------------------------------------*/
+
+* {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+*::before,
+*::after {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+}
+
+a {
+color: var(--link-color);
+font-weight: normal;
+text-decoration: none;
+transition: all 0.3s ease;
+}
+
+a:hover, 
+a:active, 
+a:focus {
+color: var(--primary-color);
+outline: none;
+text-decoration: none;
+}
+
+
+/* BG OVERLAY */
+
+.bg-overlay {
+background: var(--dark-color);
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 100%;
+opacity: 0.85;
+}
+
+
+/*---------------------------------------
+ MODAL              
+-----------------------------------------*/
+
+.modal-content {
+padding: 2rem 3rem;
+}
+
+.modal-header,
+.modal-body,
+.modal-footer {
+border: 0;
+padding: 0;
+}
+
+.membership-form a {
+color: var(--primary-color);
+}
+
+
+/*---------------------------------------
+FEATURE          
+-----------------------------------------*/
+
+.feature {
+background: var(--dark-color);
+padding: 5rem 0;
+}
+
+
+/*---------------------------------------
+ MENU             
+-----------------------------------------*/
+
+.navbar {
+background: var(--dark-color);
+padding: 1rem;
+
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+padding-right: 1.5rem;
+padding-left: 1.5rem;
+}
+
+.navbar-brand {
+color: var(--white-color);
+font-size: var(--h3-font-size);
+font-weight: var(--font-weight-bold);
+line-height: normal;
+padding-top: 0;
+}
+
+.nav-item .nav-link {
+display: block;
+color: var(--white-color);
+font-size: var(--menu-font-size);
+font-weight: var(--font-weight-normal);
+text-transform: uppercase;
+padding: 2px 6px;
+}
+
+.nav-item .nav-link.active,
+.nav-item .nav-link:hover {
+color: var(--primary-color);
+}
+
+.navbar .social-icon li a {
+color: var(--white-color);
+}
+
+.navbar-toggler {
+border: 0;
+padding: 0;
+cursor: pointer;
+margin: 0 10px 0 0;
+width: 30px;
+height: 35px;
+outline: none;
+}
+
+.navbar-toggler:focus {
+outline: none;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+background: transparent;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before,
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+transition: top 300ms 50ms ease, -webkit-transform 300ms 350ms ease;
+transition: top 300ms 50ms ease, transform 300ms 350ms ease;
+transition: top 300ms 50ms ease, transform 300ms 350ms ease, -webkit-transform 300ms 350ms ease;
+top: 0;
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::before {
+transform: rotate(45deg);
+}
+
+.navbar-toggler[aria-expanded="true"] .navbar-toggler-icon::after {
+transform: rotate(-45deg);
+}
+
+.navbar-toggler .navbar-toggler-icon {
+background: var(--primary-color);
+transition: background 10ms 300ms ease;
+display: block;
+width: 30px;
+height: 2px;
+position: relative;
+}
+
+.navbar-toggler .navbar-toggler-icon::before,
+.navbar-toggler .navbar-toggler-icon::after {
+transition: top 300ms 350ms ease, -webkit-transform 300ms 50ms ease;
+transition: top 300ms 350ms ease, transform 300ms 50ms ease;
+transition: top 300ms 350ms ease, transform 300ms 50ms ease, -webkit-transform 300ms 50ms ease;
+position: absolute;
+right: 0;
+left: 0;
+background: var(--primary-color);
+width: 30px;
+height: 2px;
+content: '';
+}
+
+.navbar-toggler .navbar-toggler-icon::before {
+top: -8px;
+}
+
+.navbar-toggler .navbar-toggler-icon::after {
+top: 8px;
+}
+
+/*---------------------------------------
+ HERO              
+-----------------------------------------*/
+
+.hero {
+background-image: url('../images/Backgroud/ServicesBackground.jpg');
+background-color: rgb(32, 9, 9);
+background-size: cover;
+background-position: top;
+background-repeat: no-repeat;
+vertical-align: middle;
+min-height: 100vh;
+position: relative;
+}
+.service {
+background-image: url('../images/Backgroud/ServicesBackground.jpg');
+background-color: rgb(32, 9, 9);
+background-size: cover;
+background-position: top;
+background-repeat: no-repeat;
+vertical-align: middle;
+min-height: 100vh;
+position: relative;
+}
+.Login {
+background-image: url('../images/Backgroud/LoginBckgroud.jpg');
+background-color: rgb(32, 9, 9);
+background-size: cover;
+background-position: top;
+background-repeat: no-repeat;
+vertical-align: middle;
+min-height: 100vh;
+position: relative;
+}
+.Profile {
+background-image: url('../images/Backgroud/ProfileBckgroud.jpg');
+background-color: rgb(32, 9, 9);
+background-size: cover;
+background-position: top;
+background-repeat: no-repeat;
+vertical-align: middle;
+min-height: 100vh;
+position: relative;
+}
+
+/*---------------------------------------
+ USER MENU              
+-----------------------------------------*/ 
+
+.dropdown {
+display: inline-block;
+color: white;
+padding: 6px 6px;
+margin-top: 3px;
+}
+
+.dropdown-content {
+display: none;
+position: absolute;
+background-color: #f9f9f9;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+
+}
+
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+background: #17181A;
+display: block;
+color: var(--white-color);
+font-size: 17px;
+}
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+display: block;
+}
+
+.dropdown:hover .dropbtn {
+transition: .5s;
+}
+
+/*------------------------------------------
+drop down Select 
+----------------------------------------*/
+.Inputdropbtn {
+background-color: rgb(255, 255, 255);
+color: rgb(77, 74, 74);
+font-size: large;  
+padding: 5px;  
+border-radius: 1rem;
+width: 100%;
+height: 40px;
+border: none;
+cursor: pointer;
+text-align: left;
+}
+
+
+.Inputdropbtn:hover, .dropbtn:focus {
+background-color:  rgb(209, 206, 206);;
+
+}
+
+#myInput {
+box-sizing: border-box;
+background-image: url('searchicon.png');
+background-position: 14px 12px;
+background-repeat: no-repeat;
+font-size: 16px;
+padding: 14px 20px 12px 45px;
+border: none;
+border-bottom: 1px solid #ddd;
+}
+
+#myInput:focus {outline: 3px solid #ddd;}
+
+.dropdownSelect {
+position: relative;
+display: inline-block;
+width: 60%;
+margin-top: 20px;
+}
+
+.dropdownSelect-content {
+display: none;
+position: absolute;
+background-color: #f6f6f6;
+width:100%;
+overflow: auto;
+border: 1px solid #ddd;
+z-index: 1;
+}
+
+.dropdownSelect-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdownSelect a:hover {background-color: #ddd;}
+
+.show {display: block;}
+.filterwidth
+{
+width:100% !important;
+}
+.dropdownSelectSearch {
+position: relative;
+display: inline-block;
+width: 100%;
+margin-top: 20px;
+}
+.dropdownSelectSearch-content {
+display: none;
+position: absolute;
+background-color: #f6f6f6;
+width:100%;
+overflow: auto;
+border: 1px solid #ddd;
+z-index: 1;
+}
+
+.dropdownSelectSearch-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+
+.dropdownSelectSearch a:hover {background-color: #ddd;}
+
+
+/*---------------------------------------
+ CLASS               
+-----------------------------------------*/
+
+.class-info {
+background: var(--white-color);
+box-shadow: 6px 0 38px rgba(20,20,20,0.10);
+border-radius: 0 0 2px 2px;
+padding: 1rem 2rem;
+position: relative;
+}
+
+.class-info img {
+border-radius: 2px 2px 0 0;
+}
+
+.class-info strong {
+color: var(--gray-color);
+}
+
+.class-price {
+background: var(--primary-color);
+border-radius: var(--border-radius-large);
+color: var(--white-color);
+font-weight: var(--font-weight-bold);
+display: block;
+position: absolute;
+top: 2rem;
+right: 2rem;
+width: 3.5rem;
+height: 3.5rem;
+line-height: 3.5rem;
+text-align: center;
+}
+
+
+/*---------------------------------------
+ SCHEDULE             
+-----------------------------------------*/
+
+.schedule {
+background: var(--dark-color);
+}
+
+.schedule-table {
+display: table;
+border: 0;
+text-align: center;
+}
+
+.schedule-table strong,
+.schedule-table span {
+display: block;
+text-align: center;
+}
+
+.schedule-table strong {
+color: var(--white-color);
+}
+
+.schedule-table span {
+color: var(--gray-color);
+}
+
+.schedule-table span,
+.schedule-table small {
+font-size: var(--menu-font-size);
+text-transform: uppercase;
+}
+
+.schedule-table small {
+position: relative;
+top: 10px;
+}
+
+.table .thead-light th,
+.schedule-table tr td:first-child {
+background: var(--primary-color);
+border: 1px solid #212122;
+color: var(--white-color);
+}
+
+.schedule-table .thead-light th {
+border-bottom: 0;
+text-transform: uppercase;
+}
+
+.table-bordered td, 
+.table-bordered th {
+border: 1px solid #212122;
+}
+
+.table-bordered td {
+padding-bottom: 22px;
+}
+
+.table td, .table th {
+padding: 1rem;
+}
+
+
+/*---------------------------------------
+  ABOUT & TEAM            
+-----------------------------------------*/
+
+.about {
+background: var(--about-bg-color);
+}
+
+.about-working-hours {
+border-left: 2px solid;
+padding-left: 3.5rem;
+}
+
+.about-working-hours strong {
+color: var(--white-color);
+opacity: 0.85;
+}
+
+.team-thumb {
+position: relative;
+}
+
+.team-info {
+background: var(--white-color);
+border-radius: 0 0 2px 2px;
+box-shadow: 6px 0 38px rgba(20,20,20,0.10);
+padding: 20px;
+position: relative;
+}
+
+.team-info span {
+font-weight: var(--font-weight-light);
+opacity: 0.85;
+}
+
+.team-info .social-icon {
+position: absolute;
+top: 10px;
+right: 20px;
+}
+
+.team-info .social-icon li {
+display: block;
+}
+
+
+/*---------------------------------------
+ CONTACT              
+-----------------------------------------*/
+
+.webform input,
+button#submit-button {
+height: calc(2.25rem + 20px);
+}
+
+.form-control {
+border-radius: var(--border-radius-small);
+margin: 1.3rem 0;
+}
+
+.form-control:focus {
+box-shadow: none;
+border-color: var(--dark-color);
+}
+
+button#submit-button {
+background: var(--dark-color);
+border-color: transparent;
+color: var(--white-color);
+cursor: pointer;
+transition: all 0.3s ease;
+}
+
+button#submit-button:hover {
+background: var(--primary-color);
+}
+
+.contact h2 + p {
+max-width: 90%;
+}
+
+.google-map {
+border-top: 1px solid #efebeb;
+margin-top: 2.5rem;
+padding-top: 2.5rem;
+}
+
+.google-map iframe {
+width: 100%;
+}
+
+
+/*---------------------------------------
+ FOOTER              
+-----------------------------------------*/
+
+.site-footer {
+border-top: 1px solid #efebeb;
+padding: 3rem 0;
+}
+
+.site-footer a {
+color: var(--p-color);
+font-weight: var(--font-weight-light);
+}
+
+.site-footer p {
+font-size: var(--base-font-size);
+}
+
+.contact .fa,
+.site-footer .fa {
+color: var(--primary-color);
+}
+
+
+/*---------------------------------------
+ SOCIAL ICON              
+-----------------------------------------*/
+.Social-media
+{
+background-color: rgba(0, 0, 0,0.5) !important;
+height:100px;
+position:fixed;
+text-align: center; 
+bottom:-50px;
+border-radius:45%;
+z-index: 99;
+
+}
+.social-icon {
+position: relative;
+padding: 0;
+margin-top: 15px; margin-right: 19px; 
+}
+
+.social-icon li {
+display: inline-block;
+list-style: none;
+}
+
+
+.social-icon li a {
+text-decoration: none;
+display: inline-block;
+color: var(--white-color);
+font-size: var(--white-color);
+font-weight: var(--font-weight-bold);
+margin: 5px 10px;
+text-align: center;
+}
+
+.social-icon li a:hover {
+color: var(--primary-color);
+}
+
+.ProfilePicture
+{
+height :55px;  
+width: 55px;
+margin-top: -15px;  
+border-radius: 50%;
+float: right;
+}
+.bt_Profile
+{
+border: none; 
+margin-top: -5px;
+background-color: transparent;
+}
+.customNav
+{
+font-size: x-large !important;
+}
+.NewProfilePicture
+{
+  height :150px;  
+  width: 150px;
   display: inline-block;
-  text-align: center;
-  background-color: rgba(65, 64, 66,0.5) !important;
-  z-index: 1;
+  border-radius: 1rem;
+  float: left;
+  background-color: rgba(65, 64, 75,0.5) !important;
+}
+.CurrentProfilepic
+{
+float: left;
+width: 20%;
+margin-top: 20px;
+margin-left: 20px;
+display: inline-block;
+
+}
+
+.custopmUploadGroup
+{
+float: left;
+width: 70%;
+margin-left: 20px;
+margin-bottom: 20px;
+
+}
+.footNote
+{
+  border-radius: 1rem;
+ background-color: rgba(65, 64, 75,0.5) !important;
+}
+.FootNoteLable
+{
+display: inline-block; 
+font-size: large;
+color: var(--white-color);
+width: 100%;
+text-align: center;
+
+}
+.WelcomeNote
+{
+display: inline-block; 
+font-size: large;
+color: var(--white-color);
+width: 100%;
+margin-top: 50px;
+margin-left: 35px;    
+text-align: left;
+
+}
+.WorkPhotoGroup
+  {
+    text-align: center;
+    height: 370px !important;
+    width:85%;
+    margin-left: 85px;
+    margin-top: 10px;
+  }
+.UploadWorkDone
+{
+float: left;
+width:90%;
+margin-left: 40px;
+margin-top: 30px;
+
+}
+.WorkDonePictures
+{
+float: left;
+width: 20%;
+margin-left: 20px;
+display: inline-block;
+
+}
+.NewWorkPic
+{
+  height :150px;  
+  width: 150px;
+  margin-top: 20px;;
+  display: inline-block;
+  border-radius: 1rem;
+  float: left;      
+  background-color: white !important;
+}
+.pictureUpload
+{
+height: 150px !important;
+width: 75%;
+margin-top: 20px;
+margin-right: 20px;
+display: inline-block;
+}
+.preUpload
+{
+margin-top: -20px;
+}
+.UserRating
+{
+width: 50%;
+text-align: left;
+margin-left: 20px;
+}
+.UserNamediv
+{
+width: 50%;
+text-align: left;
+margin-left: 20px;
+margin-top: 20px;
+}
+.checked {
+color: var(--primary-color);
+}
+.star
+{
+color: white;
+}
+
+.KasivoreLogo
+{
+width: 180x;
+height: 100px;
+margin-top: -10px;
+}
+
+
+/*---------------------------------------
+ USER PROFILE              
+-----------------------------------------*/ 
+
+.Maincard{
+height: 650px;
+margin-top: auto;
+margin-bottom: auto;
+width: 1020px;
+border-radius: 5%;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.SideMenu{
+height: 650px;
+margin-top: auto;
+margin-bottom: auto;
+width: 180px;
+border-radius: 2rem;
+margin-left: 100px;
+float: right;
+display: inline-block;
+text-align: center;
+background-color: rgba(65, 64, 66,0.5) !important;
+z-index: 1;
 }
 .arrow-up {
-  width: 0; 
-  height: 0;
-  margin-left: 50px; 
-  border-left: 25px solid transparent;
-  border-right: 25px solid transparent; 
-  border-bottom: 20px solid rgba(65, 64, 66,0.5) !important;;
-  margin-top: -20px;
-  z-index: 0;
+width: 0; 
+height: 0;
+margin-left: 50px; 
+border-left: 25px solid transparent;
+border-right: 25px solid transparent; 
+border-bottom: 20px solid rgba(65, 64, 66,0.5) !important;;
+margin-top: -20px;
+z-index: 0;
 
 }  
 
 
 
 /*---------------------------------------
-     COMMON CONTROL             
-  -----------------------------------------*/ 
+ COMMON CONTROL             
+-----------------------------------------*/ 
 
 .GenderRadioButton input[type=radio]{
-    transform:scale(3);
-    margin-top: 10px;
-    border-color: var(--white-color);
-    color: red;
+transform:scale(3);
+margin-top: 10px;
+border-color: var(--white-color);
+color: red;
 }
 .GenderRadioButton
-  {
-    display: inline-block; 
-    font-size: x-large;
-    color: white;
-    width: 20%;    
-    
+{
+display: inline-block; 
+font-size: x-large;
+color: white;
+width: 20%;    
+
 }
 
 .ThumbnailRadioButton input[type=radio]{
-    transform:scale(2);
-    border-color: var(--white-color);
-    margin-left:-25px;
-    margin-top: 25px;
+transform:scale(2);
+border-color: var(--white-color);
+margin-left:-140px;
+margin-top: 26px;
+display: inline-block;
 }
+.ThumbnailRadioButton input[type=button]{
+  color: black;
+  background-color: #be222f;
+  border-color: #be222f;
+	color: white;
+  border-radius: 2rem;
+  width: 27px;
+  height: 27px;
+  text-align: center;
+  margin-left:-30px;
+  margin-top: 20px;
+  display: inline-block;
+  }
 .ThumbnailRadioButton
-  {
-    display: inline-block; 
-    color: white; 
-    float: left;
-    
-    
+{
+color: white; 
+float: left;
+
+
 }
 
 .SideRadioButton input[type=radio]{
-    transform:scale(5);
-    border-color: var(--white-color);
-    color: red;
-    margin-left: 30px;
+transform:scale(5);
+border-color: var(--white-color);
+color: red;
+margin-left: 30px;
 }
 .SideRadioButton
-  {
-    display: block; 
-    font-size: x-large;
-    color: white;
-    width: 20%; 
-    margin-top: 50px;  
-    margin-left: 30px;
-  
+{
+display: block; 
+font-size: x-large;
+color: white;
+width: 20%; 
+margin-top: 50px;  
+margin-left: 30px;
+
 }
 
 /*---------------------------------------
-     Profile Buttons          
-  -----------------------------------------*/ 
+ Profile Buttons          
+-----------------------------------------*/ 
+.AccountFormButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 30px;
+margin-left: 300px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BioformButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top:  80px;
+margin-left: 300px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.AddressformButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 100px;
+margin-left: 300px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BusinessformButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 220px;
+margin-left: 300px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BusinessAddressformButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 100px;
+margin-left: 300px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.showcaseFormButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 20px;
+margin-left: 300px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.WelcomeFormButtons{
+height: 50px;
+width:  320px;
+border-radius: 2rem;
+margin-top:  460px;
+margin-left: 300px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+
+#profilemain
+{
+margin-top: 100px !important;
+}
+
+.Profile_btn-left{
+color: black;
+background-color: #be222f;
+color: white;
+border-radius: 5rem;
+margin-top: 6px;
+float: left;
+margin-left: 5px;
+
+}
+
+.Profile_btn{
+color: black;
+background-color: #be222f;
+color: white;
+border-radius: 5rem;
+margin-top: 6px;
+float: right;
+margin-right: 5px;
+}
+
+
+
+/*---------------------------------------
+ RESPONSIVE STYLES              
+-----------------------------------------*/
+
+#Accountpp
+{
+margin-top: 4.5px;
+margin-right: 4.5px;
+}
+.SectionLabel
+{
+width: 160px;
+color: white;
+float: left;
+display: inline-block;
+}
+.RadioContainer
+{
+width: 300px;
+float: right;
+display: inline-block;
+}
+.RadioTop
+{
+margin-top: 22px;
+}
+#Accountlabel
+{
+margin-left: 10px;
+}
+.MobileControl
+{
+display: none;
+}
+.Maincard-header h3{
+color: var(--white-color);
+}
+.Maincard-footer
+{
+  float: bottom;
+  text-align: center; 
+  margin-top: 20px
+}
+.MaicardInputBox
+{
+border-radius: 5rem;
+display: inline-block; 
+width: 60%;
+}
+.SearchcardInputBox
+{
+border-radius: 5rem;
+display: inline-block; 
+width: 100%;
+}
+.MaicardTextArea
+{
+border-radius: 1rem;
+display: inline-block; 
+width: 60%;
+}
+.pictureUpload
+{
+text-align: center;
+height: 70px;
+}
+.MainCardLabel
+{
+display: inline-block; 
+font-size: x-large;
+color: var(--white-color);
+width: 30%;
+text-align: left;
+}
+.BusinessAddressHeader
+{
+display: inline-block; 
+font-size: x-large;
+font-weight: bold;
+color: var(--white-color);
+width: 100%;
+margin-top: 20px;
+margin-left: 35px;
+text-align: left;
+}
+.GenderLabel
+{
+display: inline-block; 
+font-size: x-large;
+color: var(--white-color);
+width: 30%;
+text-align: left;
+margin-left: 10px;
+}
+
+.GenderMargin
+{
+margin-top: 20px !important;
+}
+.MainCardGroup
+  {
+    text-align: center;
+    height: 60px !important;
+    margin-left: 5px;
+    margin-right:  5px;
+  }
+  .SearchCardGroup
+  {
+    text-align: center;
+    height: 60px !important;
+  }
+  .Headergroup
+  {
+    text-align: center;
+    height: 60px !important;
+    margin-left: 5px;
+    margin-right:  5px;
+  }
+  .ServiceProviderGroup
+  {
+    text-align: center;
+    height: 60px !important;
+    margin-left: 40px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    margin-right:  5px;
+    text-align: left;
+  }
+  .ServiceRadioButton input[type=radio]{
+      transform:scale(2.5) !important;
+      margin-top: 5px !important;
+      border-color: var(--white-color);
+      color: red;
+      margin-top: 12px  !important;
+  }
+  .ServiceRadioButton
+    {
+      display: inline-block; 
+      font-size: x-large !important;
+      color: white;
+      width: 25%;
+      margin-left: 45px;
+    }
+    .Companydesc
+    {
+      vertical-align: top;
+    }
+    .RequiredLabel
+    {
+      color: red;
+    }
+
+/*-------------------------------------------------------
+Email Notifications
+--------------------------------------------------------*/
+.Letterhead
+{
+width: 100%;
+height: 200px;
+background-color: black;
+float: left;
+}
+
+
+/*----------------------------------------------
+index page styles 
+----------------------------------------------*/
+.IndexMainCard{
+height: 700px;
+width: 1300px;
+margin-top: 80px;  
+border-radius:2rem;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+
+.IndexInnercard
+{
+width: 100%;
+height: 550px;  
+
+}
+
+.collapsible {
+background-color:  #be222f;
+color: white;
+font-size: small;
+margin-top: 20px;
+margin-bottom: 20px;
+margin-right: 5%;
+width: 90%;
+border-radius: 2rem;
+
+}
+
+.active, .collapsible:hover {
+color: black;
+}
+
+.content {
+padding: 0 18px;
+display: block;
+overflow: hidden;
+border-bottom: solid #be222f 2px;
+}
+.bt_ServicesSearch
+{
+background-color:  #be222f;
+color: white;
+font-size: medium;
+margin-top: 20px;
+width: 100%;
+
+border-radius: 2rem;
+}
+.services {
+padding: 0 18px;
+display: block;
+height: 180px;
+width: 96%;
+margin-top: 10px;
+border-radius: 2rem;
+background-color: white;
+margin-left: 2%;
+margin-right: 2%;
+}
+.ServiceProfile{
+width: 30%;
+height: 178px;
+float: left;
+background-color: red;
+
+}
+.serviceThumbnail
+{
+width: 30%;
+display: inline-block;
+
+}
+.serviceThumbnailPicture
+{
+height :120px;  
+width: 150px;
+margin-top: 10px;   
+display: inline-block;
+border-radius: 1rem;
+float: left;
+}
+.ServiceDetailsgroup
+{
+width: 100%;
+margin: 0;
+}
+.serviceRating
+{
+font-size: 12px;
+font-weight: normal;
+margin-bottom: 0;
+padding: 0;
+color: black;
+width: 68%;
+display: inline-block;
+text-align: left;
+}
+.Leftcolumn
+{
+font-size: 12px;
+font-weight: bold;
+margin-bottom: 0;
+padding: 0;
+color: black;
+display: inline-block;
+width: 30%;
+text-align: left;
+}
+.RightColumn
+{
+font-size: 12px;
+font-weight: normal;
+margin-bottom: 0;
+padding: 0;
+color: black;
+width: 68%;
+display: inline-block;
+text-align: left;
+}
+.TagLine
+{
+font-size: 12px;
+margin-bottom: 0;
+font-style: italic;
+padding: 0;
+color: black;
+width: 100%;
+text-align: left;
+}
+.serviceProvider
+{
+font-size: 12px;
+font-weight: bolder;
+margin-bottom: 0;
+padding: 0;
+color: black;
+width: 100%;
+text-align: left;
+}
+.ServiceDetails{
+width: 70%;
+height: 178px;
+float: right;
+display: inline-block;
+
+}
+.bt_ServicesMore
+{
+background-color:  #be222f;
+color: white;
+font-size: small;
+margin-top: 20px;
+border-radius: 2rem;
+}
+.Recommendetion {
+padding: 0 18px;
+display: block;
+height: 130px;
+width: 80%;
+margin-top: 10px;
+border-radius: 2rem;
+background-color: white;
+margin-left: 10%;
+margin-right: 10%;
+}
+.Indexheader
+{
+color: white;
+font-size: large;
+text-align: left;
+font-weight: bold;
+margin-left: 2%;
+}
+.RecommendedHeader
+{
+color: white;
+font-size: large;
+text-align: left;
+margin-left: 15%;
+}
+.Mainsearch
+{
+width: 100%;
+height: 100px;
+}
+.mianSeachBox
+{
+float: right;
+width: 30%;
+margin-right: 5%;
+text-align: center;
+}
+.Leftpane
+{
+float: left;
+width: 25%;
+height: 60vh;  
+border-right: solid  #be222f 2px;
+}
+.bt_leftpane
+{
+background-color:  #be222f;
+color: white;
+font-size: small;
+margin-top: 20px;
+margin-bottom: 20px;
+margin-right: 5%;
+width: 90%;
+border-radius: 2rem;
+}
+.UserButtons
+{
+width: 90%;
+margin-right: 5%;
+margin-left: 5%;
+height: 80px;
+}
+
+.centerpane
+{
+width: 50%;
+float: left;
+height: 60vh;
+overflow-y: scroll;
+-ms-overflow-style: none;
+}
+.centerpane::-webkit-scrollbar {
+width: 10px;
+}
+.centerpane::-webkit-scrollbar-track {
+box-shadow: inset 0 0 5px grey; 
+border-radius: 10px;
+}
+
+
+/* Handle */
+.centerpane::-webkit-scrollbar-thumb {
+background: #be222f ; 
+border-radius: 10px;
+}
+
+/* Handle on hover */
+.centerpane::-webkit-scrollbar-thumb:hover {
+background: #b30000; 
+}
+.Providers
+{
+width: 100%;
+float: left;
+height: 100vh;
+border-right: solid  #be222f 2px;
+}
+.rightpane
+{
+float: right;
+width: 24%;
+margin-left: 1%;
+height: 60vh;  
+border-left: solid  #be222f 2px;
+
+}
+
+
+/*---------------------------------
+pop up input form 
+--------------------------------*/
+/* The popup form - hidden by default */
+.form-popup {
+display: none;
+position: fixed;
+bottom: 0;
+right: 15px;
+height: 500px;
+border: 3px solid #f1f1f1;
+background-color: black;
+opacity: 0.8;
+z-index: 9;
+}
+
+
+/* notes container*/
+.NoteConatiner
+{
+height: 440px;
+width:400px;;
+}
+
+.NoteConatiner h1
+{
+color: white;
+width: 100%;
+}
+
+/* control Buttons*/
+.formButtons
+{
+text-align: right;
+}
+
+/*Notes Text Area */
+.NotesTextArea
+{
+width: 100%;
+}
+
+/* Current notes */
+.Notehistory
+{
+width: 100%;
+color: white;
+font-size: medium;
+}
+
+.AddNoteContainer
+{
+height: 400px;
+}
+
+
+@media screen and (max-width: 992px) {
+
+
+/* hide Divs on Mobile*/
+.Leftpane
+{
+display: none;
+}
+.rightpane
+{
+display: none;
+}
+/*---------------------------------------
+ Profile Buttons          
+-----------------------------------------*/ 
+.Inputdropbtn {
+height: 35px;
+}
+#Accountpp
+{
+  margin-top: 4.5px;
+  margin-right:  4.5px;
+}
+
+.AccountFormButtons{
+height: 50px;
+width: 250px;
+border-radius: 2rem;
+margin-top:  3px;
+width: 320px;
+margin-left: 100px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BioformButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 3px;;
+margin-left: 100px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.AddressformButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 3px;;
+margin-left: 100px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BusinessformButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top:150px;
+margin-left: 100px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BusinessAddressformButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 3px;;
+margin-left: 100px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.showcaseFormButtons{
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top: 3px;
+margin-left: 100px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+.WelcomeFormButtons{  
+height: 50px;
+width: 320px;
+border-radius: 2rem;
+margin-top:  390px;
+margin-left: 100px;
+background-color: rgba(65, 64, 66,0.5) !important;
+}
+
+.arrow-right  {
+  width: 0; 
+  height: 0; 
+  margin-top: -13px;
+  margin-left: 399px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px  solid transparent;
+  border-left: 15px  solid rgba(65, 64, 66,0.5) !important;
+  z-index: 0;
+
+}
+.footNote
+{
+    border-radius: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+   background-color: rgba(65, 64, 75,0.5) !important;
+}
+.FootNoteLable
+{
+  display: inline-block; 
+  font-size: small;
+  color: var(--white-color);
+  width: 100%;
+  text-align: center;
+
+}
+.WelcomeNote
+{
+display: inline-block; 
+font-size: small;
+color: var(--white-color);
+width: 100%;
+margin-top: 50px;
+margin-left: 20px !important;
+text-align: left;
+
+}
+.WorkPhotoGroup
+{
+text-align: center;
+height: 250px !important;
+width: 100%;
+margin-top: 10px;
+margin-left: 0px;
+}
+.UploadWorkDone
+{
+float: left;
+width: 70%;
+margin-left:70px;
+margin-top: 2px;
+
+}
+ .WorkDonePictures
+{
+  float: left;
+  width: 20%;
+  margin-left: 20px;
+  display: inline-block;
+
+}
+.NewWorkPic
+{
+    height :75px;  
+    width: 75px;
+    display: inline-block;
+    border-radius: 1rem;
+    float: left;
+    background-color: white !important;
+}
+
+
+.ThumbnailRadioButton input[type=radio]{
+  transform:scale(1.5);
+  border-color: var(--white-color);
+  margin-left:-140px;
+  margin-top: 25px;
+  display: inline-block;
+  }
+  .ThumbnailRadioButton input[type=button]{
+    color: black;
+    background-color: #be222f;
+    border-color: #be222f;
+    color: white;
+    border-radius: 2rem;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin-left:-31px;
+    margin-top: 21px;
+    font-size: 11px;
+    display: inline-block;
+    }
+
+  .ThumbnailRadioButton
+    {
+      color: white; 
+      float: left;         
+      
+  }
+.CurrentProfilepic
+{
+  float: left;
+  width: 20%;
+  margin-top: 20px;
+  margin-left: 20px;
+  display: inline-block;
+
+}
+.NewProfilePicture
+{
+  height :100px;  
+  width: 100px;
+  display: inline-block;
+  border-radius: 1rem;
+  float: left;
+  background-color: rgba(65, 64, 75,0.5) !important;
+}
+.custopmUploadGroup
+{
+float: left;
+width: 90%;
+margin-bottom: 10px;
+margin-left: 20px;
+
+}
+.pictureUpload
+{
+height: 100px !important;
+width: 70%;
+margin-top: 20px;
+margin-right: 20px;
+display: inline-block;
+}
+.UserRating
+{
+width: 50%;
+text-align: left;
+margin-left: 20px;
+margin-bottom: 5px ;
+}
+.UserNamediv
+{
+width: 50%;
+text-align: left;
+margin-left: 20px;
+margin-top: 0px;
+}
+.preUpload
+{
+margin-top: -21px;
+}
+.ServiceRadioButton input[type=radio]{
+      transform:scale(1.5) !important;
+      border-color: var(--white-color);
+      color: red;
+      margin-top: 8px  !important;
+  }
+  .ServiceRadioButton
+    {
+      display: inline-block; 
+      font-size: medium !important;
+      color: white;
+      width: 20%;
+
+    }
+   .ServiceProviderGroup
+  {
+    text-align: center;
+    height: 60px !important;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    margin-right:  5px;
+    text-align: left;
+  }
+.section {
+  padding: 5rem 0;
+}
+.nav-item .nav-link {
+  padding: 6px;
+
+}
+.social-icon {
+  position: relative;
+  padding: 0;
+  margin-top: 15px; 
+  margin-left: 15px;
+}
+
+.ProfilePicture
+{
+  height :55px;  
+  width: 55px;
+  margin-top: -32px;
+  border-radius: 50%;
+  float: right;
+}
+.kasiLogo
+{
+  height: 25px;
+  width: 50px;
+  margin-top: 20px;
+}
+
+.KasivoreLogo
+{
+  width: 150x;
+  height: 100px; 
+  margin-bottom: -1px;
+}
+.Social-media{
+  z-index: 99;
+}
+
+.navbar-collapse,
+.site-footer {
+  text-align: center;
+}
+
+.schedule-table {
+  display: block;
+}
+
+.modal-content {
+  padding: 2rem;
+}
+.Mobilefooter
+{
+  vertical-align: middle;
+}
+.MobileControl{
+  height: 50px;
+  width: 500px;
+  border-radius: 2rem;
+  margin-bottom: -80px;
+  margin-top: -70px !important;
+  float: left;
+   display: inline-block;
+}
+.MobileRadioControl{
+  height: 50px;
+  width: 400px;
+  border-radius: 1rem;
+  float: left;
+  text-align: center;
+  display: inline-block;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.Mobilepp{
+  height: 50px;
+  width: 50px;
+  margin-top: -5px;
+  align-content: center;
+  text-align: center;
+  border-radius: 2rem;
+  float: right;
+  display: inline-block;
+}
+.TopButton input[type=radio]{
+      transform:scale(1.5) !important;
+      margin-top: 5px !important;
+      border-color: var(--white-color);
+      color: red;
+  }
+  .TopButton
+    {
+      display: inline-block; 
+      font-size: small !important;
+      color: white;
+      width: 12%;
+      margin-top: -7px;
+      vertical-align: middle;
+      float: right;
+      background-color: yellow;
+
+    }
+  .Maincard{
+    height: 500px;
+    width: 550px;
+    margin-top: auto;
+    margin-bottom: auto;    
+    border-radius: 15%;
+    background-color: rgba(65, 64, 66,0.5) !important;
+ }
+  .MainCardLabel
+  {
+    display: inline-block; 
+    font-size: medium;
+    color: var(--white-color);
+    width: 30%;
+    text-align: left;
+  }
+   .BusinessAddressHeader
+  {
+    display: inline-block; 
+    font-size: medium; 
+    color: var(--white-color);
+    width: 100%;
+    margin-top: 45px;
+    margin-left: 20px;
+    text-align: left;
+  }
+  .GenderLabel
+  {
+    display: inline-block; 
+    font-size: large !important;
+    color: var(--white-color);
+    width: 30%;
+    text-align: left;
+    margin-left: 15px;
+  }
+  .MainCardGroup
+  {
+    text-align: center;
+    height: 60px !important;
+    margin-left: 5px;
+    margin-right:  5px;
+  }
+  .Headergroup
+  {
+    text-align: center;
+    height: 60px !important;
+    margin-left: 5px;
+    margin-right:  5px;
+  }
+
+  .GenderRadioButton input[type=radio]{
+      transform:scale(1.1) !important;
+      margin-top: 5px !important;
+      border-color: var(--white-color);
+      color: red;
+  }
+  .GenderRadioButton
+    {
+      display: inline-block; 
+      font-size: medium !important;
+      color: white;
+      width: 20%;  
+    }
+.SideMenu{
+  display: none;
+}
+.MaicardInputBox
+  {
+    border-radius: 5rem;
+    display: inline-block; 
+    width: 60%;
+    height: 35px;
+  }
+.MaicardTextArea
+{
+border-radius: 1rem;
+    display: inline-block; 
+    width: 60%;
+    height: 35px;
+}
+
+/* index page styles */
+.mianSeachBox
+{
+ width: 90% !important;
+ float: left;
+ margin-left:5%;
+ margin-right: 5%;
+}
+.IndexMainCard{
+width: 90%;
+margin-left: 5%;
+margin-right: 5%;
+}
+.centerpane
+{
+width: 100%;
+}
+
+}
+
+@media screen and (max-width: 767px) {
+/*---------------------------------------
+ Profile Buttons          
+-----------------------------------------*/ 
+.Inputdropbtn {
+height: 35px;
+}
+
+#Accountpp
+{
+  margin-top: 4.5px;
+  margin-right:  4.5px;
+}
  .AccountFormButtons{
   height: 50px;
-  width: 320px;
+  width: 250px;
   border-radius: 2rem;
-  margin-top: 30px;
-  margin-left: 300px;
+  margin-top:  3px;
+  width: 320px;
+  margin-left: 100px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
 .BioformButtons{
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top:  80px;
-  margin-left: 300px;
+  margin-top:10px;
+  margin-left: 100px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
 .AddressformButtons{
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top: 100px;
-  margin-left: 300px;
+  margin-top:30px;
+  margin-left: 100px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
 .BusinessformButtons{
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top: 220px;
-  margin-left: 300px;
+  margin-top:150px;
+  margin-left: 100px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
 .BusinessAddressformButtons{
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top: 100px;
-  margin-left: 300px;
+  margin-top:30px;
+  margin-left: 100px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
 .showcaseFormButtons{
   height: 50px;
   width: 320px;
   border-radius: 2rem;
-  margin-top: 20px;
-  margin-left: 300px;
+  margin-top:45px;
+  margin-left: 100px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
-.WelcomeFormButtons{
+.WelcomeFormButtons{  
   height: 50px;
-  width:  320px;
+  width: 320px;
   border-radius: 2rem;
-  margin-top:  460px;
-  margin-left: 300px;
+  margin-top:  390px;
+  margin-left: 100px;
   background-color: rgba(65, 64, 66,0.5) !important;
 }
 
-#profilemain
+ .arrow-right  {
+  width: 0; 
+  height: 0; 
+  margin-top: -13px;
+  margin-left: 399px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px  solid transparent;
+  border-left: 15px  solid rgba(65, 64, 66,0.5) !important;
+  z-index: 0;
+
+}
+.ProfilePicture
 {
-  margin-top: 100px !important;
+  height :55px;  
+  width: 55px;
+  margin-top: -32px;
+  border-radius: 50%;
 }
-
-.Profile_btn-left{
-  color: black;
-  background-color: #be222f;
-  color: white;
-  border-radius: 5rem;
-  margin-top: 6px;
-  float: left;
-  margin-left: 5px;
-
-}
-
-.Profile_btn{
-  color: black;
-  background-color: #be222f;
-  color: white;
-  border-radius: 5rem;
-  margin-top: 6px;
-  float: right;
-  margin-right: 5px;
-}
-
-   
-  
-  /*---------------------------------------
-     RESPONSIVE STYLES              
-  -----------------------------------------*/
-  
-  #Accountpp
-  {
-    margin-top: 4.5px;
-    margin-right: 4.5px;
-  }
-  .SectionLabel
-  {
-    width: 160px;
-    color: white;
-    float: left;
-    display: inline-block;
-  }
-  .RadioContainer
-  {
-    width: 300px;
-    float: right;
-    display: inline-block;
-  }
-  .RadioTop
-  {
-    margin-top: 22px;
-  }
-  #Accountlabel
-  {
-    margin-left: 10px;
-  }
-  .MobileControl
-  {
-    display: none;
-  }
-  .Maincard-header h3{
-  color: var(--white-color);
-  }
-  .Maincard-footer
-  {
-      float: bottom;
-      text-align: center; 
-      margin-top: 20px
-  }
-  .MaicardInputBox
-  {
-    border-radius: 5rem;
-    display: inline-block; 
-    width: 60%;
-  }
-  .SearchcardInputBox
-  {
-    border-radius: 5rem;
-    display: inline-block; 
-    width: 100%;
-  }
-  .MaicardTextArea
-  {
+.footNote
+{
     border-radius: 1rem;
-    display: inline-block; 
-    width: 60%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+   background-color: rgba(65, 64, 75,0.5) !important;
+}
+.FootNoteLable
+{
+  display: inline-block; 
+  font-size: small;
+  color: var(--white-color);
+  width: 100%;
+  text-align: center;
+
+}
+.WelcomeNote
+{
+display: inline-block; 
+font-size: small;
+color: var(--white-color);
+width: 100%;
+margin-top: 50px;
+margin-left: 20px !important;
+text-align: left;
+
+}
+.WorkPhotoGroup
+    {
+      text-align: center;
+      height: 250px !important;
+      width: 100%;
+      margin-top: 10px;
+      margin-left: 0px;
+    }
+ .UploadWorkDone
+{
+  float: left;
+  width: 70%;
+  margin-left:70px;
+  margin-top: 2px;
+
+}
+ .WorkDonePictures
+{
+  float: left;
+  width: 20%;
+  margin-left: 20px;
+  display: inline-block;
+
+}
+.NewWorkPic
+{
+    height :75px;  
+    width: 75px;
+    display: inline-block;
+    border-radius: 1rem;
+    float: left;
+    background-color: white !important;
+}
+.ThumbnailRadioButton input[type=radio]{
+  transform:scale(1.5);
+  border-color: var(--white-color);
+  margin-left:-76px;
+  margin-top: 25px;
   }
-  .pictureUpload
+  .ThumbnailRadioButton
+    {
+      display: inline-block; 
+      color: white; 
+      float: left;
+      
+      
+  }
+ .CurrentProfilepic
+{
+  float: left;
+  width: 20%;
+  margin-top: 20px;
+  margin-left: 20px;
+  display: inline-block;
+
+}
+.NewProfilePicture
+{
+  height :100px;  
+  width: 100px;
+  display: inline-block;
+  border-radius: 1rem;
+  float: left;
+  background-color: rgba(65, 64, 75,0.5) !important;
+}
+.custopmUploadGroup
+{
+float: left;
+width: 90%;
+margin-bottom: 10px;
+margin-left: 20px;
+
+}
+.pictureUpload
+{
+height: 100px !important;
+width: 70%;
+margin-top: 20px;
+margin-right: 20px;
+display: inline-block;
+}
+.UserRating
+{
+width: 50%;
+text-align: left;
+margin-left: 20px;
+margin-bottom: 5px ;
+}
+.UserNamediv
+{
+width: 50%;
+text-align: left;
+margin-left: 20px;
+margin-top: 0px;
+}
+.preUpload
+{
+margin-top: -20px;
+}
+.ServiceRadioButton input[type=radio]{
+      transform:scale(1.5) !important;
+      border-color: var(--white-color);
+      color: red;
+      margin-top: 8px  !important;
+  }
+  .ServiceRadioButton
+    {
+      display: inline-block; 
+      font-size: medium !important;
+      color: white;
+      width: 20%;
+
+    }
+   .ServiceProviderGroup
   {
     text-align: center;
-    height: 70px;
+    height: 60px !important;
+    margin-left: 30px;
+    margin-top: 20px;
+    margin-bottom: -20px;
+    margin-right:  5px;
+    text-align: left;
   }
-  .MainCardLabel
+h1 {
+  font-size: 38px;
+}
+
+.about-working-hours {
+  border-left: 0;
+  padding: 22px 0 0 0;
+}
+ .kasiLogo
+{
+  margin-top: 25px
+}
+
+.KasivoreLogo
+{
+  width: 150x;
+  height: 100px;
+
+}
+.Social-media{
+  z-index: 99;
+}
+.contact h2 span {
+  display: block;
+}
+ .social-icon {
+  position: relative;
+  padding: 0;
+  margin-top: 15px;
+  margin-left: 15px; 
+}
+.Mobilefooter
+{
+  vertical-align: middle;
+}
+.MobileControl{
+  height: 50px;
+  width: 500px;
+  border-radius: 2rem;
+   margin-bottom: -80px;
+   margin-top: -70px !important;
+  float: left;
+   display: inline-block;
+}
+.MobileRadioControl{
+  height: 50px;
+  width: 400px;
+  border-radius: 1rem;
+  float: left;
+  text-align: center;
+   display: inline-block;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.Mobilepp{
+  height: 50px;
+  width: 50px;      
+   margin-top: -5px;
+  align-content: center;
+  text-align: center;
+  border-radius: 2rem;
+  float: right; 
+  display: inline-block;
+
+}
+.TopButton input[type=radio]{
+      transform:scale(1.5) !important;
+      margin-top: 5px !important;
+      border-color: var(--white-color);
+      color: red;
+  }
+  .TopButton
+    {
+      display: inline-block; 
+      font-size: small !important;
+      color: white;
+      width: 12%;
+      margin-top: -7px;
+      vertical-align: middle;
+      float: right;
+      background-color: yellow;
+
+    }
+    #Accountlabel
+    {
+      margin-top: 14px;
+      margin-right: 30px;
+
+    }
+    .Maincard{
+    height: 500px;
+    width: 550px;
+    margin-top: auto;
+    margin-bottom: auto;
+    border-radius: 15%;
+    background-color: rgba(65, 64, 66,0.5) !important;
+    }
+
+.MainCardLabel
   {
     display: inline-block; 
-    font-size: x-large;
+    font-size: medium; !important;
     color: var(--white-color);
     width: 30%;
     text-align: left;
@@ -1213,831 +2445,60 @@ https://www.tooplate.com/view/2119-gymso-fitness
   .BusinessAddressHeader
   {
     display: inline-block; 
-    font-size: x-large;
-    font-weight: bold;
+    font-size: medium; !important;
     color: var(--white-color);
     width: 100%;
-    margin-top: 20px;
-    margin-left: 35px;
+    margin-top: 45px;
+    margin-left: 20px;
     text-align: left;
   }
   .GenderLabel
   {
     display: inline-block; 
-    font-size: x-large;
+    font-size: medium !important;
     color: var(--white-color);
     width: 30%;
     text-align: left;
-    margin-left: 10px;
+    margin-left: 15px;
   }
 
-  .GenderMargin
-  {
-    margin-top: 20px !important;
-  }
-   .MainCardGroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 5px;
-        margin-right:  5px;
-      }
-      .SearchCardGroup
-      {
-        text-align: center;
-        height: 60px !important;
-      }
-      .Headergroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 5px;
-        margin-right:  5px;
-      }
-      .ServiceProviderGroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 40px;
-        margin-top: 20px;
-        margin-bottom: -20px;
-        margin-right:  5px;
-        text-align: left;
-      }
-      .ServiceRadioButton input[type=radio]{
-          transform:scale(2.5) !important;
-          margin-top: 5px !important;
-          border-color: var(--white-color);
-          color: red;
-          margin-top: 12px  !important;
-      }
-      .ServiceRadioButton
-        {
-          display: inline-block; 
-          font-size: x-large !important;
-          color: white;
-          width: 25%;
-          margin-left: 45px;
-        }
-        .Companydesc
-        {
-          vertical-align: top;
-        }
-        .RequiredLabel
-        {
-          color: red;
-        }
-
-/*-------------------------------------------------------
-Email Notifications
---------------------------------------------------------*/
-.Letterhead
-{
-  width: 100%;
-  height: 200px;
-  background-color: black;
-  float: left;
-}
-
-
-/*----------------------------------------------
-   index page styles 
-----------------------------------------------*/
-.IndexMainCard{
-  height: 700px;
-  width: 1300px;
-  margin-top: 80px;  
-  border-radius:2rem;
-  background-color: rgba(65, 64, 66,0.5) !important;
-}
-
-.IndexInnercard
-{
-  width: 100%;
-  height: 550px;  
-  
-}
-
-.collapsible {
-  background-color:  #be222f;
-  color: white;
-  font-size: small;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 5%;
-  width: 90%;
-  border-radius: 2rem;
-
-}
-
-.active, .collapsible:hover {
-  color: black;
-}
-
-.content {
-  padding: 0 18px;
-  display: block;
-  overflow: hidden;
-  border-bottom: solid #be222f 2px;
-}
-.bt_ServicesSearch
-{
-  background-color:  #be222f;
-  color: white;
-  font-size: medium;
-  margin-top: 20px;
-  width: 100%;
-  
-  border-radius: 2rem;
-}
-.services {
-  padding: 0 18px;
-  display: block;
-  height: 180px;
-  width: 96%;
-  margin-top: 10px;
-  border-radius: 2rem;
-  background-color: white;
-  margin-left: 2%;
-  margin-right: 2%;
-}
-.ServiceProfile{
- width: 30%;
- height: 178px;
- float: left;
- background-color: red;
- 
-}
-.serviceThumbnail
-{
-  width: 30%;
-  display: inline-block;
-
-}
-.serviceThumbnailPicture
-{
-    height :120px;  
-    width: 150px;
-    margin-top: 10px;   
-    display: inline-block;
-    border-radius: 1rem;
-    float: left;
-}
-.ServiceDetailsgroup
-{
-  width: 100%;
-  margin: 0;
-}
-.serviceRating
-{
-  font-size: 12px;
-  font-weight: normal;
-  margin-bottom: 0;
-  padding: 0;
-  color: black;
-  width: 68%;
-  display: inline-block;
-  text-align: left;
-}
-.Leftcolumn
-{
-  font-size: 12px;
-  font-weight: bold;
-  margin-bottom: 0;
-  padding: 0;
-  color: black;
-  display: inline-block;
-  width: 30%;
-  text-align: left;
-}
-.RightColumn
-{
-  font-size: 12px;
-  font-weight: normal;
-  margin-bottom: 0;
-  padding: 0;
-  color: black;
-  width: 68%;
-  display: inline-block;
-  text-align: left;
-}
-.TagLine
-{
-  font-size: 12px;
-  margin-bottom: 0;
-  font-style: italic;
-  padding: 0;
-  color: black;
-  width: 100%;
-  text-align: left;
-}
-.serviceProvider
-{
-  font-size: 12px;
-  font-weight: bolder;
-  margin-bottom: 0;
-  padding: 0;
-  color: black;
-  width: 100%;
-  text-align: left;
-}
-.ServiceDetails{
-  width: 70%;
-  height: 178px;
-  float: right;
-  display: inline-block;
-  
- }
- .bt_ServicesMore
- {
-   background-color:  #be222f;
-   color: white;
-   font-size: small;
-   margin-top: 20px;
-   border-radius: 2rem;
- }
-.Recommendetion {
-  padding: 0 18px;
-  display: block;
-  height: 130px;
-  width: 80%;
-  margin-top: 10px;
-  border-radius: 2rem;
-  background-color: white;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-.Indexheader
-{
-  color: white;
-  font-size: large;
-  text-align: left;
-  font-weight: bold;
-  margin-left: 2%;
-}
-.RecommendedHeader
-{
-  color: white;
-  font-size: large;
-  text-align: left;
-  margin-left: 15%;
-}
-.Mainsearch
-{
-  width: 100%;
-  height: 100px;
-}
-.mianSeachBox
-{
-  float: right;
-  width: 30%;
-  margin-right: 5%;
-  text-align: center;
-}
-.Leftpane
-{
-  float: left;
-  width: 25%;
-  height: 60vh;  
-  border-right: solid  #be222f 2px;
-}
-.bt_leftpane
-{
-  background-color:  #be222f;
-  color: white;
-  font-size: small;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-right: 5%;
-  width: 90%;
-  border-radius: 2rem;
-}
-.UserButtons
-{
-  width: 90%;
-  margin-right: 5%;
-  margin-left: 5%;
-  height: 80px;
-}
-
-.centerpane
-{
-  width: 50%;
-  float: left;
-  height: 60vh;
-  overflow-y: scroll;
-  -ms-overflow-style: none;
-}
-.centerpane::-webkit-scrollbar {
-  width: 10px;
-}
-.centerpane::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
-
- 
-/* Handle */
-.centerpane::-webkit-scrollbar-thumb {
-  background: #be222f ; 
-  border-radius: 10px;
-}
-
-/* Handle on hover */
-.centerpane::-webkit-scrollbar-thumb:hover {
-  background: #b30000; 
-}
-.Providers
-{
-  width: 100%;
-  float: left;
-  height: 100vh;
-  border-right: solid  #be222f 2px;
-}
-.rightpane
-{
-  float: right;
-  width: 24%;
-  margin-left: 1%;
-  height: 60vh;  
-  border-left: solid  #be222f 2px;
-  
-}
-
-
-  /*---------------------------------
-  pop up input form 
-  --------------------------------*/
-/* The popup form - hidden by default */
-.form-popup {
-	display: none;
-	position: fixed;
-	bottom: 0;
-	right: 15px;
-	height: 500px;
-	border: 3px solid #f1f1f1;
-	background-color: black;
-	opacity: 0.8;
-	z-index: 9;
-  }
-  
-
-  /* notes container*/
-  .NoteConatiner
-  {
-	  height: 440px;
-	  width:400px;;
-  }
-
-  .NoteConatiner h1
-  {
-	  color: white;
-	  width: 100%;
-  }
-
-  /* control Buttons*/
-  .formButtons
-  {
-	  text-align: right;
-  }
-
-  /*Notes Text Area */
-  .NotesTextArea
-  {
-	  width: 100%;
-  }
-  
-  /* Current notes */
-  .Notehistory
-  {
-	  width: 100%;
-	  color: white;
-	  font-size: medium;
-  }
-
-.AddNoteContainer
-{
-	height: 400px;
-}
-
-
-@media screen and (max-width: 992px) {
-
-  
-  /* hide Divs on Mobile*/
-  .Leftpane
-  {
-    display: none;
-  }
-  .rightpane
-  {
-    display: none;
-  }
-    /*---------------------------------------
-     Profile Buttons          
-  -----------------------------------------*/ 
-  .Inputdropbtn {
-    height: 35px;
-  }
-  #Accountpp
-    {
-      margin-top: 4.5px;
-      margin-right:  4.5px;
-    }
-    
-  .AccountFormButtons{
-    height: 50px;
-    width: 250px;
-    border-radius: 2rem;
-    margin-top:  3px;
-    width: 320px;
-    margin-left: 100px;
-    background-color: rgba(65, 64, 66,0.5) !important;
-  }
-  .BioformButtons{
-    height: 50px;
-    width: 320px;
-    border-radius: 2rem;
-    margin-top: 3px;;
-    margin-left: 100px;
-    background-color: rgba(65, 64, 66,0.5) !important;
-  }
-  .AddressformButtons{
-    height: 50px;
-    width: 320px;
-    border-radius: 2rem;
-    margin-top: 3px;;
-    margin-left: 100px;
-    background-color: rgba(65, 64, 66,0.5) !important;
-  }
-  .BusinessformButtons{
-    height: 50px;
-    width: 320px;
-    border-radius: 2rem;
-    margin-top:150px;
-    margin-left: 100px;
-    background-color: rgba(65, 64, 66,0.5) !important;
-  }
-  .BusinessAddressformButtons{
-    height: 50px;
-    width: 320px;
-    border-radius: 2rem;
-    margin-top: 3px;;
-    margin-left: 100px;
-    background-color: rgba(65, 64, 66,0.5) !important;
-  }
-  .showcaseFormButtons{
-    height: 50px;
-    width: 320px;
-    border-radius: 2rem;
-    margin-top: 3px;
-    margin-left: 100px;
-    background-color: rgba(65, 64, 66,0.5) !important;
-  }
-  .WelcomeFormButtons{  
-    height: 50px;
-    width: 320px;
-    border-radius: 2rem;
-    margin-top:  390px;
-    margin-left: 100px;
-    background-color: rgba(65, 64, 66,0.5) !important;
-  }
-
-    .arrow-right  {
-      width: 0; 
-      height: 0; 
-      margin-top: -13px;
-      margin-left: 399px;
-      border-top: 15px solid transparent;
-      border-bottom: 15px  solid transparent;
-      border-left: 15px  solid rgba(65, 64, 66,0.5) !important;
-      z-index: 0;
-
-    }
-    .footNote
-    {
-        border-radius: 1rem;
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 20px;
-       background-color: rgba(65, 64, 75,0.5) !important;
-    }
-    .FootNoteLable
-    {
-      display: inline-block; 
-      font-size: small;
-      color: var(--white-color);
-      width: 100%;
-      text-align: center;
-
-    }
-    .WelcomeNote
-  {
-    display: inline-block; 
-    font-size: small;
-    color: var(--white-color);
-    width: 100%;
-    margin-top: 50px;
-    margin-left: 20px !important;
-    text-align: left;
-
-  }
-  .WorkPhotoGroup
+  .MainCardGroup
   {
     text-align: center;
-    height: 250px !important;
-    width: 100%;
-    margin-top: 10px;
-    margin-left: 0px;
-    }
-  .UploadWorkDone
-  {
-  float: left;
-  width: 70%;
-  margin-left:70px;
-  margin-top: 2px;
-
+    height: 60px !important;
+     margin-left: 5px;
+    margin-right:  5px;
   }
-     .WorkDonePictures
-    {
-      float: left;
-      width: 20%;
-      margin-left: 20px;
-      display: inline-block;
-
-    }
-    .NewWorkPic
-    {
-        height :75px;  
-        width: 75px;
-        display: inline-block;
-        border-radius: 1rem;
-        float: left;
-        background-color: white !important;
-    }
-    .ThumbnailRadioButton input[type=radio]{
-      transform:scale(1.5);
+  .Headergroup
+  {
+    text-align: center;
+    height: 60px !important;
+    margin-left: 5px;
+    margin-right:  5px;
+  }
+  .GenderRadioButton input[type=radio]{
+      transform:scale(1.1) !important;
+      margin-top: 5px !important;
       border-color: var(--white-color);
-      margin-left:-25px;
-      margin-top: 25px;
-      }
-      .ThumbnailRadioButton
-        {
-          display: inline-block; 
-          color: white; 
-          float: left;         
-          
-      }
-    .CurrentProfilepic
+      color: red;
+  }
+  .GenderRadioButton
     {
-      float: left;
-      width: 20%;
-      margin-top: 20px;
-      margin-left: 20px;
-      display: inline-block;
-
+      display: inline-block; 
+      font-size: medium !important;
+      color: white;
+      width: 20% ;
     }
-    .NewProfilePicture
+.SideMenu{
+  display: none;
+}
+ .MaicardInputBox
   {
-      height :100px;  
-      width: 100px;
-      display: inline-block;
-      border-radius: 1rem;
-      float: left;
-      background-color: rgba(65, 64, 75,0.5) !important;
+    border-radius: 5rem;
+    display: inline-block; 
+    width: 60%;
+    height: 35px;
   }
- .custopmUploadGroup
-  {
-    float: left;
-    width: 90%;
-    margin-bottom: 10px;
-    margin-left: 20px;
-
-  }
-  .pictureUpload
-  {
-    height: 100px !important;
-    width: 70%;
-    margin-top: 20px;
-    margin-right: 20px;
-    display: inline-block;
-  }
-  .UserRating
-  {
-    width: 50%;
-    text-align: left;
-    margin-left: 20px;
-    margin-bottom: 5px ;
-  }
-  .UserNamediv
-  {
-    width: 50%;
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 0px;
-  }
-  .preUpload
-  {
-    margin-top: -21px;
-  }
-  .ServiceRadioButton input[type=radio]{
-          transform:scale(1.5) !important;
-          border-color: var(--white-color);
-          color: red;
-          margin-top: 8px  !important;
-      }
-      .ServiceRadioButton
-        {
-          display: inline-block; 
-          font-size: medium !important;
-          color: white;
-          width: 20%;
-
-        }
-       .ServiceProviderGroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 30px;
-        margin-top: 20px;
-        margin-bottom: -20px;
-        margin-right:  5px;
-        text-align: left;
-      }
-    .section {
-      padding: 5rem 0;
-    }
-    .nav-item .nav-link {
-      padding: 6px;
-
-    }
-    .social-icon {
-      position: relative;
-      padding: 0;
-      margin-top: 15px; 
-      margin-left: 15px;
-    }
-
-    .ProfilePicture
-    {
-      height :55px;  
-      width: 55px;
-      margin-top: -32px;
-      border-radius: 50%;
-      float: right;
-    }
-    .kasiLogo
-    {
-      height: 25px;
-      width: 50px;
-      margin-top: 20px;
-    }
-
-    .KasivoreLogo
-    {
-      width: 150x;
-      height: 100px; 
-      margin-bottom: -1px;
-    }
-    .Social-media{
-      z-index: 99;
-    }
-
-    .navbar-collapse,
-    .site-footer {
-      text-align: center;
-    }
-
-    .schedule-table {
-      display: block;
-    }
-
-    .modal-content {
-      padding: 2rem;
-    }
-    .Mobilefooter
-    {
-      vertical-align: middle;
-    }
-    .MobileControl{
-      height: 50px;
-      width: 500px;
-      border-radius: 2rem;
-      margin-bottom: -80px;
-      margin-top: -70px !important;
-      float: left;
-       display: inline-block;
-    }
-    .MobileRadioControl{
-      height: 50px;
-      width: 400px;
-      border-radius: 1rem;
-      float: left;
-      text-align: center;
-      display: inline-block;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .Mobilepp{
-      height: 50px;
-      width: 50px;
-      margin-top: -5px;
-      align-content: center;
-      text-align: center;
-      border-radius: 2rem;
-      float: right;
-      display: inline-block;
-    }
-    .TopButton input[type=radio]{
-          transform:scale(1.5) !important;
-          margin-top: 5px !important;
-          border-color: var(--white-color);
-          color: red;
-      }
-      .TopButton
-        {
-          display: inline-block; 
-          font-size: small !important;
-          color: white;
-          width: 12%;
-          margin-top: -7px;
-          vertical-align: middle;
-          float: right;
-          background-color: yellow;
-
-        }
-      .Maincard{
-        height: 500px;
-        width: 550px;
-        margin-top: auto;
-        margin-bottom: auto;    
-        border-radius: 15%;
-        background-color: rgba(65, 64, 66,0.5) !important;
-     }
-      .MainCardLabel
-      {
-        display: inline-block; 
-        font-size: medium;
-        color: var(--white-color);
-        width: 30%;
-        text-align: left;
-      }
-       .BusinessAddressHeader
-      {
-        display: inline-block; 
-        font-size: medium; 
-        color: var(--white-color);
-        width: 100%;
-        margin-top: 45px;
-        margin-left: 20px;
-        text-align: left;
-      }
-      .GenderLabel
-      {
-        display: inline-block; 
-        font-size: large !important;
-        color: var(--white-color);
-        width: 30%;
-        text-align: left;
-        margin-left: 15px;
-      }
-      .MainCardGroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 5px;
-        margin-right:  5px;
-      }
-      .Headergroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 5px;
-        margin-right:  5px;
-      }
-
-      .GenderRadioButton input[type=radio]{
-          transform:scale(1.1) !important;
-          margin-top: 5px !important;
-          border-color: var(--white-color);
-          color: red;
-      }
-      .GenderRadioButton
-        {
-          display: inline-block; 
-          font-size: medium !important;
-          color: white;
-          width: 20%;  
-        }
-    .SideMenu{
-      display: none;
-    }
-    .MaicardInputBox
-      {
-        border-radius: 5rem;
-        display: inline-block; 
-        width: 60%;
-        height: 35px;
-      }
   .MaicardTextArea
   {
     border-radius: 1rem;
@@ -2045,1000 +2506,588 @@ Email Notifications
         width: 60%;
         height: 35px;
   }
+   /* index page style*/
+ .serviceThumbnail
+{
+  width: 40%;
+  display: inline-block;
 
-  /* index page styles */
-  .mianSeachBox
-  {
-     width: 90% !important;
-     float: left;
-     margin-left:5%;
-     margin-right: 5%;
-  }
-  .IndexMainCard{
-   width: 90%;
-   margin-left: 5%;
-   margin-right: 5%;
-  }
-  .centerpane
-  {
-    width: 100%;
-  }
+}
+.ServiceDetails{
+  width: 60%;
+  display: inline-block;
+}
+ .bt_ServicesMore
+ {
+   margin-top: 10px;
+ }
  
+   .Leftcolumn
+  {
+    width: 48%;
+    display: inline-block;
+    text-align: left;
+  }
+  .RightColumn
+  {
+    width: 48%;
+    display: inline-block;
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
-  @media screen and (max-width: 767px) {
-    /*---------------------------------------
-     Profile Buttons          
-  -----------------------------------------*/ 
-  .Inputdropbtn {
-    height: 35px;
-  }
-  
-    #Accountpp
-    {
-      margin-top: 4.5px;
-      margin-right:  4.5px;
-    }
-     .AccountFormButtons{
-      height: 50px;
-      width: 250px;
-      border-radius: 2rem;
-      margin-top:  3px;
-      width: 320px;
-      margin-left: 100px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .BioformButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:10px;
-      margin-left: 100px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .AddressformButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:30px;
-      margin-left: 100px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .BusinessformButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:150px;
-      margin-left: 100px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .BusinessAddressformButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:30px;
-      margin-left: 100px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .showcaseFormButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:45px;
-      margin-left: 100px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .WelcomeFormButtons{  
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:  390px;
-      margin-left: 100px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
 
-     .arrow-right  {
-      width: 0; 
-      height: 0; 
-      margin-top: -13px;
-      margin-left: 399px;
-      border-top: 15px solid transparent;
-      border-bottom: 15px  solid transparent;
-      border-left: 15px  solid rgba(65, 64, 66,0.5) !important;
-      z-index: 0;
+@media screen and (max-width: 480px) {
+/*---------------------------------------
+ Profile Buttons          
+-----------------------------------------*/
+.Inputdropbtn {
+height: 40px;
+}
+#Accountpp
+{
+  margin-top: 3.5px;
+  margin-right:  3.5px;
+} 
+ .AccountFormButtons{
+  height: 50px;
+  width: 320px;
+  border-radius: 2rem;
+  margin-top: -20px;
+  margin-left:12px;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BioformButtons{
+  height: 50px;
+  width: 320px;
+  border-radius: 2rem;
+  margin-top:  32px;
+  margin-left: 12px;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.AddressformButtons{
+  height: 50px;
+  width: 320px;
+  border-radius: 2rem;
+  margin-top:  32px;
+  margin-left: 12px;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BusinessformButtons{
+  height: 50px;
+  width: 320px;
+  border-radius: 2rem;
+  margin-top:  185px;
+  margin-left: 12px;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.BusinessAddressformButtons{
+  height: 50px;
+  width: 320px;
+  border-radius: 2rem;
+  margin-top:  32px;
+  margin-left: 12px;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.showcaseFormButtons{
+  height: 50px;
+  width: 320px;
+  border-radius: 2rem;
+  margin-top:  0px;
+  margin-left: 12px;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.WelcomeFormButtons{  
+  height: 50px;
+  width: 320px;
+  border-radius: 2rem;
+  margin-top:  465px;
+  margin-left: 12px;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
 
-    }
-    .ProfilePicture
+ .arrow-right  {
+  width: 0; 
+  height: 0; 
+  margin-top: -10px;
+  margin-left: 249.0px;
+  border-top: 15px solid transparent;
+  border-bottom: 15px  solid transparent;
+  border-left: 15px  solid rgba(65, 64, 66,0.5) !important;
+  z-index: 0;
+
+}
+.footNote
+{
+    border-radius: 1rem;
+    margin-left: 10px;
+    margin-right: 10px;
+   background-color: rgba(65, 64, 75,0.5) !important;
+}
+.FootNoteLable
+{
+  display: inline-block; 
+  font-size: small;
+  color: var(--white-color);
+  width: 100%;
+  text-align: center;
+
+}
+.WelcomeNote
+{
+display: inline-block; 
+font-size: small;
+color: var(--white-color);
+width: 80%;
+margin-left: 10px !important;
+margin-top: 20px !important;
+text-align: center;
+
+}
+.WorkPhotoGroup
     {
-      height :55px;  
-      width: 55px;
-      margin-top: -32px;
-      border-radius: 50%;
-    }
-    .footNote
-    {
-        border-radius: 1rem;
-        margin-left: 10px;
-        margin-right: 10px;
-        margin-top: 20px;
-       background-color: rgba(65, 64, 75,0.5) !important;
-    }
-    .FootNoteLable
-    {
-      display: inline-block; 
-      font-size: small;
-      color: var(--white-color);
-      width: 100%;
       text-align: center;
-
+      height:350px !important;
+      width: 90%;
+      margin-left: 25px;
+      margin-top: 10px;
+      
     }
-   .WelcomeNote
+ .UploadWorkDone
+{
+  float: left;
+  width: 90%;
+  margin-left: 10px;
+  margin-right: 5px;
+  margin-top: 2px;
+
+}
+ .WorkDonePictures
+{
+  float: left;
+  width: 20%;
+  margin-right: 5px;
+  display: inline-block;
+
+}
+.NewWorkPic
+{
+    height :75px;  
+    width: 75x;
+    display: inline-block;
+    border-radius: 1rem;
+    float: left;
+    background-color: white !important;
+}
+.ThumbnailRadioButton input[type=radio]{
+    transform:scale(1.3);
+    margin-top: 22px;
+    border-color: var(--white-color);
+    color: red;
+    margin-left: -75px;
+}
+
+.ThumbnailRadioButton
   {
     display: inline-block; 
-    font-size: small;
+    font-size: large;
+    color: white; 
+    float: left; 
+    margin-left: 5px;
+    
+}
+ .CurrentProfilepic
+{
+  text-align: center;
+  width: 100%;
+  display: inline-block;
+  align-content: center;
+
+}
+.NewProfilePicture
+{
+  height :100px;  
+  width: 100px;
+  margin-left: 85px;
+  display: inline-block;
+  text-align: center;
+  border-radius: 1rem;
+ 
+  background-color: rgba(65, 64, 75,0.5) !important;
+}
+.custopmUploadGroup
+{
+float: left;
+width: 95%;
+margin-right: 5px;
+margin-left: 5px;
+margin-bottom: 10px;
+
+}
+.pictureUpload
+{
+height: 70px !important;
+width: 100%;
+margin-top: 10px;
+}
+.UserRating
+{
+margin-bottom: 5px ;
+width: 45%;
+float: left;
+margin-left: 5px;
+display: inline-block;
+}
+.UserNamediv
+{
+width: 20%;
+float: right;
+margin-top: 0px; 
+background-color: white  !important;   
+margin-right: 5px;  
+}
+.preUpload
+{
+margin-top: -21px;
+}
+.ServiceRadioButton input[type=radio]{
+      transform:scale(1) !important;
+      border-color: var(--white-color);
+      color: red;
+      margin-top: 0px  !important;
+  }
+  .ServiceRadioButton
+    {
+      display: inline-block; 
+      font-size: small !important;
+      color: white;
+      width: 10%;
+      margin-top: 25px;
+
+    }
+   .ServiceProviderGroup
+  {
+    text-align: center;
+    height: 60px !important;
+    margin-left: 20px;
+    margin-top: 5px !important;
+    margin-bottom: -20px;
+    margin-right:  5px;
+    text-align: left;
+  }
+
+.SectionLabel
+{
+  width: 100%;
+  text-align: center;
+  color: white;
+  float: left;
+  display: block;
+  margin-top: -15px;
+}
+.RadioTop
+  {
+    width: 100%;
+    display: block;
+  }
+h1 {
+  font-size: 38px;
+}
+
+.about-working-hours {
+  border-left: 0;
+  padding: 22px 0 0 0;
+}
+.ProfilePicture
+{
+  height :42px;  
+  width: 42px;
+  margin-top: -15px;
+  border-radius: 50%;
+  float: right;
+}
+    
+ .kasiLogo
+{
+  margin-top: 25px
+}
+
+.KasivoreLogo
+{
+  width: 150x;
+  height: 100px;
+
+}
+.Social-media{
+  z-index: 99;
+}
+.contact h2 span {
+  display: block;
+}
+ .social-icon {
+  position: relative;
+  padding: 0;
+  margin-top: 15px;
+  margin-left: 15px; 
+}
+.Mobilefooter
+{
+  vertical-align: middle;
+}
+.MobileControl{
+  height: 55px;
+  width: 325px;
+  border-radius: 2rem;
+   margin-bottom: -80px;
+  margin-top: 10px !important;
+  float: left;
+   display: inline-block;
+}
+.MobileRadioControl{
+  height: 55px;
+  width: 250px;
+  border-radius: 1rem;
+  float: left;
+  text-align: center;
+   display: inline-block;
+  background-color: rgba(65, 64, 66,0.5) !important;
+}
+.Mobilepp{
+  height: 50px;
+  width: 50px;      
+   margin-top: 5px;
+  align-content: center;
+  text-align: center;
+  border-radius: 2rem;
+  float: right; 
+  display: inline-block;
+
+}
+.TopButton input[type=radio]{
+      transform:scale(1.5) !important;
+      margin-top: 5px !important;
+      border-color: var(--white-color);
+      color: red;
+  }
+  .TopButton
+    {
+      display: inline-block; 
+      font-size: small !important;
+      color: white;
+      width: 24%;
+      margin-top: -7px;
+      vertical-align: middle;
+      float: right;
+      background-color: yellow;
+
+    }
+    #Accountlabel
+    {
+      margin-top: 14px;
+      margin-right: 30px;
+    }
+    .Maincard{
+      height:  600px;
+      width: 350px;
+      margin-top: 70px;
+      margin-bottom: auto;
+      border-radius: 7%;
+      background-color: rgba(65, 64, 66,0.5) !important;
+      }
+
+.MainCardLabel
+  {
+    display: block; 
+    font-size: small !important;
     color: var(--white-color);
     width: 100%;
-    margin-top: 50px;
-    margin-left: 20px !important;
     text-align: left;
-
+    margin-left: 10px;
+    margin-bottom: -20px;
   }
-    .WorkPhotoGroup
-        {
-          text-align: center;
-          height: 250px !important;
-          width: 100%;
-          margin-top: 10px;
-          margin-left: 0px;
-        }
-     .UploadWorkDone
-    {
-      float: left;
-      width: 70%;
-      margin-left:70px;
-      margin-top: 2px;
-
-    }
-     .WorkDonePictures
-    {
-      float: left;
-      width: 20%;
-      margin-left: 20px;
-      display: inline-block;
-
-    }
-    .NewWorkPic
-    {
-        height :75px;  
-        width: 75px;
-        display: inline-block;
-        border-radius: 1rem;
-        float: left;
-        background-color: white !important;
-    }
-    .ThumbnailRadioButton input[type=radio]{
-      transform:scale(1.5);
-      border-color: var(--white-color);
-      margin-left:-25px;
-      margin-top: 25px;
-      }
-      .ThumbnailRadioButton
-        {
-          display: inline-block; 
-          color: white; 
-          float: left;
-          
-          
-      }
-     .CurrentProfilepic
-    {
-      float: left;
-      width: 20%;
-      margin-top: 20px;
-      margin-left: 20px;
-      display: inline-block;
-
-    }
-    .NewProfilePicture
+  .BusinessAddressHeader
   {
-      height :100px;  
-      width: 100px;
-      display: inline-block;
-      border-radius: 1rem;
-      float: left;
-      background-color: rgba(65, 64, 75,0.5) !important;
+    display: block; 
+    font-size: medium !important;
+    font-weight: bold;
+    color: var(--white-color);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 0px;
+    margin-left: 10px;
   }
- .custopmUploadGroup
+  .GenderLabel
   {
-    float: left;
-    width: 90%;
+    display: block; 
+    font-size: medium !important;
+    color: var(--white-color);
+    width: 100%;
+    text-align: left;
+    margin-left: 10px;
     margin-bottom: 10px;
+  }
+
+  .MainCardGroup
+  {
+    text-align: center;
     margin-left: 20px;
-
+    margin-right:  20px;
+    margin-top: 10px;
+    width: 90%;
   }
-  .pictureUpload
+  .Headergroup
   {
-    height: 100px !important;
-    width: 70%;
-    margin-top: 20px;
-    margin-right: 20px;
-    display: inline-block;
-  }
-  .UserRating
-  {
-    width: 50%;
-    text-align: left;
+    text-align: center;
     margin-left: 20px;
-    margin-bottom: 5px ;
+    margin-right:  20px;
+    margin-bottom: -30px;
+    width: 90%;
   }
-  .UserNamediv
+  .GenderRadioButton input[type=radio]{
+      transform:scale(1.5) !important;
+      margin-top: 2px !important;
+      border-color: var(--white-color);
+      color: red;
+  }
+  .GenderRadioButton
+    {
+      display: inline-block; 
+      font-size: 10px !important;
+      color: white;
+      width: 32% ;
+    }
+.SideMenu{
+  display: none;
+}
+ .MaicardInputBox
   {
-    width: 50%;
-    text-align: left;
-    margin-left: 20px;
-    margin-top: 0px;
-  }
-  .preUpload
-  {
-    margin-top: -20px;
-  }
-  .ServiceRadioButton input[type=radio]{
-          transform:scale(1.5) !important;
-          border-color: var(--white-color);
-          color: red;
-          margin-top: 8px  !important;
-      }
-      .ServiceRadioButton
-        {
-          display: inline-block; 
-          font-size: medium !important;
-          color: white;
-          width: 20%;
-
-        }
-       .ServiceProviderGroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 30px;
-        margin-top: 20px;
-        margin-bottom: -20px;
-        margin-right:  5px;
-        text-align: left;
-      }
-    h1 {
-      font-size: 38px;
-    }
-   
-    .about-working-hours {
-      border-left: 0;
-      padding: 22px 0 0 0;
-    }
-     .kasiLogo
-    {
-      margin-top: 25px
-    }
-
-    .KasivoreLogo
-    {
-      width: 150x;
-      height: 100px;
-
-    }
-    .Social-media{
-      z-index: 99;
-    }
-    .contact h2 span {
-      display: block;
-    }
-     .social-icon {
-      position: relative;
-      padding: 0;
-      margin-top: 15px;
-      margin-left: 15px; 
-    }
-    .Mobilefooter
-    {
-      vertical-align: middle;
-    }
-    .MobileControl{
-      height: 50px;
-      width: 500px;
-      border-radius: 2rem;
-       margin-bottom: -80px;
-       margin-top: -70px !important;
-      float: left;
-       display: inline-block;
-    }
-    .MobileRadioControl{
-      height: 50px;
-      width: 400px;
-      border-radius: 1rem;
-      float: left;
-      text-align: center;
-       display: inline-block;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .Mobilepp{
-      height: 50px;
-      width: 50px;      
-       margin-top: -5px;
-      align-content: center;
-      text-align: center;
-      border-radius: 2rem;
-      float: right; 
-      display: inline-block;
-
-    }
-    .TopButton input[type=radio]{
-          transform:scale(1.5) !important;
-          margin-top: 5px !important;
-          border-color: var(--white-color);
-          color: red;
-      }
-      .TopButton
-        {
-          display: inline-block; 
-          font-size: small !important;
-          color: white;
-          width: 12%;
-          margin-top: -7px;
-          vertical-align: middle;
-          float: right;
-          background-color: yellow;
-
-        }
-        #Accountlabel
-        {
-          margin-top: 14px;
-          margin-right: 30px;
-
-        }
-        .Maincard{
-        height: 500px;
-        width: 550px;
-        margin-top: auto;
-        margin-bottom: auto;
-        border-radius: 15%;
-        background-color: rgba(65, 64, 66,0.5) !important;
-        }
-
-    .MainCardLabel
-      {
-        display: inline-block; 
-        font-size: medium; !important;
-        color: var(--white-color);
-        width: 30%;
-        text-align: left;
-      }
-      .BusinessAddressHeader
-      {
-        display: inline-block; 
-        font-size: medium; !important;
-        color: var(--white-color);
-        width: 100%;
-        margin-top: 45px;
-        margin-left: 20px;
-        text-align: left;
-      }
-      .GenderLabel
-      {
-        display: inline-block; 
-        font-size: medium !important;
-        color: var(--white-color);
-        width: 30%;
-        text-align: left;
-        margin-left: 15px;
-      }
-
-      .MainCardGroup
-      {
-        text-align: center;
-        height: 60px !important;
-         margin-left: 5px;
-        margin-right:  5px;
-      }
-      .Headergroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 5px;
-        margin-right:  5px;
-      }
-      .GenderRadioButton input[type=radio]{
-          transform:scale(1.1) !important;
-          margin-top: 5px !important;
-          border-color: var(--white-color);
-          color: red;
-      }
-      .GenderRadioButton
-        {
-          display: inline-block; 
-          font-size: medium !important;
-          color: white;
-          width: 20% ;
-        }
-    .SideMenu{
-      display: none;
-    }
-     .MaicardInputBox
-      {
-        border-radius: 5rem;
-        display: inline-block; 
-        width: 60%;
-        height: 35px;
-      }
-      .MaicardTextArea
-      {
-        border-radius: 1rem;
-            display: inline-block; 
-            width: 60%;
-            height: 35px;
-      }
-      /* index page style*/
-      .IndexMainCard{
-        margin-top: 60px;
-      }
-
-      .centerpane
-      {
-        height: 63vh;
-      }
-      .ServiceDetails
-      {
-        width: 50%;
-      }
-      .Leftcolumn
-      {
-        width: 30%;
-        display: inline-block;
-        text-align: left;
-      }
-      .RightColumn
-      {
-        width: 68%;
-        display: inline-block;
-        text-align: left;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .serviceRating
-      {
-        font-size: 10px;
-        width: 100%;
-      }
-      .services {
-        padding: 0 18px;
-        display: block;
-        height: 420px;
-        width: 75%;
-        margin-top: 10px;
-        border-radius: 2rem;
-        background-color: white;
-        margin-left: 12.5%;
-        margin-right: 12.5%;
-      }
-      .serviceThumbnail
-      {
-        width: 100%;
-      }
-      .ServiceDetails{
-        width: 100%;
-        height: 178px;
-        float: left;
-      }
-      .serviceThumbnailPicture
-      {
-          height :180px;  
-          width:220px;
-          margin-top: 10px; 
-          margin-left: 10%;
-          margin-right: 10%;
-          display: inline-block;
-          border-radius: 1rem;
-          float: left;
-      }  
-     
-  }
-
-  
-@media screen and (max-width: 480px) {
-    /*---------------------------------------
-     Profile Buttons          
-  -----------------------------------------*/
-  .Inputdropbtn {
+    border-radius: 5rem;
+    display: block; 
+    width: 100%;
     height: 40px;
   }
-    #Accountpp
-    {
-      margin-top: 3.5px;
-      margin-right:  3.5px;
-    } 
-     .AccountFormButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top: -20px;
-      margin-left:12px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .BioformButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:  32px;
-      margin-left: 12px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .AddressformButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:  32px;
-      margin-left: 12px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .BusinessformButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:  185px;
-      margin-left: 12px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .BusinessAddressformButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:  32px;
-      margin-left: 12px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .showcaseFormButtons{
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:  0px;
-      margin-left: 12px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-    .WelcomeFormButtons{  
-      height: 50px;
-      width: 320px;
-      border-radius: 2rem;
-      margin-top:  465px;
-      margin-left: 12px;
-      background-color: rgba(65, 64, 66,0.5) !important;
-    }
-
-     .arrow-right  {
-      width: 0; 
-      height: 0; 
-      margin-top: -10px;
-      margin-left: 249.0px;
-      border-top: 15px solid transparent;
-      border-bottom: 15px  solid transparent;
-      border-left: 15px  solid rgba(65, 64, 66,0.5) !important;
-      z-index: 0;
-
-    }
-    .footNote
-    {
-        border-radius: 1rem;
-        margin-left: 10px;
-        margin-right: 10px;
-       background-color: rgba(65, 64, 75,0.5) !important;
-    }
-    .FootNoteLable
-    {
-      display: inline-block; 
-      font-size: small;
-      color: var(--white-color);
-      width: 100%;
-      text-align: center;
-
-    }
-    .WelcomeNote
+  .MaicardTextArea
   {
-    display: inline-block; 
-    font-size: small;
-    color: var(--white-color);
-    width: 80%;
-    margin-left: 10px !important;
-    margin-top: 20px !important;
-    text-align: center;
-
-  }
-    .WorkPhotoGroup
-        {
-          text-align: center;
-          height:350px !important;
-          width: 90%;
-          margin-left: 25px;
-          margin-top: 10px;
-          
-        }
-     .UploadWorkDone
-    {
-      float: left;
-      width: 90%;
-      margin-left: 10px;
-      margin-right: 5px;
-      margin-top: 2px;
-
-    }
-     .WorkDonePictures
-    {
-      float: left;
-      width: 20%;
-      margin-right: 5px;
-      display: inline-block;
-
-    }
-    .NewWorkPic
-    {
-        height :75px;  
-        width: 75x;
-        display: inline-block;
-        border-radius: 1rem;
-        float: left;
-        background-color: white !important;
-    }
-    .ThumbnailRadioButton input[type=radio]{
-        transform:scale(1.5);
-        margin-top: 25px;
-        border-color: var(--white-color);
-        color: red;
-        margin-left: -20px;
-    }
-    .ThumbnailRadioButton
-      {
-        display: inline-block; 
-        font-size: large;
-        color: white; 
-        float: left; 
-        margin-left: 5px;
-        
-    }
-     .CurrentProfilepic
-    {
-      text-align: center;
-      width: 100%;
-      display: inline-block;
-      align-content: center;
-
-    }
-    .NewProfilePicture
-  {
-      height :100px;  
-      width: 100px;
-      margin-left: 85px;
-      display: inline-block;
-      text-align: center;
-      border-radius: 1rem;
-     
-      background-color: rgba(65, 64, 75,0.5) !important;
-  }
- .custopmUploadGroup
-  {
-    float: left;
-    width: 95%;
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: 10px;
-
-  }
-  .pictureUpload
-  {
-    height: 70px !important;
+    border-radius: 1rem;
+    display: block; 
     width: 100%;
-    margin-top: 10px;
+    height: 40px;
   }
-  .UserRating
-  {
-    margin-bottom: 5px ;
-    width: 45%;
-    float: left;
-    margin-left: 5px;
-    display: inline-block;
-  }
-  .UserNamediv
-  {
-    width: 20%;
-    float: right;
-    margin-top: 0px; 
-    background-color: white  !important;   
-    margin-right: 5px;  
-  }
-  .preUpload
-  {
-    margin-top: -21px;
-  }
-  .ServiceRadioButton input[type=radio]{
-          transform:scale(1) !important;
-          border-color: var(--white-color);
-          color: red;
-          margin-top: 0px  !important;
-      }
-      .ServiceRadioButton
-        {
-          display: inline-block; 
-          font-size: small !important;
-          color: white;
-          width: 10%;
-          margin-top: 25px;
-
-        }
-       .ServiceProviderGroup
-      {
-        text-align: center;
-        height: 60px !important;
-        margin-left: 20px;
-        margin-top: 5px !important;
-        margin-bottom: -20px;
-        margin-right:  5px;
-        text-align: left;
-      }
-
-    .SectionLabel
-    {
-      width: 100%;
-      text-align: center;
-      color: white;
-      float: left;
-      display: block;
-      margin-top: -15px;
-    }
-    .RadioTop
-      {
-        width: 100%;
-        display: block;
-      }
-    h1 {
-      font-size: 38px;
-    }
-   
-    .about-working-hours {
-      border-left: 0;
-      padding: 22px 0 0 0;
-    }
-    .ProfilePicture
-    {
-      height :42px;  
-      width: 42px;
-      margin-top: -15px;
-      border-radius: 50%;
-      float: right;
-    }
-        
-     .kasiLogo
-    {
-      margin-top: 25px
-    }
-
-    .KasivoreLogo
-    {
-      width: 150x;
-      height: 100px;
-
-    }
-    .Social-media{
-      z-index: 99;
-    }
-    .contact h2 span {
-      display: block;
-    }
-     .social-icon {
-      position: relative;
-      padding: 0;
-      margin-top: 15px;
-      margin-left: 15px; 
-    }
-    .Mobilefooter
-    {
-      vertical-align: middle;
-    }
-    .MobileControl{
-      height: 55px;
-      width: 325px;
+  .ProfileButtons{
+      height: 50px;
+      width: 220px;
       border-radius: 2rem;
-       margin-bottom: -80px;
-      margin-top: 10px !important;
-      float: left;
-       display: inline-block;
-    }
-    .MobileRadioControl{
-      height: 55px;
-      width: 250px;
-      border-radius: 1rem;
-      float: left;
-      text-align: center;
-       display: inline-block;
+      margin-top: 20px;
       background-color: rgba(65, 64, 66,0.5) !important;
     }
-    .Mobilepp{
-      height: 50px;
-      width: 50px;      
-       margin-top: 5px;
-      align-content: center;
-      text-align: center;
-      border-radius: 2rem;
-      float: right; 
+    .Profile_btn-left{
+      color: black;
+      background-color: #be222f;
+      color: white;
+      border-radius: 5rem;
+      margin-top: 5px;
+      float: left;
+      font-size: 5px !important;
       display: inline-block;
 
     }
-    .TopButton input[type=radio]{
-          transform:scale(1.5) !important;
-          margin-top: 5px !important;
-          border-color: var(--white-color);
-          color: red;
-      }
-      .TopButton
-        {
-          display: inline-block; 
-          font-size: small !important;
-          color: white;
-          width: 24%;
-          margin-top: -7px;
-          vertical-align: middle;
-          float: right;
-          background-color: yellow;
 
-        }
-        #Accountlabel
-        {
-          margin-top: 14px;
-          margin-right: 30px;
-        }
-        .Maincard{
-          height:  600px;
-          width: 350px;
-          margin-top: auto;
-          margin-bottom: auto;
-          border-radius: 7%;
-          background-color: rgba(65, 64, 66,0.5) !important;
-          }
+    .Profile_btn{
+      color: black;
+      background-color: #be222f;
+      color: white;
+      border-radius: 5rem;
+      margin-top: 5px;
+      font-size: 5px !important;
+      float: right;
+      display: inline-block;
 
-    .MainCardLabel
-      {
-        display: block; 
-        font-size: small !important;
-        color: var(--white-color);
-        width: 100%;
-        text-align: left;
-        margin-left: 10px;
-        margin-bottom: -20px;
-      }
-      .BusinessAddressHeader
-      {
-        display: block; 
-        font-size: medium !important;
-        font-weight: bold;
-        color: var(--white-color);
-        width: 100%;
-        text-align: center;
-        margin-bottom: 0px;
-        margin-left: 10px;
-      }
-      .GenderLabel
-      {
-        display: block; 
-        font-size: medium !important;
-        color: var(--white-color);
-        width: 100%;
-        text-align: left;
-        margin-left: 10px;
-        margin-bottom: 10px;
-      }
-
-      .MainCardGroup
-      {
-        text-align: center;
-        margin-left: 20px;
-        margin-right:  20px;
-        margin-top: 10px;
-        width: 90%;
-      }
-      .Headergroup
-      {
-        text-align: center;
-        margin-left: 20px;
-        margin-right:  20px;
-        margin-bottom: -30px;
-        width: 90%;
-      }
-      .GenderRadioButton input[type=radio]{
-          transform:scale(1.5) !important;
-          margin-top: 2px !important;
-          border-color: var(--white-color);
-          color: red;
-      }
-      .GenderRadioButton
-        {
-          display: inline-block; 
-          font-size: 10px !important;
-          color: white;
-          width: 32% ;
-        }
-    .SideMenu{
-      display: none;
     }
-     .MaicardInputBox
-      {
-        border-radius: 5rem;
-        display: block; 
-        width: 100%;
-        height: 40px;
-      }
-      .MaicardTextArea
-      {
-        border-radius: 1rem;
-        display: block; 
-        width: 100%;
-        height: 40px;
-      }
-      .ProfileButtons{
-          height: 50px;
-          width: 220px;
-          border-radius: 2rem;
-          margin-top: 20px;
-          background-color: rgba(65, 64, 66,0.5) !important;
-        }
-        .Profile_btn-left{
-          color: black;
-          background-color: #be222f;
-          color: white;
-          border-radius: 5rem;
-          margin-top: 5px;
-          float: left;
-          font-size: 5px !important;
-          display: inline-block;
-
-        }
-
-        .Profile_btn{
-          color: black;
-          background-color: #be222f;
-          color: white;
-          border-radius: 5rem;
-          margin-top: 5px;
-          font-size: 5px !important;
-          float: right;
-          display: inline-block;
-
-        }
-        .progressKasi
-        {
-          margin-top: 10px !important;
-        }
-        
-        .dropdownSelect {
-          position: relative;
-          display: inline-block;
-          width: 100%;
-          margin-top: 20px;
-        }
-        #lbUserlabel
-        {
-          margin-right: 10px !important;
-        }
-        .Profile 
-        {
-          height: 100% !important;
-          padding-bottom: 30px;
-        }
-        #txtbusAddress
-        {
-          width: 100% !important;
-        }
-        #txt_addressSearch
-        {
-          width: 100% !important;
-        }
-
-        
+    .progressKasi
+    {
+      margin-top: 10px !important;
+    }
+    
+    .dropdownSelect {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      margin-top: 20px;
+    }
+    #lbUserlabel
+    {
+      margin-right: 10px !important;
+    }
+    .Profile 
+    {
+      height: 100% !important;
+      padding-bottom: 30px;
+    }
+    #txtbusAddress
+    {
+      width: 100% !important;
+    }
+    #txt_addressSearch
+    {
+      width: 100% !important;
+    }
+/* index page style*/
+  .IndexMainCard{
+    margin-top: 170px;
   }
 
+  .centerpane
+  {
+    height: 80vh;
+  }
+  .ServiceDetails
+  {
+    width: 50%;
+  }
+
+  .serviceRating
+  {
+    font-size: 10px;
+    width: 100%;
+  }
+  .services {
+    padding: 0 18px;
+    display: block;
+    height: 420px;
+    width: 90%;
+    margin-top: 10px;
+    border-radius: 2rem;
+    background-color: white;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+  .serviceThumbnail
+  {
+    width: 100%;
+  }
+  .ServiceDetails{
+    width: 100%;
+    height: 178px;
+    float: left;
+  }
+  .serviceThumbnailPicture
+  {
+      height :200px;  
+      width:250px;
+      margin-top: 10px; 
+      display: inline-block;
+      border-radius: 1rem;
+      float: left;
+  }  
+    .bt_ServicesMore
+ {
+   margin-top: 20px;
+ }
   
-  
+    
+}
+
+

@@ -731,11 +731,12 @@
                                         <div class="WorkPhotoGroup">
                                           {%for images in SampleImages%}
                                               <div class="WorkDonePictures"> 
-                                                  <label class="ThumbnailRadioButton" for="radio2">
+                                                  <label class="ThumbnailRadioButton" for="radio2">                                                    
                                                     <span><img  src="/useraccounts/{{images[2]}}" alt="Avatar" class="NewWorkPic"></span>
-                                                    <input type="radio" class="form-check-input" id="ThumbnailRadio{{images[0]}}" name="Thumnailradio" value="{{images[0]}}" onclick="SelectThumbnail('{{images[0]}}')" {{images[5]}}>
-                                                    <span class="checkmark"></span>
-                                                </label>
+                                                    <input type="radio" class="form-check-input" id="ThumbnailRadio{{images[0]}}" name="Thumnailradio" value="{{images[0]}}" onclick="SelectThumbnail('{{images[0]}}')" {{images[5]}}>                                                                                                                                                                                    
+                                                    <input type="button" value="X" class="Removepic" onclick="Removeimage('{{images[0]}}')"  >
+                                                  </label>
+                                                     
                                                   
                                               </div>
                                           {%endfor%}
@@ -773,6 +774,7 @@
                                         
                                      <input type="hidden" id="hf_ImageUpload"  name="hf_ImageUpload">
                                      <input type="hidden" id="hf_imageID"  name="hf_imageID">
+                                     <input type="hidden" id="hf_Remove"  name="hf_Remove">
                                     </form>
                                 
                                     <!--Welcome Note-->
