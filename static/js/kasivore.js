@@ -80,28 +80,65 @@ function ValidateUser() {
 	  	document.getElementById('Error').style.display = "block";
 	  	document.getElementById( 'lbSignin' ).innerHTML = "Reset password";
 	}
-	function ProfileSlides(CurrentSection)
+	function ProfileSlides(CurrentSection, PrevSection="")
 	{
-		document.getElementById('AccountForm' ).style.display = "none";
-		document.getElementById('Bioform' ).style.display = "none";
-		document.getElementById('Addressform' ).style.display = "none";
-		document.getElementById('Businessform' ).style.display = "none";
-		document.getElementById('BusinessAddressform' ).style.display = "none";
-		document.getElementById('showcaseForm' ).style.display = "none";
-		document.getElementById('WelcomeForm' ).style.display = "none";
-		document.getElementById(CurrentSection).style.display = "block";
-		document.getElementById('Accountlabel' ).innerHTML = CurrentSection.replace('form','').replace('Form','')
-		
-		if(CurrentSection == 'BusinessAddressform' || CurrentSection =='showcaseForm')
+		if(PrevSection !="")
 		{
-			CurrentSection = 'Businessform';
-		}
+			if ($(PrevSection).data("changed")) {
+				// submit the form
+				document.getElementById(PrevSection.replace("#","")).action ="/Profile/" +CurrentSection+ "/" +PrevSection.replace("#","")
+				document.getElementById(PrevSection.replace("#","")).submit();
+				
+			 }
+			 else
+			 {
+				document.getElementById('AccountForm' ).style.display = "none";
+				document.getElementById('Bioform' ).style.display = "none";
+				document.getElementById('Addressform' ).style.display = "none";
+				document.getElementById('Businessform' ).style.display = "none";
+				document.getElementById('BusinessAddressform' ).style.display = "none";
+				document.getElementById('showcaseForm' ).style.display = "none";
+				document.getElementById('WelcomeForm' ).style.display = "none";
+				document.getElementById(CurrentSection).style.display = "block";
+				document.getElementById('Accountlabel' ).innerHTML = CurrentSection.replace('form','').replace('Form','')
+				
+				if(CurrentSection == 'BusinessAddressform' || CurrentSection =='showcaseForm')
+				{
+					CurrentSection = 'Businessform';
+				}
 
-		var radioButtons1 = 'radio' +CurrentSection + '1';
-		var radioButtons2 = 'radio' +CurrentSection + '2';
+				var radioButtons1 = 'radio' +CurrentSection + '1';
+				var radioButtons2 = 'radio' +CurrentSection + '2';
+				
+				document.getElementById(radioButtons1 ).checked = true;
+				document.getElementById(radioButtons2 ).checked = true;
+
+
+			 }
+		}
+		else{
+				document.getElementById('AccountForm' ).style.display = "none";
+				document.getElementById('Bioform' ).style.display = "none";
+				document.getElementById('Addressform' ).style.display = "none";
+				document.getElementById('Businessform' ).style.display = "none";
+				document.getElementById('BusinessAddressform' ).style.display = "none";
+				document.getElementById('showcaseForm' ).style.display = "none";
+				document.getElementById('WelcomeForm' ).style.display = "none";
+				document.getElementById(CurrentSection).style.display = "block";
+				document.getElementById('Accountlabel' ).innerHTML = CurrentSection.replace('form','').replace('Form','')
+				
+				if(CurrentSection == 'BusinessAddressform' || CurrentSection =='showcaseForm')
+				{
+					CurrentSection = 'Businessform';
+				}
+
+				var radioButtons1 = 'radio' +CurrentSection + '1';
+				var radioButtons2 = 'radio' +CurrentSection + '2';
+				
+				document.getElementById(radioButtons1 ).checked = true;
+				document.getElementById(radioButtons2 ).checked = true;
+		}
 		
-		document.getElementById(radioButtons1 ).checked = true;
-		document.getElementById(radioButtons2 ).checked = true;
 	}
 	//Change Account Type
 	function ChangeAccountType(){
@@ -393,4 +430,27 @@ function ValidateUser() {
 		document.getElementById(formname).style.display = "none";
 		
 	}
+
+//Form change detection
+$("#AccountForm :input").change(function() {
+	$("#AccountForm").data("changed",true);
+ });
+ $("#Bioform :input").change(function() {
+	$("#Bioform").data("changed",true);
+ });
+
+ $("#Addressform :input").change(function() {
+	$("#Addressform").data("changed",true);
+ });
+
+ $("#BusinessAddressform :input").change(function() {
+	$("#BusinessAddressform").data("changed",true);
+ });
+
+ $("#Businessform :input").change(function() {
+	$("#Businessform").data("changed",true);
+ });
+
+
+
 

@@ -516,13 +516,13 @@
 
                                      <div class="BioformButtons" >
                                        <div class="form-group Profile_btn-left"    >
-                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('AccountForm')" name="ub_Prev" class="btn float-right login_btn"   >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('AccountForm','#Bioform')" name="ub_Prev" class="btn float-right login_btn"   >
                                             </div> 
                                              <div class="form-group Profile_btn-left"    >
                                                 <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
                                               </div>
                                               <div class="form-group Profile_btn"    >
-                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('Addressform')" name="ub_Next" class="btn float-right login_btn"   >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('Addressform','#Bioform')" name="ub_Next" class="btn float-right login_btn"   >
                                             </div>   
                                                               
                                                                 
@@ -574,18 +574,18 @@
 
                                      <div class="AddressformButtons">
                                        <div class="form-group Profile_btn-left"    >
-                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Bioform')" name="ub_Prev" class="btn float-right login_btn"   >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Bioform','#Addressform')" name="ub_Prev" class="btn float-right login_btn"   >
                                             </div> 
                                              <div class="form-group Profile_btn-left"    >
                                                 <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
                                               </div>
                                               {%if userDetails[9] != 'Buyer' %}
                                                 <div class="form-group Profile_btn"    >
-                                                  <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('Businessform')" name="ub_Next" class="btn float-right login_btn"   >
+                                                  <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('Businessform','#Addressform')" name="ub_Next" class="btn float-right login_btn"   >
                                               </div> 
                                               {% else%}
                                                 <div class="form-group Profile_btn"    >
-                                                  <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('WelcomeForm')" name="ub_Next" class="btn float-right login_btn"   >
+                                                  <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('WelcomeForm','#Addressform')" name="ub_Next" class="btn float-right login_btn"   >
                                                </div> 
                                               {%endif%}
                                                
@@ -643,13 +643,13 @@
                                         
                                        <div class="BusinessformButtons">
                                        <div class="form-group Profile_btn-left"    >
-                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Addressform')" name="ub_Prev" class="btn float-right login_btn"   >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Addressform','#Businessform')" name="ub_Prev" class="btn float-right login_btn"   >
                                             </div> 
                                              <div class="form-group Profile_btn-left"    >
                                                 <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
                                               </div>
                                               <div class="form-group Profile_btn"    >
-                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('BusinessAddressform')" name="ub_Next" class="btn float-right login_btn"   >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('BusinessAddressform','#Businessform')" name="ub_Next" class="btn float-right login_btn"   >
                                             </div>   
                                                               
                                                                 
@@ -701,13 +701,13 @@
 
                                       <div class="BusinessAddressformButtons">
                                        <div class="form-group Profile_btn-left"    >
-                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Businessform')" name="ub_Prev" class="btn float-right login_btn"   >
+                                                <input type="button" value="Prev" id="ub_Prev" onclick="ProfileSlides('Businessform','#BusinessAddressform')" name="ub_Prev" class="btn float-right login_btn"   >
                                             </div> 
                                              <div class="form-group Profile_btn-left"    >
                                                 <input type="submit" value="Save" id="ub_Save" name="ub_Save" class="btn float-right login_btn"  >
                                               </div>
                                               <div class="form-group Profile_btn"    >
-                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('showcaseForm')" name="ub_Next" class="btn float-right login_btn"   >
+                                                <input type="button" value="Next" id="ub_Next" onclick="ProfileSlides('showcaseForm','#BusinessAddressform')" name="ub_Next" class="btn float-right login_btn"   >
                                             </div>   
                                                               
                                                                 

@@ -61,8 +61,20 @@ def GetDistance (Providers, long, lat):
     
 
     for prov in Providers:
-        lat2 = float(prov[3])
-        long2 = float(prov[4])
+        
+       
+        try:
+            lat2 = float(prov[3])        
+        except Exception as identifier:
+            lat2= -26.27075929
+            error_Report('Kasivore distcal' , str(identifier) )
+        
+        try:
+            long2 = float(prov[4])       
+        except Exception as identifier:
+            lat2= 28.1122679
+            error_Report('Kasivore distcal' , str(identifier) )
+
         TempList = list(prov)
         TempList.append(round(DistanceCalc.estimatedDistance (long,lat,long2,lat2),2))
         prov =  tuple(TempList)
@@ -307,8 +319,9 @@ def Pay():
 
 
 @app.route('/Profile/<formname>', methods=['GET', 'POST'])
+@app.route('/Profile/<formname>/<navigate>', methods=['GET', 'POST'])
 @app.route('/Profile', methods=['GET', 'POST'])
-def Profile(formname=None):
+def Profile(formname=None, navigate=None):
     userMenuList = {}
     ErrorMsq = ''
     IsSignUp = ''
@@ -329,8 +342,12 @@ def Profile(formname=None):
             passowrd = user[2]
             userid = user[0]
         if request.method == 'POST':
-
-            CurrentProfileForm= formname
+            if navigate is not None:
+                 CurrentProfileForm= formname
+                 formname = navigate
+            else:
+                 CurrentProfileForm= formname
+          
             if formname == "AccountForm":
                 if request.form['hf_ppUpload'] == "1":
                     # Change profile picture
@@ -383,6 +400,7 @@ def Profile(formname=None):
                     CreatedID = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_create_user', parameters)
             elif formname == "Bioform":
                 ##Update personal details 
+                print('Themba Pakula')
                 print('txtbirthday: ' + request.form["txtbirthday"])
                 parameters = {'_userid': userid, '_firstname': request.form["txtName"] , '_lastname': request.form["txtSurname"], '_Tell': request.form["txtTell"], '_nationality': request.form["country"], '_idnumber': request.form["txtIDNO"], '_passportnumber': request.form["txtPassport"], '_dateofbirth': request.form["txtbirthday"], '_gender': request.form["Gender"]}
                 # txtName , txtSurname ,txtTell,country, txtIDNO, txtPassport,txtbirthday, Gender
@@ -443,6 +461,7 @@ def Profile(formname=None):
     SampleImages = KasivoreData.pgsql_call_Tablefunction_P('app', 'fn_get_SampleImages',S_parameters)
     print('serviceprovider')
     print(serviceprovider)
+    #Navigate to new form
     return render_template('profile.html', CurrentProfileForm=CurrentProfileForm, ErrorMsq=ErrorMsq, GID=GID, MAPS= MAPS_API,Categories = Categories,serviceprovider = serviceprovider,SampleImages = SampleImages,
                            menubuttons=menubuttons, userMenuList=userMenuList, loginUrl=loginUrl)
 
